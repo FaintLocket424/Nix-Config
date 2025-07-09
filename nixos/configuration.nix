@@ -223,7 +223,7 @@
 
   # Configure your system-wide user settings (groups, etc)
   users = {
-    mutableUsers = false;
+    mutableUsers = true;
     users = {
       matthew = {
         initialPassword = "password";

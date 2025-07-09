@@ -225,12 +225,14 @@
   users = {
     mutableUsers = true;
     users = {
+      root.hashedPassword = "!";
       matthew = {
-        initialPassword = "password";
+        description = "Matthew Peters";
+        hashedPassword = "$6$jeYZ3.QYh.Hqa6pR$wbdeB2vysnjf5nNglU8Eb7LyQ.hdrGhL5wPGf4VnECdW.dmkgjrN/flAODApiqo/tSuUYtqgDZoyJ/4sYUs.d1";
         isNormalUser = true;
         extraGroups = ["wheel" "networkmanager" "video" "libvirtd"];
+
         shell = pkgs.fish;
-        description = "Matthew Peters";
       };
     };
   };

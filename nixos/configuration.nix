@@ -226,7 +226,7 @@
     mutableUsers = false;
     users = {
       matthew = {
-        initialPassword = "";
+        initialPassword = "password";
         isNormalUser = true;
         extraGroups = ["wheel" "networkmanager" "video" "libvirtd"];
         shell = pkgs.fish;

@@ -136,7 +136,7 @@
         "$mainmod, w, fullscreen"
 
 		## Unblock Wifi 
-		"$mainmod, XF86NumericPound, exec, rfkill unblock all"
+		"$mainmod, p, exec, rfkill unblock all"
 		
 		## Open Terminal
         "$mainmod, Return, exec, uwsm-app -- kitty"

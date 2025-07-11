@@ -1,5 +1,4 @@
 { pkgs }:
-
 pkgs.writeShellApplication {
   name = "update";
   runtimeInputs = with pkgs; [
@@ -14,4 +13,9 @@ pkgs.writeShellApplication {
     git push;
     nh os switch /home/matthew/development/nixos;
   '';
+}
+
+writeShellApplication {
+  name = "extractMojangJar";
+  text = (builtins.readFile ./scripts/extractMojangJar.sh);
 }

@@ -197,14 +197,11 @@
   };
   
 #  home.file.".local/bin/extractMojangJar.sh" = {
-#    source = ./scriptsa/extractMojangJar.sh;
+#    source = ./scripts/extractMojangJar.sh;
 #    executable = true;
 #  };
 
-  pkgs.writeShellApplication = {
-    name = "extractMojangJar";
-    text = (builtins.readFile ./scripts/extractMojangJar.sh);
-  };
+
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

@@ -194,7 +194,12 @@
 
   home.file."${config.xdg.configHome}/libvirt/qemu.conf" = {
       source = ./qemu.conf;
-    };
+  };
+	
+  home.file.".local/bin/extractMojangJar.sh" = {
+    source = ./scripts/extractMojangJar.sh;
+    executable = true;
+  };
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

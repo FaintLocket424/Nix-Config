@@ -90,6 +90,9 @@
 
       ## Disk Usage Analyser
       # qdirstat
+	  
+	  # File Sync
+	  syncthing
 
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh

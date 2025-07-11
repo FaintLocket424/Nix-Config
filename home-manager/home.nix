@@ -40,18 +40,18 @@
     };
 
     packages = with pkgs; [
-	    # System Management
+      # System Management
       selectdefaultapplication
       bleachbit
       via
       pwvucontrol
-	    git-credential-manager
+      git-credential-manager
 
       # Default Applications
-	    ## Web Browsers
+      ## Web Browsers
       firefox
-	    brave
-	  
+      brave
+    
       ## Image Viewer
       xviewer
 
@@ -71,16 +71,16 @@
       popsicle
 
       ## Virtual Machines
-  #	  gnome-boxes
-  #	  swtpm
-  #	  spice-gtk
-	  
+  #    gnome-boxes
+  #    swtpm
+  #    spice-gtk
+    
       ## QT Fixes/packages
       kdePackages.qtwayland
       kdePackages.kwayland
       kdePackages.kservice
       libsForQt5.qtwayland
-	  
+    
       ## Remote Desktop
       parsec-bin
 
@@ -90,9 +90,9 @@
 
       ## Disk Usage Analyser
       # qdirstat
-	  
-	  # File Sync
-	  syncthing
+    
+    # File Sync
+    syncthing
 
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh
@@ -106,10 +106,10 @@
       corefonts
       vistafonts
       open-sans
-	    jetbrains-mono
+      jetbrains-mono
 
       networkmanagerapplet
-	  
+    
       # Editors
       audacity
       obs-studio
@@ -118,7 +118,7 @@
       jetbrains.idea-ultimate
       jetbrains.pycharm-professional
       jetbrains.goland
-	  
+    
       # Social
       zapzap
       vesktop
@@ -195,10 +195,15 @@
   home.file."${config.xdg.configHome}/libvirt/qemu.conf" = {
       source = ./qemu.conf;
   };
-	
-  home.file.".local/bin/extractMojangJar.sh" = {
-    source = ./scripts/extractMojangJar.sh;
-    executable = true;
+  
+#  home.file.".local/bin/extractMojangJar.sh" = {
+#    source = ./scriptsa/extractMojangJar.sh;
+#    executable = true;
+#  };
+
+  pkgs.writeShellApplication = {
+    name = "extractMojangJar";
+    text = (builtins.readFile ./scripts/extractMojangJar.sh);
   };
 
   # Enable home-manager and git

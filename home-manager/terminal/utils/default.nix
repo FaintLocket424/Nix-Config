@@ -2,6 +2,11 @@
 {
   home.packages = with pkgs; [
     (import ./update.nix {inherit pkgs;})
+
+#  (writeShellApplication {
+#    name = "extractMojangJar";
+#    text = (builtins.readFile ../../scripts/extractMojangJar.sh);
+#  })
 	
 	# Media somethingorother
 	playerctl

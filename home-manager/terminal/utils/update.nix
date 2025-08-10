@@ -3,7 +3,7 @@ pkgs.writeShellApplication {
   name = "update";
   runtimeInputs = with pkgs; [
     git
-  nh
+    nh
   ];
   text = ''
     cd /home/matthew/development/nixos/ || exit
@@ -15,7 +15,3 @@ pkgs.writeShellApplication {
   '';
 }
 
-writeShellApplication {
-  name = "extractMojangJar";
-  text = (builtins.readFile ./scripts/extractMojangJar.sh);
-}

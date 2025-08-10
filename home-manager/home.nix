@@ -118,6 +118,7 @@
       jetbrains.idea-ultimate
       jetbrains.pycharm-professional
       jetbrains.goland
+      jetbrains.webstorm
     
       # Social
       zapzap

@@ -92,7 +92,7 @@
       # qdirstat
     
     # File Sync
-    syncthing
+#    syncthing
 
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh
@@ -160,6 +160,10 @@
        "secrets"
        "ssh"
      ];
+   };
+
+   syncthing = {
+     enable = true;
    };
   };
 

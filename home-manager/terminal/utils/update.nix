@@ -6,7 +6,6 @@ pkgs.writeShellApplication {
     nh
   ];
   text = ''
-    sudo test
     cd /home/matthew/development/nixos/ || exit
     nix flake update --flake .;
     git add ./*;

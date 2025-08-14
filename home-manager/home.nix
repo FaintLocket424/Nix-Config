@@ -164,7 +164,6 @@
 
    syncthing = {
      enable = true;
-     openDefaultPorts = true;
    };
   };
 

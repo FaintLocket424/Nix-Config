@@ -51,6 +51,7 @@
       ## Web Browsers
       firefox
       brave
+      chromium
     
       ## Image Viewer
       xviewer

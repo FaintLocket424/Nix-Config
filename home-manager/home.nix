@@ -141,8 +141,6 @@
     hyprpaper.enable = true;
     playerctld.enable = true;
 
-    printing.enable = true;
-
     mako = {
       enable = true;
       settings = {

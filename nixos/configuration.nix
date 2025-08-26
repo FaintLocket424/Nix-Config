@@ -133,6 +133,14 @@
   services = {
     dbus.implementation = "broker";
 
+    printing.enable = true;
+
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+
     scx = {
       enable = true;
       scheduler = "scx_lavd";

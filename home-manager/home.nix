@@ -95,6 +95,7 @@
     # File Sync
 #    syncthing
 
+
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh
       hunspell
@@ -164,9 +165,15 @@
      ];
    };
 
-   syncthing = {
-     enable = true;
-   };
+#   syncthing = {
+#     enable = true;
+#   };
+
+    resilio = {
+      enable = true;
+      enableWebUI = true;
+      httpListenAddr = "127.0.0.1"; # To bind the WebUI to only localhost
+    };
   };
 
   programs = {

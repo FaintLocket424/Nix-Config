@@ -182,6 +182,10 @@
         PLATFORM_PROFILE_ON_BAT = "low-power";
       };
     };
+
+    resilio = {
+      enable = true;
+    };
   };
 
   xdg.portal = {

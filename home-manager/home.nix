@@ -130,6 +130,7 @@
       protonup
       ## Minecraft
       gdlauncher-carbon
+      modrinth-app
       jdk21
       ## Emulators
       dolphin-emu

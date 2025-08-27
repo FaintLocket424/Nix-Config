@@ -186,6 +186,10 @@
     resilio = {
       enable = true;
       enableWebUI = true;
+      httpLogin = "matthew";
+      httpPass = "password";
+      deviceName = "Hyperion";
+      httpListenAddr = "127.0.0.1";
     };
   };
 
@@ -243,7 +247,7 @@
         description = "Matthew Peters";
         hashedPassword = "$6$jeYZ3.QYh.Hqa6pR$wbdeB2vysnjf5nNglU8Eb7LyQ.hdrGhL5wPGf4VnECdW.dmkgjrN/flAODApiqo/tSuUYtqgDZoyJ/4sYUs.d1";
         isNormalUser = true;
-        extraGroups = ["wheel" "networkmanager" "video" "libvirtd"];
+        extraGroups = ["wheel" "networkmanager" "video" "libvirtd" "rslsync"];
 
         shell = pkgs.fish;
       };

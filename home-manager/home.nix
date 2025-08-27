@@ -133,9 +133,6 @@
       jdk21
       ## Emulators
       dolphin-emu
-
-      # Printing
-      system-config-printer
     ];
   };
 

@@ -95,7 +95,7 @@
     # File Sync
 #    syncthing
 
-      resilio
+      resilio-sync
 
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh

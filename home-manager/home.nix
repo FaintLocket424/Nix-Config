@@ -157,20 +157,22 @@
 
     blueman-applet.enable = true;
 
-   gnome-keyring = {
+    gnome-keyring = {
      enable = true;
      components = [
        "pkcs11"
        "secrets"
        "ssh"
      ];
-   };
+    };
 
-   syncthing = {
-     enable = true;
-#     openDefaultPorts = true;
-     options.localAnnounceEnabled = true;
-   };
+    syncthing = {
+      enable = true;
+      settings = {
+        openDefaultPorts = true;
+        options.localAnnounceEnabled = true;
+      };
+    };
 
 #    resilio = {
 #      enable = true;

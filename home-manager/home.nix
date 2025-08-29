@@ -171,7 +171,28 @@
       settings = {
         openDefaultPorts = true;
         options.localAnnounceEnabled = true;
+        devices = {
+          falcon = {
+            name = "Falcon";
+            id = "MYFAGZC-Z6HAPNZ-4Y66OCM-JBIXCWG-IB42EPE-YJOKBC3-QCO6LH5-TOPPGA5";
+          };
+          s25 = {
+            name = "S25";
+            id = "RJYXKAI-CMTCOMD-XPLK5PG-4DGG3FB-SWFD6TL-B7WQDZJ-EKC4B2P-LRXNVA2";
+          };
+        };
+        folders = {
+          programming = {
+            enable = true;
+            devices = ["Falcon" "S25"];
+            id = "programming";
+            label = "programming";
+            path = "~/programming";
+          };
+        };
       };
+      overrideDevices = true;
+      overrideFolders = true;
     };
 
 #    resilio = {

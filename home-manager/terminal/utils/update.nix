@@ -6,12 +6,12 @@ pkgs.writeShellApplication {
     nh
   ];
   text = ''
-    cd /home/matthew/development/nixos/ || exit
+    cd /home/matthew/programming/Production/nixos-config || exit
     nix flake update --flake .;
     git add ./*;
     git commit -a -m "Automatic commit from update script";
     git push;
-    nh os switch /home/matthew/development/nixos;
+    nh os switch /home/matthew/programming/Production/nixos-config;
   '';
 }
 

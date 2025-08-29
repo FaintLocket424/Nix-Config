@@ -169,7 +169,7 @@
    syncthing = {
      enable = true;
      openDefaultPorts = true;
-     localAnnounceEnabled = true;
+     options.localAnnounceEnabled = true;
    };
 
 #    resilio = {

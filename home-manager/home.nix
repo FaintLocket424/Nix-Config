@@ -184,7 +184,7 @@
         folders = {
           programming = {
             enable = true;
-            devices = ["Falcon" "S25"];
+            devices = ["falcon" "s25"];
             id = "programming";
             label = "programming";
             path = "~/programming";

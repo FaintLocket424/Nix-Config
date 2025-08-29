@@ -195,11 +195,6 @@
       overrideFolders = true;
     };
 
-#    resilio = {
-#      enable = true;
-#      enableWebUI = true;
-#      httpListenAddr = "127.0.0.1"; # To bind the WebUI to only localhost
-#    };
   };
 
   programs = {

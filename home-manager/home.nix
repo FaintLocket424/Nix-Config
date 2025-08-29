@@ -168,7 +168,7 @@
 
    syncthing = {
      enable = true;
-     openDefaultPorts = true;
+#     openDefaultPorts = true;
      options.localAnnounceEnabled = true;
    };
 

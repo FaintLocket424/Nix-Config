@@ -95,7 +95,7 @@
     # File Sync
 #    syncthing
 
-      resilio-sync
+#      resilio-sync
 
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh
@@ -166,9 +166,11 @@
      ];
    };
 
-#   syncthing = {
-#     enable = true;
-#   };
+   syncthing = {
+     enable = true;
+     openDefaultPorts = true;
+     localAnnounceEnabled = true;
+   };
 
 #    resilio = {
 #      enable = true;

@@ -134,7 +134,7 @@
       gdlauncher-carbon
       modrinth-app
       jdk21
-	  jdk17
+	  # jdk17
       ## Emulators
       dolphin-emu
     ];

@@ -122,6 +122,7 @@
       jetbrains.pycharm-professional
       jetbrains.goland
       jetbrains.webstorm
+	  android-studio-full
     
       # Social
       zapzap

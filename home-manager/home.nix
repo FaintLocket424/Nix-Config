@@ -140,7 +140,7 @@
 	  
 	  gradle
 	  
-	  hiPrio python313
+	  (hiPrio python313)
 	  python312
     ];
   };

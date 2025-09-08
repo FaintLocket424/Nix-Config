@@ -146,6 +146,7 @@
       libressl
 
       insomnia
+      postman
     ];
   };
 

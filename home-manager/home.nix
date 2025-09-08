@@ -138,12 +138,14 @@
       ## Emulators
       dolphin-emu
 	  
-	  gradle
-	  
-	  (hiPrio python313)
-	  python312
-	  
-	  libressl
+      gradle
+
+      (hiPrio python313)
+      python312
+
+      libressl
+
+      insomnia
     ];
   };
 

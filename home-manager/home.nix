@@ -141,7 +141,7 @@
 	  gradle
 	  
 	  python313
-	  # python312
+	  python312
     ];
   };
 

@@ -139,6 +139,9 @@
       dolphin-emu
 	  
 	  gradle
+	  
+	  python313
+	  # python312
     ];
   };
 

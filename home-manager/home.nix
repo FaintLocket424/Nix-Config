@@ -143,7 +143,7 @@
 	  (hiPrio python313)
 	  python312
 	  
-	  openssl
+	  libressl
     ];
   };
 

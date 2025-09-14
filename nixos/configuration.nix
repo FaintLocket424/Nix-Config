@@ -141,6 +141,7 @@
   };
 
   services = {
+    blueman.enable = true;
 
     dbus.implementation = "broker";
 

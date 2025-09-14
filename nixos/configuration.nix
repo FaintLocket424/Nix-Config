@@ -35,7 +35,17 @@
     enableAllFirmware = true;
     bluetooth = {
       enable = true;
-      settings.General.Disable = "Headset";
+      powerOnBoot = true;
+
+      settings = {
+        General = {
+          Experimental = true;
+          FastConnectable = true;
+        };
+        Policy = {
+          AutoEnable = true;
+        };
+      };
     };
     brillo.enable = true;
     keyboard.qmk.enable = true;
@@ -131,6 +141,7 @@
   };
 
   services = {
+
     dbus.implementation = "broker";
 
     printing.enable = true;

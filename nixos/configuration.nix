@@ -145,7 +145,13 @@
 
     dbus.implementation = "broker";
 
-    printing.enable = true;
+    printing = {
+      enable = true;
+      drivers = [
+        pkgs.gutenprint
+        pkgs.canon-cups-ufr2
+      ];
+    };
 
     avahi = {
       enable = true;

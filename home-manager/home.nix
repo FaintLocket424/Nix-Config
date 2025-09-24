@@ -55,6 +55,7 @@
     
       ## Image Viewer
       xviewer
+	  photoflare
 
       ## PDF Reader
       evince

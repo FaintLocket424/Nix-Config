@@ -32,6 +32,7 @@
   };
 
   hardware = {
+    steam-hardware = true;
     xone.enable = true;
     enableAllFirmware = true;
     bluetooth = {

@@ -32,6 +32,7 @@
   };
 
   hardware = {
+    xone.enable = true;
     enableAllFirmware = true;
     bluetooth = {
       enable = true;

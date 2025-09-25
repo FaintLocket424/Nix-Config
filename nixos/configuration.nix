@@ -143,6 +143,7 @@
   };
 
   services = {
+    joycond.enable = true;
     blueman.enable = true;
 
     dbus.implementation = "broker";

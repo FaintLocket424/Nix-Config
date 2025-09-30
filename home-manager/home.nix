@@ -156,6 +156,16 @@
     hyprpaper.enable = true;
     playerctld.enable = true;
 
+    udiskie = {
+      enable = true;
+      settings = {
+        program_options = {
+          # replace with your favorite file manager
+          file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
+        };
+      };
+    };
+
     mako = {
       enable = true;
       settings = {

@@ -211,6 +211,13 @@
             label = "programming";
             path = "~/programming";
           };
+          sharedDocuments = {
+            enable = true;
+            devices = ["falcon"];
+            id = "sharedDocuments";
+            label = "Shared Documents";
+            path = "~/sharedDocuments";
+          };
         };
       };
       overrideDevices = true;

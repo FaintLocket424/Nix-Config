@@ -148,6 +148,8 @@
 
       insomnia
       postman
+
+      xwiimote
     ];
   };
 
@@ -208,7 +210,7 @@
             enable = true;
             devices = ["falcon" "s25"];
             id = "programming";
-            label = "programming";
+            label = "Programming";
             path = "~/programming";
           };
           sharedDocuments = {

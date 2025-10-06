@@ -150,6 +150,7 @@
       postman
 
       xwiimote
+      geteduroam
     ];
   };
 

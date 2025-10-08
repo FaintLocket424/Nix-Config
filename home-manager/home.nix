@@ -151,6 +151,7 @@
 
       xwiimote
       geteduroam
+      scrcpy
     ];
   };
 

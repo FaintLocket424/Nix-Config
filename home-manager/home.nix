@@ -152,6 +152,7 @@
       xwiimote
       geteduroam
       scrcpy
+	  singularity
     ];
   };
 

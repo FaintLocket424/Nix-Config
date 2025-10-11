@@ -154,6 +154,7 @@
       scrcpy
 	  singularity
 	  usbutils
+	  evtest-qt
     ];
   };
 

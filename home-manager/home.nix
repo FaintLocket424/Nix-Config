@@ -156,6 +156,7 @@
 	  usbutils
 	  evtest
 	  evtest-qt
+	  antimicrox
     ];
   };
 

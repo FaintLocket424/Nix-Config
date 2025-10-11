@@ -153,6 +153,7 @@
       geteduroam
       scrcpy
 	  singularity
+	  usbutils
     ];
   };
 

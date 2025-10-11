@@ -157,6 +157,7 @@
 	  evtest
 	  evtest-qt
 	  antimicrox
+	  linuxConsoleTools
     ];
   };
 

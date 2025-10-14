@@ -159,6 +159,7 @@
 	  antimicrox
 	  linuxConsoleTools
 	  jstest-gtk
+	  vscode
     ];
   };
 

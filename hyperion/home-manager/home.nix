@@ -230,6 +230,7 @@
 
   programs = {
     ssh = {
+      enable = true;
       matchBlocks = {
         # The name of the block (will be the Host alias in the config file)
         "Hamilton" = {

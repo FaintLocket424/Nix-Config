@@ -37,57 +37,42 @@
       bleachbit
       via
       pwvucontrol
+      networkmanagerapplet
 
-      # Default Applications
-      ## Web Browsers
-      firefox
-      brave
-      chromium
+      brave # Web Browser
+      xviewer # Image Viewer
+	    photoflare # Image Editor like Paint.NET
+      celluloid # Media Player
+      nemo-with-extensions # File Browser
+      notepad-next # Text Editor
+      popsicle # ISO Writer
+      parsec-bin # Remote Desktop
+      bambu-studio # 3D Printing Slicer for Bambu Labs Printers
+      freecad # FOSS 3D Modelling Software
+      obs-studio # FOSS for Screen Recording and Streaming
+      obsidian # FOSS for Markdown Note-taking
+      zapzap # Whatsapp desktop app
+      vesktop # Lightweight linux discord client
+      mangohud # IDK
+      protonup # IDK - Something for steam proton.
+      gdlauncher-carbon # FOSS for launching Minecraft
+      modrinth-app # FOSS for launching Minecraft
+#      dolphin-emu # FOSS for running Wii and Gamecube games
+      libressl # IDK
 
-      ## Image Viewer
-      xviewer
-	    photoflare
 
-      ## PDF Reader
-      evince
+      # Runtimes
+      jdk21 # Dev Kit and runtime for Java 21
+     gradle
+     (hiPrio python314)
+     python313
+     python312
 
-      ## Media Player
-      celluloid
-
-      ## File Browser
-      nemo-with-extensions
-
-      ## Text Editor
-      notepad-next
-
-      ## ISO Writer
-      popsicle
-
-      ## Virtual Machines
-  #    gnome-boxes
-  #    swtpm
-  #    spice-gtk
-
-      ## QT Fixes/packages
+      # QT Fixes/packages
       kdePackages.qtwayland
       kdePackages.kwayland
       kdePackages.kservice
       libsForQt5.qtwayland
-
-      ## Remote Desktop
-      parsec-bin
-
-      ## CAD and 3D Printing
-      bambu-studio
-      freecad
-
-      ## Disk Usage Analyser
-      # qdirstat
-
-    # File Sync
-#    syncthing
-
-#      resilio-sync
 
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh
@@ -103,39 +88,13 @@
       open-sans
       jetbrains-mono
 
-      networkmanagerapplet
-
-      # Editors
-      audacity
-      obs-studio
-      obsidian
-      ## Code Editors
+      # Code Editors
       jetbrains.idea-ultimate
       jetbrains.pycharm-professional
       jetbrains.goland
       jetbrains.webstorm
-	  # android-studio-full
 
-      # Social
-      zapzap
-      vesktop
 
-      # Gaming
-      mangohud
-      protonup
-      ## Minecraft
-      gdlauncher-carbon
-      modrinth-app
-      jdk21
-      ## Emulators
-#      dolphin-emu
-
-      gradle
-
-      (hiPrio python313)
-      python312
-
-      libressl
 
       insomnia
       postman

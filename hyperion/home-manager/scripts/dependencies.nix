@@ -7,6 +7,10 @@
     pkgs.nh
   ];
 
+  "extractMojangJar" = [
+    pkgs.jdk21
+  ];
+
   # You can also define a default set of dependencies for scripts not listed here
   "default" = [
     pkgs.bash

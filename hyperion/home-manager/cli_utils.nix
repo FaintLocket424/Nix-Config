@@ -2,7 +2,7 @@
 let
   scriptsDir = ./scripts;
 
-  dependencyMap = import ./dependencies.nix { inherit pkgs; };
+  dependencyMap = import ./scripts/dependencies.nix { inherit pkgs; };
 
   shellScripts = lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".sh" name)
     (builtins.readDir scriptsDir);

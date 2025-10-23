@@ -2,7 +2,11 @@
   pkgs,
   config,
   ...
-}: {
+}:
+let
+  localPackages = import ./
+
+{
   nixpkgs.config = {
     allowUnfree = true;
     system = "x86_64-linux";

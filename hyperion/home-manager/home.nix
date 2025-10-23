@@ -12,9 +12,11 @@
     ./stylix.nix
     ./git.nix
     ./shell.nix
-    ./utils.nix
+    ./cli_utils.nix
     ./system
   ];
+
+  programs.btop.enable = true;
 
   fonts.fontconfig.enable = true;
 
@@ -34,7 +36,6 @@
       bleachbit
       via
       pwvucontrol
-      git-credential-manager
 
       # Default Applications
       ## Web Browsers

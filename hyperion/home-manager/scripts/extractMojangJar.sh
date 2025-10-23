@@ -12,11 +12,18 @@
 #   ./extract.sh path/to/yourfile.jar path/to/output_directory
 
 # --- Argument Validation ---
-if test (count $argv) -ne 2
+# Use 'math' for numerical comparison
+if math "(count $argv) != 2"
     echo "Error: Incorrect number of arguments."
     echo "Usage: $0 <source_jar_file> <output_directory>"
     exit 1
 end
+
+#if test (count $argv) -ne 2
+#    echo "Error: Incorrect number of arguments."
+#    echo "Usage: $0 <source_jar_file> <output_directory>"
+#    exit 1
+#end
 
 # Resolve to an absolute path to ensure 'jar' can find it after 'cd'.
 set source_jar (realpath $argv[1])

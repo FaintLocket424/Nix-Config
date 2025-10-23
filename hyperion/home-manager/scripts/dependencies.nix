@@ -9,6 +9,7 @@
 
   "extractMojangJar" = [
     pkgs.jdk21
+    pkgs.findutils
   ];
 
   # You can also define a default set of dependencies for scripts not listed here

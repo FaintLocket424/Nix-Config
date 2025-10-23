@@ -53,10 +53,10 @@
       firefox
       brave
       chromium
-    
+
       ## Image Viewer
       xviewer
-	  photoflare
+	    photoflare
 
       ## PDF Reader
       evince
@@ -77,13 +77,13 @@
   #    gnome-boxes
   #    swtpm
   #    spice-gtk
-    
+
       ## QT Fixes/packages
       kdePackages.qtwayland
       kdePackages.kwayland
       kdePackages.kservice
       libsForQt5.qtwayland
-    
+
       ## Remote Desktop
       parsec-bin
 
@@ -93,7 +93,7 @@
 
       ## Disk Usage Analyser
       # qdirstat
-    
+
     # File Sync
 #    syncthing
 
@@ -114,7 +114,7 @@
       jetbrains-mono
 
       networkmanagerapplet
-    
+
       # Editors
       audacity
       obs-studio
@@ -125,7 +125,7 @@
       jetbrains.goland
       jetbrains.webstorm
 	  # android-studio-full
-    
+
       # Social
       zapzap
       vesktop
@@ -138,8 +138,8 @@
       modrinth-app
       jdk21
       ## Emulators
-      dolphin-emu
-	  
+#      dolphin-emu
+
       gradle
 
       (hiPrio python313)
@@ -268,9 +268,9 @@
     };
   };
 
-  home.file."${config.xdg.configHome}/libvirt/qemu.conf" = {
-      source = ./qemu.conf;
-  };
+#  home.file."${config.xdg.configHome}/libvirt/qemu.conf" = {
+#      source = ./qemu.conf;
+#  };
   
 #  home.file.".local/bin/extractMojangJar.sh" = {
 #    source = ./scripts/extractMojangJar.sh;

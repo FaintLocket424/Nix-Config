@@ -10,25 +10,25 @@
 
   imports = [
 #    ./stylix.nix
-    ./system
-    ./terminal
+#    ./system
+#    ./terminal
   ];
 
   fonts.fontconfig.enable = true;
 
   stylix = {
-      targets = {
-        qt.platform = "qtct";
-  #      waybar.font = "sansSerif";
-      };
-
-      iconTheme = {
-        enable = true;
-        dark = "Papirus-Dark";
-        light = "Papirus-Light";
-        package = pkgs.papirus-icon-theme;
-      };
+    targets = {
+      qt.platform = "qtct";
+#      waybar.font = "sansSerif";
     };
+
+    iconTheme = {
+      enable = true;
+      dark = "Papirus-Dark";
+      light = "Papirus-Light";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
 
   home = {
     keyboard = "uk";

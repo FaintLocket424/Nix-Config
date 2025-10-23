@@ -5,15 +5,13 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
 
-    hyprlock.url = "github:hyprwm/hyprlock";
+    hyprlock.url = "github:hyprwm/hyprlock/v0.9.2";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.51.1";
 
     nix-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
 
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
-    };
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
 
     # Home Manager
     home-manager = {

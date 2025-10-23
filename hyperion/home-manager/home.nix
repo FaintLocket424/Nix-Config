@@ -3,9 +3,6 @@
   config,
   ...
 }:
-let
-  localPackages = import ./
-
 {
   nixpkgs.config = {
     allowUnfree = true;

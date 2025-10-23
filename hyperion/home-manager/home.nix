@@ -59,14 +59,23 @@
       modrinth-app # FOSS for launching Minecraft
 #      dolphin-emu # FOSS for running Wii and Gamecube games
       libressl # IDK
+      geteduroam # Software for getting on eduroam
+      scrcpy # Android screen mirroring
 
+      # Controller libs
+      xwiimote # Driver for wiimotes
+      evtest
+      evtest-qt
+      antimicrox
+      linuxConsoleTools
+      jstest-gtk
 
       # Runtimes
       jdk21 # Dev Kit and runtime for Java 21
-     gradle
-     (hiPrio python314)
-     python313
-     python312
+      gradle # Build tool for Java and Kotlin
+      (hiPrio python314) # Python 3.14
+      python313 # Python 3.13
+      python312 # Python 3.12
 
       # QT Fixes/packages
       kdePackages.qtwayland
@@ -93,23 +102,7 @@
       jetbrains.pycharm-professional
       jetbrains.goland
       jetbrains.webstorm
-
-
-
-      insomnia
-      postman
-
-      xwiimote
-      geteduroam
-      scrcpy
-	  singularity
-	  usbutils
-	  evtest
-	  evtest-qt
-	  antimicrox
-	  linuxConsoleTools
-	  jstest-gtk
-	  vscode
+      vscode
     ];
   };
 

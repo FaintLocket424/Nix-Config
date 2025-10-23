@@ -78,7 +78,7 @@
         };
 
         modules = [
-          ./nixos/configuration.nix
+          ./hyperion/configuration.nix
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
@@ -88,7 +88,7 @@
                 inherit system;
                 inherit stable;
               };
-              users.matthew = import ./home-manager/home.nix;
+              users.matthew = import ./hyperion/home-manager/home.nix;
             };
           }
           lanzaboote.nixosModules.lanzaboote

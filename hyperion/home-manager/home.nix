@@ -8,26 +8,15 @@
     system = "x86_64-linux";
   };
 
-  stylix = {
-    targets = {
-      qt.platform = "qtct";
-#      waybar.font = "sansSerif";
-    };
-
-    iconTheme = {
-      enable = true;
-      dark = "Papirus-Dark";
-      light = "Papirus-Light";
-      package = pkgs.papirus-icon-theme;
-    };
-  };
-
-  fonts.fontconfig.enable = true;
-
   imports = [
+    ./stylix.nix
     ./system
     ./terminal
   ];
+
+  fonts.fontconfig.enable = true;
+
+
 
   home = {
     keyboard = "uk";

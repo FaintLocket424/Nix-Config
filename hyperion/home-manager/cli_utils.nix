@@ -33,6 +33,7 @@ in
     bat
     eza
     pfetch-rs
+    sshfs
   ]
   ++ scriptPackages;
 }

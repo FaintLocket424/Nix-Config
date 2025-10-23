@@ -229,6 +229,30 @@
   };
 
   programs = {
+    ssh = {
+      matchBlocks = {
+        # The name of the block (will be the Host alias in the config file)
+        "Hamilton" = {
+
+          # Corresponds to 'HostName actual.server.address.com'
+          hostname = "hamilton8.dur.ac.uk";
+
+          # Corresponds to 'User yourusername'
+          user = "qcsc66";
+
+          # This is the key part: it corresponds to 'SetEnv TERM=xterm-256color'
+          # SetEnv is given as an attribute set where the key is the variable name.
+          setEnv = {
+            TERM = "xterm-256color";
+          };
+
+          # You can add other options here too, like:
+          # port = 2222;
+          # identityFile = "~/.ssh/id_rsa_special";
+        };
+      };
+    };
+
     direnv = {
       enable = true;
       nix-direnv.enable = true;

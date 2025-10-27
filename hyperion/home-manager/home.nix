@@ -61,6 +61,7 @@
       libressl # IDK
       geteduroam # Software for getting on eduroam
       scrcpy # Android screen mirroring
+	  gnumake # Building make
 
       # Controller libs
       xwiimote # Driver for wiimotes

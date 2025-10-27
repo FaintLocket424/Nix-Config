@@ -62,6 +62,7 @@
       geteduroam # Software for getting on eduroam
       scrcpy # Android screen mirroring
 	  gnumake # Building make
+	  gcc # GNU Compiler Collection
 
       # Controller libs
       xwiimote # Driver for wiimotes

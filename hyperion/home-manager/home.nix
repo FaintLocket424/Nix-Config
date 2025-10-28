@@ -64,6 +64,7 @@
 	    gnumake # Building make
 	    gcc # GNU Compiler Collection
 	    pandoc # Document compiler
+	    texliveFull # LaTeX
 
       # Controller libs
       xwiimote # Driver for wiimotes

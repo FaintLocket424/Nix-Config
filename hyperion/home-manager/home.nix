@@ -65,6 +65,7 @@
 	    gcc # GNU Compiler Collection
 	    pandoc # Document compiler
 	    texliveFull # LaTeX
+	    zotero # Research reference manager
 
       # Controller libs
       xwiimote # Driver for wiimotes

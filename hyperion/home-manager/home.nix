@@ -203,7 +203,7 @@
 
     direnv = {
       enable = true;
-      nix-direnv.enable = true;updateup
+      nix-direnv.enable = true;
     };
 
     fuzzel = {

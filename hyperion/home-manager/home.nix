@@ -66,10 +66,11 @@
 	    pandoc # Document compiler
 	    texliveFull # LaTeX
 	    zotero # Research reference manager
+	    direnv # Automatic environment manager for directories
 
       # Controller libs
       xwiimote # Driver for wiimotes
-      evtest
+      evtest # CLI program for
       evtest-qt
       antimicrox
       linuxConsoleTools

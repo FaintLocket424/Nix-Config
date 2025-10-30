@@ -24,6 +24,9 @@ let
   ) shellScripts;
 in
 {
+  # This file is for specifically programs that are designed to be
+  # used within, and to aid in the use of the terminal.
+
   home.packages = with pkgs; [
     playerctl
     hyperfine

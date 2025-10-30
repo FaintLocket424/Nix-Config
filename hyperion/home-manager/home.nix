@@ -66,7 +66,6 @@
 	    pandoc # Document compiler
 	    texliveFull # LaTeX
 	    zotero # Research reference manager
-	    direnv # Automatic environment manager for directories
 
       # Controller libs
       xwiimote # Driver for wiimotes
@@ -204,7 +203,7 @@
 
     direnv = {
       enable = true;
-      nix-direnv.enable = true;
+      nix-direnv.enable = true;updateup
     };
 
     fuzzel = {

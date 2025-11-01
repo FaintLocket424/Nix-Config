@@ -67,6 +67,7 @@
 	    texliveFull # LaTeX
 	    zotero # Research reference manager
 	    godot # FOSS game engine
+	    arduino
 
       # Controller libs
       xwiimote # Driver for wiimotes

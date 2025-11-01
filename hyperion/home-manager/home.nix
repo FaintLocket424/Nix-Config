@@ -68,6 +68,7 @@
 	    zotero # Research reference manager
 	    godot # FOSS game engine
 	    arduino-ide
+	    arduino-cli
 
       # Controller libs
       xwiimote # Driver for wiimotes

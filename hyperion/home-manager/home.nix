@@ -154,7 +154,7 @@
       settings = {
         openDefaultPorts = true;
         options.localAnnounceEnabled = true;
-        options.urAccepted = "-1";
+        options.urAccepted = -1;
         devices = {
           falcon = {
             name = "Falcon";

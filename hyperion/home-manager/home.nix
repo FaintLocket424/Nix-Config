@@ -66,6 +66,7 @@
 	    pandoc # Document compiler
 	    texliveFull # LaTeX
 	    zotero # Research reference manager
+	    godot # FOSS game engine
 
       # Controller libs
       xwiimote # Driver for wiimotes
@@ -153,6 +154,7 @@
       settings = {
         openDefaultPorts = true;
         options.localAnnounceEnabled = true;
+        options.urAccepted = "-1";
         devices = {
           falcon = {
             name = "Falcon";

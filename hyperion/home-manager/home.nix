@@ -14,6 +14,7 @@
     ./git.nix
     ./shell.nix
     ./cli_utils.nix
+    ./waybar.nix
     ./system
   ];
 
@@ -61,14 +62,10 @@
       libressl # IDK
       geteduroam # Software for getting on eduroam
       scrcpy # Android screen mirroring
-	    gnumake # Building make
-	    gcc # GNU Compiler Collection
-	    pandoc # Document compiler
-	    texliveFull # LaTeX
 	    zotero # Research reference manager
 	    godot # FOSS game engine
-	    arduino-ide
-	    arduino-cli
+	    arduino-ide # IDE for working with Arduino hardware
+
 
       # Controller libs
       xwiimote # Driver for wiimotes
@@ -78,12 +75,20 @@
       linuxConsoleTools
       jstest-gtk
 
-      # Runtimes
+
+      # Runtimes and Compilers
       jdk21 # Dev Kit and runtime for Java 21
       gradle # Build tool for Java and Kotlin
       (hiPrio python314) # Python 3.14
       python313 # Python 3.13
       python312 # Python 3.12
+      gnumake # Building make
+      gcc # GNU Compiler Collection
+      arduino-cli # CLI for working with Arduino hardware
+      pandoc # Document compiler
+      texliveFull # LaTeX
+      ghc # The Glasgow Haskell Compiler
+
 
       # QT Fixes/packages
       kdePackages.qtwayland

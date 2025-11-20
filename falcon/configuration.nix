@@ -187,6 +187,7 @@
 
     fwupd.enable = true;
 
+    pulseaudio.enable = false;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -211,9 +212,8 @@
   # Set Hostname
   networking = {
     hostName = "falcon";
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager.enable = true;
+    wireless.enable = true;
     firewall = {
       allowedTCPPorts = [ /*8384*/ 22000 ];
       allowedUDPPorts = [ 22000 21027 ];

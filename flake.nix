@@ -63,6 +63,35 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
+      falcon = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          inherit stable;
+          inherit system;
+        };
+
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
+        modules = [
+          ./falcon/configuration.nix
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = {
+                inherit inputs;
+                inherit system;
+                inherit stable;
+              };
+              users.matthew = import ./falcon/home-manager/home.nix;
+            };
+          }
+          lanzaboote.nixosModules.lanzaboote
+        ];
+      };
       hyperion = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;

@@ -9,6 +9,7 @@
   };
 
   imports = [
+    ../../common/home/matthew/home.nix
 #    ./stylix.nix
 #    ./git.nix
 #    ./shell.nix
@@ -19,7 +20,7 @@
 
   programs.btop.enable = true;
 
-  fonts.fontconfig.enable = true;
+#  fonts.fontconfig.enable = true;
 
   home = {
     keyboard = "uk";
@@ -41,12 +42,12 @@
 
       brave # Web Browser
       xviewer # Image Viewer
-	    photoflare # Image Editor like Paint.NET
+      photoflare # Image Editor like Paint.NET
       celluloid # Media Player
       nemo-with-extensions # File Browser
       notepad-next # Text Editor
       popsicle # ISO Writer
-      parsec-bin # Remote Desktop
+#      parsec-bin # Remote Desktop
       bambu-studio # 3D Printing Slicer for Bambu Labs Printers
       freecad # FOSS 3D Modelling Software
       obs-studio # FOSS for Screen Recording and Streaming
@@ -61,9 +62,9 @@
       libressl # IDK
       geteduroam # Software for getting on eduroam
       scrcpy # Android screen mirroring
-	    zotero # Research reference manager
-	    godot # FOSS game engine
-	    arduino-ide # IDE for working with Arduino hardware
+      zotero # Research reference manager
+      godot # FOSS game engine
+      arduino-ide # IDE for working with Arduino hardware
 
 
       # Controller libs
@@ -103,11 +104,12 @@
       aspellDicts.en
 
       # Fonts
-      nerd-fonts.symbols-only
-      corefonts
-      vistafonts
-      open-sans
-      jetbrains-mono
+#      nerd-fonts.symbols-only
+#      corefonts
+#      vistafonts
+#      open-sans
+#      jetbrains-mono
+#      inter
 
       # Code Editors
       jetbrains.idea-ultimate
@@ -278,5 +280,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "25.05";
+#  home.stateVersion = "25.05";
 }

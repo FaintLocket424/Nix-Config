@@ -182,6 +182,7 @@
         variant = "";
       };
       displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
       excludePackages = [ pkgs.xterm ];
     };
 
@@ -213,7 +214,6 @@
   networking = {
     hostName = "falcon";
     networkmanager.enable = true;
-    wireless.enable = true;
     firewall = {
       allowedTCPPorts = [ /*8384*/ 22000 ];
       allowedUDPPorts = [ 22000 21027 ];
@@ -243,11 +243,18 @@
     fish.enable = true;
   };
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.symbols-only
+    corefonts
+    vistafonts
+    google-fonts
+  ];
+
   console.keyMap = "uk";
 
   # Configure your system-wide user settings (groups, etc)
   users = {
-    mutableUsers = true;
+    mutableUsers = false;
     users = {
       root.hashedPassword = "!";
       matthew = {

@@ -77,6 +77,7 @@
 
         modules = [
           ./falcon/configuration.nix
+          ./common/configuration.nix
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
@@ -106,6 +107,7 @@
 
         modules = [
           ./hyperion/configuration.nix
+          ./common/configuration.nix
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {

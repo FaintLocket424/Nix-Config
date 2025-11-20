@@ -9,6 +9,7 @@
   };
 
   imports = [
+    ../../common/home/matthew/home.nix
     ./stylix.nix
     ./git.nix
     ./shell.nix
@@ -278,5 +279,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "25.05";
+#  home.stateVersion = "25.05";
 }

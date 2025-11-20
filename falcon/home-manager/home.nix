@@ -9,12 +9,12 @@
   };
 
   imports = [
-    ./stylix.nix
-    ./git.nix
-    ./shell.nix
-    ./cli_utils.nix
-    ./waybar.nix
-    ./system
+#    ./stylix.nix
+#    ./git.nix
+#    ./shell.nix
+#    ./cli_utils.nix
+#    ./waybar.nix
+#    ./system
   ];
 
   programs.btop.enable = true;
@@ -114,7 +114,7 @@
       jetbrains.pycharm-professional
       jetbrains.goland
       jetbrains.webstorm
-      vscode
+#      vscode
     ];
   };
 
@@ -122,24 +122,24 @@
     polkit-gnome.enable = true;
     hyprpaper.enable = true;
 
-    hyprsunset = {
-      enable = true;
-      transitions = {
-        sunrise = {
-          calendar = "*-*-* 06:00:00";
-          requests = [
-            [ "temperature" "6500" ]
-            [ "gamma 100" ]
-          ];
-        };
-        sunset = {
-          calendar = "*-*-* 19:00:00";
-          requests = [
-            [ "temperature" "3500" ]
-          ];
-        };
-      };
-    };
+#    hyprsunset = {
+#      enable = true;
+#      transitions = {
+#        sunrise = {
+#          calendar = "*-*-* 06:00:00";
+#          requests = [
+#            [ "temperature" "6500" ]
+#            [ "gamma 100" ]
+#          ];
+#        };
+#        sunset = {
+#          calendar = "*-*-* 19:00:00";
+#          requests = [
+#            [ "temperature" "3500" ]
+#          ];
+#        };
+#      };
+#    };
 
     playerctld.enable = true;
 
@@ -175,42 +175,42 @@
      ];
     };
 
-    syncthing = {
-      enable = true;
-      settings = {
-        openDefaultPorts = true;
-        options.localAnnounceEnabled = true;
-        options.urAccepted = -1;
-        devices = {
-          falcon = {
-            name = "Falcon";
-            id = "MYFAGZC-Z6HAPNZ-4Y66OCM-JBIXCWG-IB42EPE-YJOKBC3-QCO6LH5-TOPPGA5";
-          };
-          s25 = {
-            name = "S25";
-            id = "RJYXKAI-CMTCOMD-XPLK5PG-4DGG3FB-SWFD6TL-B7WQDZJ-EKC4B2P-LRXNVA2";
-          };
-        };
-        folders = {
-          programming = {
-            enable = true;
-            devices = ["falcon"];
-            id = "programming";
-            label = "Programming";
-            path = "~/programming";
-          };
-          sharedDocuments = {
-            enable = true;
-            devices = ["falcon"];
-            id = "sharedDocuments";
-            label = "Shared Documents";
-            path = "~/sharedDocuments";
-          };
-        };
-      };
-      overrideDevices = true;
-      overrideFolders = true;
-    };
+#    syncthing = {
+#      enable = true;
+#      settings = {
+#        openDefaultPorts = true;
+#        options.localAnnounceEnabled = true;
+#        options.urAccepted = -1;
+#        devices = {
+#          falcon = {
+#            name = "Falcon";
+#            id = "MYFAGZC-Z6HAPNZ-4Y66OCM-JBIXCWG-IB42EPE-YJOKBC3-QCO6LH5-TOPPGA5";
+#          };
+#          s25 = {
+#            name = "S25";
+#            id = "RJYXKAI-CMTCOMD-XPLK5PG-4DGG3FB-SWFD6TL-B7WQDZJ-EKC4B2P-LRXNVA2";
+#          };
+#        };
+#        folders = {
+#          programming = {
+#            enable = true;
+#            devices = ["falcon"];
+#            id = "programming";
+#            label = "Programming";
+#            path = "~/programming";
+#          };
+#          sharedDocuments = {
+#            enable = true;
+#            devices = ["falcon"];
+#            id = "sharedDocuments";
+#            label = "Shared Documents";
+#            path = "~/sharedDocuments";
+#          };
+#        };
+#      };
+#      overrideDevices = true;
+#      overrideFolders = true;
+#    };
   };
 
   programs = {
@@ -262,7 +262,7 @@
 #  home.file."${config.xdg.configHome}/libvirt/qemu.conf" = {
 #      source = ./qemu.conf;
 #  };
-  
+
 #  home.file.".local/bin/extractMojangJar.sh" = {
 #    source = ./scripts/extractMojangJar.sh;
 #    executable = true;

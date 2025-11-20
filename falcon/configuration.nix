@@ -1,126 +1,272 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
+# System configuration file
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  pkgs,
+  stable,
+  options,
+  config,
+  inputs,
+  ...
+}: {
+  imports = [
+    # nixos-generate-config
+    ./hardware-configuration.nix
+#    ./theme
+  ];
+
+  boot = {
+    extraModulePackages = [config.boot.kernelPackages.ddcci-driver];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+      timeout = 0;
+    };
+
+#    kernelParams = [
+#      "workqueue.power_efficient=true"
+#      "i915.force_probe=a7a1"
+#    ];
+
+    initrd.systemd.enable = true;
+  };
+
+  hardware = {
+#    steam-hardware.enable = true;
+    xone.enable = true;
+    enableAllFirmware = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+
+      settings = {
+        General = {
+          Experimental = true;
+          FastConnectable = true;
+        };
+        Policy = {
+          AutoEnable = true;
+        };
+      };
+    };
+    brillo.enable = true;
+    keyboard.qmk.enable = true;
+
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+#      driSupport = true;
+#      driSupport32Bit = true;
+
+#      extraPackages = with pkgs; [
+#        intel-media-driver
+#        vpl-gpu-rt
+#      ];
+    };
+  };
+
+#  environment.sessionVariables = {
+#    LIBVA_DRIVER_NAME = "iHD";
+#  };
+
+  nix = {
+    settings = {
+      trusted-users = ["matthew"];
+
+      # Enable flakes and new 'nix' command
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+
+      auto-optimise-store = true;
+	    download-buffer-size = 524288000; # 500 MiB
+    };
+
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs}"
+      "home-manager=${inputs.home-manager}"
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+    registry.nixpkgs.flake = inputs.nixpkgs;
+  };
 
-  # networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+#  virtualisation = {
+#      libvirtd.enable = true;
+#      libvirtd.qemu = {
+#        package = pkgs.qemu_kvm;
+#        runAsRoot = true;
+#        swtpm.enable = true;
+#        ovmf = {
+#          enable = true;
+#          packages = [(pkgs.OVMFFull.override {
+#            secureBoot = true;
+#            tpmSupport = true;
+#          })];
+#        };
+#      };
+#
+##      docker = {
+##        enable = true;
+##        autoPrune.enable = true;
+##      };
+#    };
 
-  # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  programs = {
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+#    virt-manager.enable = true;
 
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+      gamescopeSession.enable = true;
+      extraCompatPackages = [
+        pkgs.proton-ge-bin
+      ];
+    };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+    gamescope = {
+      enable = true;
+    };
 
+    gamemode = {
+      enable = true;
+      enableRenice = true;
+      settings.general.renice = 10;
+    };
+  };
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  
+  services = {
+    joycond.enable = true;
+    blueman.enable = true;
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+    udisks2.enable = true;
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+    dbus.implementation = "broker";
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+    printing = {
+      enable = true;
+      drivers = [
+        pkgs.gutenprint
+        pkgs.canon-cups-ufr2
+      ];
+    };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     tree
-  #   ];
-  # };
+    scx = {
+      enable = true;
+      scheduler = "scx_lavd";
+      extraArgs = [
+        "--autopower"
+        "--verbose"
+      ];
+    };
 
-  # programs.firefox.enable = true;
+    automatic-timezoned.enable = true;
+    fstrim.enable = true;
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "gb";
+        variant = "";
+      };
+      displayManager.gdm.enable = true;
+      excludePackages = [ pkgs.xterm ];
+    };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+    fwupd.enable = true;
 
-  # List services that you want to enable:
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+  };
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = builtins.attrValues {
+      inherit
+        (pkgs)
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
+        ;
+    };
+    config.common.default = "*";
+  };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  # Set Hostname
+  networking = {
+    hostName = "falcon";
+    networkmanager = {
+      enable = true;
+    };
+    firewall = {
+      allowedTCPPorts = [ /*8384*/ 22000 ];
+      allowedUDPPorts = [ 22000 21027 ];
+    };
+  };
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
+  i18n = let
+    locale = "en_GB.UTF-8";
+  in {
+    defaultLocale = locale;
+    extraLocaleSettings = {
+      LC_ADDRESS = locale;
+      LC_IDENTIFICATION = locale;
+      LC_MEASUREMENT = locale;
+      LC_MONETARY = locale;
+      LC_NAME = locale;
+      LC_NUMERIC = locale;
+      LC_PAPER = locale;
+      LC_TELEPHONE = locale;
+    };
+  };
 
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05"; # Did you read the comment?
+  services.gnome.gnome-keyring.enable = true;
 
+  programs = {
+    git.enable = true;
+    fish.enable = true;
+  };
+
+  console.keyMap = "uk";
+
+  # Configure your system-wide user settings (groups, etc)
+  users = {
+    mutableUsers = true;
+    users = {
+      root.hashedPassword = "!";
+      matthew = {
+        description = "Matthew Peters";
+        hashedPassword = "$6$jeYZ3.QYh.Hqa6pR$wbdeB2vysnjf5nNglU8Eb7LyQ.hdrGhL5wPGf4VnECdW.dmkgjrN/flAODApiqo/tSuUYtqgDZoyJ/4sYUs.d1";
+        isNormalUser = true;
+        extraGroups = ["wheel" "networkmanager" "video" "dialout"];
+
+        shell = pkgs.fish;
+      };
+    };
+  };
+
+  environment.systemPackages = builtins.attrValues {
+    inherit
+      (pkgs)
+    ;
+  };
+
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  system.stateVersion = "25.05";
 }
-

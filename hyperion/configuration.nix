@@ -91,26 +91,26 @@
     registry.nixpkgs.flake = inputs.nixpkgs;
   };
 
-  virtualisation = {
-      libvirtd.enable = true;
-      libvirtd.qemu = {
-        package = pkgs.qemu_kvm;
-        runAsRoot = true;
-        swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [(pkgs.OVMFFull.override {
-            secureBoot = true;
-            tpmSupport = true;
-          })];
-        };
-      };
-
-#      docker = {
-#        enable = true;
-#        autoPrune.enable = true;
+#  virtualisation = {
+#      libvirtd.enable = true;
+#      libvirtd.qemu = {
+#        package = pkgs.qemu_kvm;
+#        runAsRoot = true;
+#        swtpm.enable = true;
+#        ovmf = {
+#          enable = true;
+#          packages = [(pkgs.OVMFFull.override {
+#            secureBoot = true;
+#            tpmSupport = true;
+#          })];
+#        };
 #      };
-    };
+#
+##      docker = {
+##        enable = true;
+##        autoPrune.enable = true;
+##      };
+#    };
 
   programs = {
     hyprland = {

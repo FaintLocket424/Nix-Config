@@ -5,6 +5,10 @@
   hostname,
   ...
 }: {
+  imports = [
+    "./theme"
+  ];
+
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
@@ -207,8 +211,6 @@
 #      (pkgs)
 #    ;
 #  };
-
-#  stylix.enable = true;
 
 # Configure your system-wide user settings (groups, etc)
   users = {

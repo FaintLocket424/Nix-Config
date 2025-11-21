@@ -100,6 +100,8 @@
 
   };
 
+  security.pam.services.login.enableGnomeKeyring = true;
+
   services = {
     joycond.enable = true;
     blueman.enable = true;

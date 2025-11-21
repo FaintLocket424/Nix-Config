@@ -7,7 +7,7 @@
 }: {
   imports = [
     ./theme
-    ./gnome
+    ./gnome.nix
   ];
 
   boot = {

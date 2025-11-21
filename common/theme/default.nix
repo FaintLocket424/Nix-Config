@@ -26,13 +26,9 @@
       };
 
       monospace = {
-#        package = pkgs.nerd-fonts.commit-mono;
-#        name = "CommitMono Nerd Font";
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font Mono";
       };
-
-
     };
   };
 }

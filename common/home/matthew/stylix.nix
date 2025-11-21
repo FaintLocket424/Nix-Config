@@ -3,6 +3,7 @@
   ...
 }: {
   stylix = {
+    enable = true;
     image = ./backgrounds/toothless_1.jpg;
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";

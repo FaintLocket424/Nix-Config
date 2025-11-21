@@ -208,7 +208,7 @@
 #    ;
 #  };
 
-  stylix.enable = true;
+#  stylix.enable = true;
 
 # Configure your system-wide user settings (groups, etc)
   users = {

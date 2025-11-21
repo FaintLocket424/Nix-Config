@@ -214,7 +214,7 @@
 
 # Configure your system-wide user settings (groups, etc)
   users = {
-    mutableUsers = true;
+    mutableUsers = false;
     users = {
       root.hashedPassword = "!";
       matthew = {

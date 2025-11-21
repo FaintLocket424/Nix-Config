@@ -9,10 +9,10 @@
   imports = [
     ./stylix.nix
     ./git.nix
-    ./waybar.nix
+#    ./waybar.nix
     ./shell.nix
-    ./idle
-    ./hyprland
+#    ./idle
+#    ./hyprland
   ];
 
   home = {
@@ -71,38 +71,38 @@
   };
 
   services = {
-    hyprpaper.enable = true;
-
-    hyprsunset = {
-      enable = true;
-      transitions = {
-        sunrise = {
-          calendar = "*-*-* 06:00:00";
-          requests = [
-            [ "temperature" "6500" ]
-            [ "gamma 100" ]
-          ];
-        };
-        sunset = {
-          calendar = "*-*-* 19:00:00";
-          requests = [
-            [ "temperature" "3500" ]
-          ];
-        };
-      };
-    };
+#    hyprpaper.enable = true;
+#
+#    hyprsunset = {
+#      enable = true;
+#      transitions = {
+#        sunrise = {
+#          calendar = "*-*-* 06:00:00";
+#          requests = [
+#            [ "temperature" "6500" ]
+#            [ "gamma 100" ]
+#          ];
+#        };
+#        sunset = {
+#          calendar = "*-*-* 19:00:00";
+#          requests = [
+#            [ "temperature" "3500" ]
+#          ];
+#        };
+#      };
+#    };
 
     # Wayland Notifications
-    mako = {
-      enable = true;
-      settings = {
-        default-timeout = "5000";
-        border-radius = "5";
-        icons = "true";
-        max-icon-size = "96";
-        layer = "top";
-      };
-    };
+#    mako = {
+#      enable = true;
+#      settings = {
+#        default-timeout = "5000";
+#        border-radius = "5";
+#        icons = "true";
+#        max-icon-size = "96";
+#        layer = "top";
+#      };
+#    };
 
     syncthing = {
       enable = true;

@@ -30,7 +30,6 @@ in {
       pwvucontrol
       networkmanagerapplet
 
-
       brave # Web Browser
       xviewer # Image Viewer
       celluloid # Media Player
@@ -54,6 +53,9 @@ in {
       hunspellDicts.en_GB-ise
       aspell
       aspellDicts.en
+
+
+      gnomeExtensions.user-themes
     ];
   };
 

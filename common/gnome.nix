@@ -13,6 +13,15 @@
     core-developer-tools.enable = false;
   };
 
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [
+        "kitty.desktop"
+      ];
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     gnome-tweaks
     gnomeExtensions.user-themes

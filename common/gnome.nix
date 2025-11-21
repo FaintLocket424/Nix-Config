@@ -8,9 +8,9 @@
   };
 
   services.gnome = {
-    games = false;
-    core-apps = false;
-    core-developer-tools = false;
+    games.enable = false;
+    core-apps.enable = false;
+    core-developer-tools.enable = false;
   };
 
   # Optional: GNOME-specific packages/exclusions

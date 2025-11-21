@@ -53,9 +53,6 @@ in {
       hunspellDicts.en_GB-ise
       aspell
       aspellDicts.en
-
-
-      gnomeExtensions.user-themes
     ];
   };
 
@@ -92,7 +89,7 @@ in {
     kitty = {
       enable = true;
       settings = {
-        font_features = "CommitMonoNF-Regular +calt +ss05 +ss04 +ss03 +ss02 +ss01";
+        font_features = "JetBrainsMono Nerd Font Mono +calt";
         window_padding_width = 0;
         "modify_font cell_height" = "120%";
       };

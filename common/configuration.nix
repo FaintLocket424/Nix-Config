@@ -73,12 +73,6 @@
     git.enable = true;
     fish.enable = true;
 
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-      xwayland.enable = true;
-    };
-
     steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -139,12 +133,8 @@
 
     xserver = {
       enable = true;
-      xkb = {
-        layout = "gb";
-        variant = "";
-      };
+      xkb.layout = "gb";
       displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       excludePackages = [ pkgs.xterm ];
     };
 
@@ -158,18 +148,6 @@
       pulse.enable = true;
       jack.enable = true;
     };
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = builtins.attrValues {
-      inherit
-        (pkgs)
-        xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
-        ;
-    };
-    config.common.default = "*";
   };
 
   networking = {
@@ -207,12 +185,6 @@
   ];
 
   console.keyMap = "uk";
-
-#  environment.systemPackages = builtins.attrValues {
-#    inherit
-#      (pkgs)
-#    ;
-#  };
 
 # Configure your system-wide user settings (groups, etc)
   users = {

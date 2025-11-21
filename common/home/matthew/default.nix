@@ -9,10 +9,7 @@
   imports = [
     ./stylix.nix
     ./git.nix
-#    ./waybar.nix
     ./shell.nix
-#    ./idle
-#    ./hyprland
   ];
 
   home = {

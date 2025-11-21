@@ -26,7 +26,7 @@
           disabled = false;
           style = "bg:green fg:black";
           symbols = {
-            NixOS = "  ";
+            NixOS = "";
           };
         };
 

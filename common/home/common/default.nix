@@ -18,8 +18,6 @@ in {
     system = pkgs.system;
   };
 
-  programs.btop.enable = true;
-
   fonts.fontconfig.enable = true;
 
   home = {
@@ -57,14 +55,6 @@ in {
       hunspellDicts.en_GB-ise
       aspell
       aspellDicts.en
-
-
-#      # Fonts
-#      nerd-fonts.symbols-only
-#      corefonts
-#      vistafonts
-#      open-sans
-#      jetbrains-mono
     ];
   };
 
@@ -77,7 +67,6 @@ in {
       enable = true;
       settings = {
         program_options = {
-          # replace with your favorite file manager
           file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
         };
       };
@@ -97,6 +86,7 @@ in {
 
   programs = {
     home-manager.enable = true;
+    btop.enable = true;
 
     kitty = {
       enable = true;

@@ -20,15 +20,7 @@
     starship = {
       enable = true;
       settings = {
-        format = "[](green)$os$username[](bg:cyan fg:green)$directory[](fg:cyan bg:blue)$git_branch$git_status[](fg:blue bg:bright-black)$time[ ](fg:bright-black)$line_break$character";
-
-        os = {
-          disabled = false;
-          style = "bg:green fg:black";
-          symbols = {
-            NixOS = "";
-          };
-        };
+        format = "[](green)$username[](bg:cyan fg:green)$directory[](fg:cyan bg:blue)$git_branch$git_status[](fg:blue bg:bright-black)$time[ ](fg:bright-black)$line_break$character";
 
         username = {
           show_always = true;

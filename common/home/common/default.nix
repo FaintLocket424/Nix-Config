@@ -9,7 +9,6 @@
   username = config.home.username;
 in {
   imports = [
-    ./shell.nix
     ./cli_utils.nix
   ];
 

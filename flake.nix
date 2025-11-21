@@ -58,10 +58,10 @@
           home-manager = {
             extraSpecialArgs = { inherit inputs hostname; };
 
-            sharedModules = [
-              import ./common/home/common      # Home Manager -   All Machines   - All Users
-              import ./${hostname}/home/common # Home Manager - Machine Specific - All Users
-            ];
+#            sharedModules = [
+#              import ./common/home/common      # Home Manager -   All Machines   - All Users
+#              import ./${hostname}/home/common # Home Manager - Machine Specific - All Users
+#            ];
 
             users = nixpkgs.lib.genAttrs myUsers (username:
               { config, pkgs, ...}: {
@@ -69,6 +69,8 @@
                 home.homeDirectory = "/home/${username}";
 
                 imports = [
+                  ./common/home/common      # Home Manager -   All Machines   - All Users
+                  ./${hostname}/home/common # Home Manager - Machine Specific - All Users
                   ./common/home/${username}      # Home Manager -   All Machines   - User Specific
                   ./${hostname}/home/${username} # Home Manager - Machine Specific - User Specific
                 ];

@@ -1,12 +1,12 @@
 {
   config,
   pkgs,
+  lib,
   inputs,
   hostname,
   ...
 }: {
   imports = [
-    # nixos-generate-config
-    ./hardware-configuration.nix
+    ../../../common/home/matthew/home.nix
   ];
 }

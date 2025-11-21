@@ -5,4 +5,4 @@ cd /home/matthew/programming/Production/nixos-config || exit
 #git add ./*;
 #git commit -a -m "Automatic commit from update script";
 #git push;
-sudo nixos-rebuild dry-run --flake .#hyperion;
+sudo nixos-rebuild dry-run --flake .#"$(hostname)"

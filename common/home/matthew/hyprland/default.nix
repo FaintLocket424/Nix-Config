@@ -5,8 +5,6 @@
   ...
 }: {
   wayland.windowManager.hyprland = {
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     enable = true;
     systemd.enable = false;
 
@@ -23,23 +21,23 @@
 	  
 	  exec-once = [
 	    "~/.config/hypr/switch.sh"
-		"xsetroot -cursor_name left_ptr"
-		"uwsm app -- nm-applet"
+      "xsetroot -cursor_name left_ptr"
+      "uwsm app -- nm-applet"
 	  ];
 	  
 	  env = [
-        "PF_INFO, ascii title os kernel uptime memory palette"
-        "PF_ASCII, linux"
-        "XCURSOR_THEME, Bibata-Modern-Classic"
-        "XCURSOR_SIZE, 32"
-        "HYPRCURSOR_THEME,HyprBibataModernClassicSVG"
-        "HYPRCURSOR_SIZE,20"
-        "GDK_SCALE, 1.2"
-        "NIXOS_OZONE_WL, 1"
-        "DIRENV_LOG_FORMAT,"
-        "XDG_DOWNLOAD_DIR, $HOME/downloads"
-        "SSH_AUTH_SOCK, /run/user/1000/keyring/ssh"
-      ];
+      "PF_INFO, ascii title os kernel uptime memory palette"
+      "PF_ASCII, linux"
+      "XCURSOR_THEME, Bibata-Modern-Classic"
+      "XCURSOR_SIZE, 32"
+      "HYPRCURSOR_THEME,HyprBibataModernClassicSVG"
+      "HYPRCURSOR_SIZE,20"
+      "GDK_SCALE, 1.2"
+      "NIXOS_OZONE_WL, 1"
+      "DIRENV_LOG_FORMAT,"
+      "XDG_DOWNLOAD_DIR, $HOME/downloads"
+      "SSH_AUTH_SOCK, /run/user/1000/keyring/ssh"
+    ];
 
 	  xwayland.force_zero_scaling = true;
 
@@ -47,57 +45,57 @@
 #	    allow_early_buffer_release = 0;
 #	  };
 
-      input = {
-        sensitivity = 0.5;
-        kb_layout = "gb";
-        follow_mouse = 1;
-		accel_profile = "flat";
-		force_no_accel = 1;
-		scroll_factor = 0.9;
-		
-        touchpad = {
-		  scroll_factor = 0.2;
-          natural_scroll = true;
-          disable_while_typing = true;
-        };
+    input = {
+      sensitivity = 0.5;
+      kb_layout = "gb";
+      follow_mouse = 1;
+      accel_profile = "flat";
+      force_no_accel = 1;
+      scroll_factor = 0.9;
+
+      touchpad = {
+        scroll_factor = 0.2;
+        natural_scroll = true;
+        disable_while_typing = true;
       };
+    };
 
 	  general = {
-        gaps_out = 4;
-        gaps_in = 3;
-        border_size = 1;
-        layout = "dwindle";
-      };
+      gaps_out = 4;
+      gaps_in = 3;
+      border_size = 1;
+      layout = "dwindle";
+    };
 
-      decoration = {
-        blur = {
-          xray = false;
-          size = 12;
-          popups = true;
-          passes = 3;
-        };
-        rounding = 2;
-        shadow = {
-          enabled = true;
-        };
+    decoration = {
+      blur = {
+        xray = false;
+        size = 12;
+        popups = true;
+        passes = 3;
       };
+      rounding = 2;
+      shadow = {
+        enabled = true;
+      };
+    };
 	  
 	  animations = {
-        bezier = "mybezier, 0.05, 0.9, 0.1, 1.00";
-        animation = [
-          "windows, 1, 3, mybezier"
-          "windowsOut, 1, 4, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 4, default"
-          "workspaces, 1, 2, default"
-        ];
-      };
+      bezier = "mybezier, 0.05, 0.9, 0.1, 1.00";
+      animation = [
+        "windows, 1, 3, mybezier"
+        "windowsOut, 1, 4, default, popin 80%"
+        "border, 1, 10, default"
+        "borderangle, 1, 8, default"
+        "fade, 1, 4, default"
+        "workspaces, 1, 2, default"
+      ];
+    };
 	  
 	  dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
+      pseudotile = true;
+      preserve_split = true;
+    };
 	  
 	  gestures.workspace_swipe = true;
 

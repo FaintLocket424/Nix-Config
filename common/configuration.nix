@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    "./theme"
+    ./theme
   ];
 
   boot = {

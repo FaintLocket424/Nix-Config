@@ -7,6 +7,12 @@
     desktopManager.gnome.enable = true;
   };
 
+  services.gnome = {
+    games = false;
+    core-apps = false;
+    core-developer-tools = false;
+  };
+
   # Optional: GNOME-specific packages/exclusions
   environment.gnome.excludePackages = [ pkgs.gnome-tour ];
 

@@ -36,7 +36,6 @@
 
       (modrinth-app.overrideAttrs (oldAttrs: {
         nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [ makeWrapper ];
-
         postFixup = (oldAttrs.postFixup or "") + ''
           wrapProgram $out/bin/ModrinthApp \
             --set WEBKIT_DISABLE_DMABUF_RENDERER 1

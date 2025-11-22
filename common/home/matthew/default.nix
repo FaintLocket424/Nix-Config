@@ -27,8 +27,7 @@
       obs-studio # FOSS for Screen Recording and Streaming
       obsidian # FOSS for Markdown Note-taking
       protonup # IDK - Something for steam proton.
-#      dolphin-emu # FOSS for running Wii and Gamecube games
-#      libressl # IDK
+      dolphin-emu # FOSS for running Wii and Gamecube games
       scrcpy # Android screen mirroring
       zotero # Research reference manager
       godot # FOSS game engine
@@ -59,8 +58,8 @@
 
       # Runtimes and Compilers
       (hiPrio jdk21) # Dev Kit and runtime for Java 21
-      jdk17
-      jdk8
+      jdk17 # Dev Kit and runtime for Java 17
+      jdk8 # Dev Kit and runtime for Java 8
       gradle # Build tool for Java and Kotlin
       (hiPrio python314) # Python 3.14
       python313 # Python 3.13
@@ -80,7 +79,7 @@
       jetbrains.webstorm
       vscode
     ]) ++ (with pkgs-unstable; [
-#      modrinth-app # FOSS Minecraft Launcher
+
     ]);
   };
 

@@ -5,6 +5,8 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
 
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -34,12 +36,18 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     stylix,
     ...
   } @ inputs:
   let
     system = "x86_64-linux";
+
+    pkgs-unstable = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
 
     myUsers = [ "matthew" ];
 
@@ -56,7 +64,7 @@
 
         {
           home-manager = {
-            extraSpecialArgs = { inherit inputs hostname; };
+            extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
 
 #            sharedModules = [
 #              import ./common/home/common      # Home Manager -   All Machines   - All Users

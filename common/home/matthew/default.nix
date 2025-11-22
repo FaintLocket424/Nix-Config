@@ -4,6 +4,7 @@
   lib,
   inputs,
   hostname,
+  pkgs-unstable,
   ...
 }: {
   imports = [
@@ -18,6 +19,10 @@
             "\${HOME}/.steam/root/compatibilitytools.d";
     };
 
+    packages = with pkgs-unstable; [
+      modrinth-app # FOSS for launching Minecraft
+    ];
+
     packages = with pkgs; [
       photoflare # Image Editor like Paint.NET
       popsicle # ISO Writer
@@ -26,7 +31,6 @@
       obs-studio # FOSS for Screen Recording and Streaming
       obsidian # FOSS for Markdown Note-taking
       protonup # IDK - Something for steam proton.
-      modrinth-app # FOSS for launching Minecraft
 #      dolphin-emu # FOSS for running Wii and Gamecube games
 #      libressl # IDK
       scrcpy # Android screen mirroring

@@ -34,6 +34,14 @@
       godot # FOSS game engine
       arduino-ide # IDE for working with Arduino hardware
 
+      (modrinth-app.overrideAttrs (oldAttrs: {
+        nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [ makeWrapper ];
+
+        postFixup = (oldAttrs.postFixup or "") + ''
+          wrapProgram $out/bin/modrinth-app \
+            --set WEBKIT_DISABLE_DMABUF_RENDERER 1
+        '';
+      }))
 
       # Controller libs
       xwiimote # Driver for wiimotes
@@ -65,7 +73,7 @@
       jetbrains.webstorm
       vscode
     ]) ++ (with pkgs-unstable; [
-      modrinth-app # FOSS Minecraft Launcher
+#      modrinth-app # FOSS Minecraft Launcher
     ]);
   };
 

@@ -39,6 +39,7 @@ in {
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
       parsec-bin # Remote Desktop
+      bc # Calculator
 
       # QT Fixes/packages
       kdePackages.qtwayland

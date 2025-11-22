@@ -58,7 +58,9 @@
 
 
       # Runtimes and Compilers
-      jdk21 # Dev Kit and runtime for Java 21
+      (hiPrio jdk21) # Dev Kit and runtime for Java 21
+      jdk17
+      jdk8
       gradle # Build tool for Java and Kotlin
       (hiPrio python314) # Python 3.14
       python313 # Python 3.13

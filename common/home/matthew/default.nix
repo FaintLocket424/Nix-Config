@@ -19,11 +19,7 @@
             "\${HOME}/.steam/root/compatibilitytools.d";
     };
 
-    packages = with pkgs-unstable; [
-      modrinth-app # FOSS for launching Minecraft
-    ];
-
-    packages = with pkgs; [
+    packages = (with pkgs; [
       photoflare # Image Editor like Paint.NET
       popsicle # ISO Writer
       bambu-studio # 3D Printing Slicer for Bambu Labs Printers
@@ -68,7 +64,9 @@
       jetbrains.goland
       jetbrains.webstorm
       vscode
-    ];
+    ]) ++ (with pkgs-unstable; [
+      modrinth-app # FOSS Minecraft Launcher
+    ]);
   };
 
   services = {

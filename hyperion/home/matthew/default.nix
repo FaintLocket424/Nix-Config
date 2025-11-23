@@ -33,6 +33,13 @@
         label = "Shared Documents";
         path = "~/sharedDocuments";
       };
+      lecture-tracker = {
+        enable = true;
+        devices = [ "falcon" ];
+        id = "lecture-tracker";
+        label = "Lecture Tracker";
+        path = "~/.local/share/lecture_tracker";
+      };
     };
   };
 }

@@ -6,7 +6,6 @@
   hostname,
   ...
 }: {
-
   services.syncthing.settings = {
     devices = {
       falcon = {

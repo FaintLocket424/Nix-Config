@@ -21,14 +21,14 @@
     folders = {
       programming = {
         enable = true;
-        devices = ["falcon"];
+        devices = [ "falcon" ];
         id = "programming";
         label = "Programming";
         path = "~/programming";
       };
       sharedDocuments = {
         enable = true;
-        devices = ["falcon"];
+        devices = [ "falcon" ];
         id = "sharedDocuments";
         label = "Shared Documents";
         path = "~/sharedDocuments";

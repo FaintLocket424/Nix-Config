@@ -49,4 +49,8 @@
       };
     };
   };
+
+  home.packages = with pkgs; [
+    modrinth-app
+  ];
 }

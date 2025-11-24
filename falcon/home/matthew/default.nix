@@ -40,6 +40,13 @@
         label = "Lecture Tracker";
         path = "~/.local/share/lecture_tracker";
       };
+      modrinth-instances = {
+        enable = true;
+        devices = [ "hyperion" ];
+        id = "modrinth-instances";
+        label = "Modrinth Instances";
+        path = "~/Games/Standalone Games/Minecraft/ModrinthApp/profiles";
+      };
     };
   };
 }

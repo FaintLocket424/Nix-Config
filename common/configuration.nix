@@ -203,6 +203,11 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    wireguard-tools
+    protonvpn-gui
+  ];
+
   # Set Hostname
   networking.hostName = hostname;
 

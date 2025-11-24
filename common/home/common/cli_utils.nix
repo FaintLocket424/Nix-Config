@@ -29,7 +29,6 @@ in
 
   home.packages = with pkgs; [
     playerctl
-    hyperfine
     fastfetch
     wl-clipboard
     nh

@@ -10,6 +10,10 @@
     ./hardware-configuration.nix
   ];
 
+  hardware.graphics.extraPackages = with pkgs; [
+    nvidia-vaapi-driver
+  ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {

@@ -33,6 +33,7 @@
       godot # FOSS game engine
       arduino-ide # IDE for working with Arduino hardware
 
+      modrinth-app-unwrapped
 #      (symlinkJoin {
 #        name = "modrinth-app-fixed";
 #        paths = [ modrinth-app ];
@@ -79,7 +80,7 @@
       jetbrains.webstorm
       vscode
     ]) ++ (with pkgs-unstable; [
-      modrinth-app-unwrapped
+
     ]);
   };
 

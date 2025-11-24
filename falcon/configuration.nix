@@ -10,6 +10,10 @@
     ./hardware-configuration.nix
   ];
 
+  boot.kernelModules = [
+    "nvidia"
+  ];
+
   hardware.graphics.extraPackages = with pkgs; [
     nvidia-vaapi-driver
   ];

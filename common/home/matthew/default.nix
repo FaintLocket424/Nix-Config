@@ -79,7 +79,7 @@
       jetbrains.webstorm
       vscode
     ]) ++ (with pkgs-unstable; [
-      modrinth-app
+      modrinth-app-unwrapped
     ]);
   };
 

@@ -11,7 +11,7 @@
   ];
 
   boot = {
-    loader.systemd-boot.enable = true;
+#    loader.systemd-boot.enable = true;
     extraModulePackages = [config.boot.kernelPackages.ddcci-driver];
 
     kernelParams = [

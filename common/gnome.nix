@@ -7,13 +7,11 @@
     desktopManager.gnome.enable = true;
   };
 
-  services.gnome.games.enable = true;
-
-#  services.gnome = {
+  services.gnome = {
 #    games.enable = false;
 #    core-apps.enable = false;
-#    core-developer-tools.enable = false;
-#  };
+    core-developer-tools.enable = false;
+  };
 
   environment.gnome.excludePackages = with pkgs; [
     epiphany

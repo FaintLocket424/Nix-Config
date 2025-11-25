@@ -25,6 +25,7 @@
     gnome-maps
     gnome-weather
     gnome-characters
+    gnome-calendar
     simple-scan
     totem
     yelp
@@ -43,5 +44,6 @@
   environment.systemPackages = with pkgs; [
     gnome-tweaks
     gnomeExtensions.user-themes
+    gnomeExtensions.lockscreen-extension
   ];
 }

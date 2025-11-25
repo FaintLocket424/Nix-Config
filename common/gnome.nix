@@ -26,6 +26,9 @@
     gnome-weather
     gnome-characters
     gnome-calendar
+    gnome-notes
+    gnome-contacts
+    gnome-text-editor
     simple-scan
     totem
     yelp

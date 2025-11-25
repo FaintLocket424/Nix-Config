@@ -85,7 +85,7 @@ in {
 
   programs = {
     home-manager.enable = true;
-    btop.enable = true;
+#    btop.enable = true;
 
     kitty = {
       enable = true;

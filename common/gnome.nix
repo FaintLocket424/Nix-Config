@@ -23,7 +23,14 @@
     gnome-music
     gnome-photos
     gnome-tour
+    gnome-font-viewer
+    gnome-maps
+    gnome-weather
+    gnome-characters
+    simple-scan
     totem
+    yelp
+    cheese
   ];
 
   xdg.terminal-exec = {

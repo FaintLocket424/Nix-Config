@@ -35,7 +35,6 @@ in {
       celluloid # Media Player
 #      nemo-with-extensions # File Browser
       notepad-next # Text Editor
-      zapzap # Whatsapp desktop app
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
       parsec-bin # Remote Desktop

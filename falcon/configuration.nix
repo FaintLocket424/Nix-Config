@@ -16,6 +16,14 @@
     useOSProber = true;
   };
 
+  boot.blacklistedKernelModules = [
+    "nvidia"
+    "nvidiafb"
+    "nvidia-drm"
+    "nvidia-uvm"
+    "nvidia-modeset"
+  ];
+
 #  boot.kernelModules = [
 #    "nvidia"
 #  ];

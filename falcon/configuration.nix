@@ -10,12 +10,6 @@
     ./hardware-configuration.nix
   ];
 
-#  boot.loader.grub = {
-#    enable = true;
-#    device = "nodev";
-#    useOSProber = true;
-#  };
-
   boot.blacklistedKernelModules = [
     "nvidia"
     "nvidiafb"
@@ -23,6 +17,10 @@
     "nvidia-uvm"
     "nvidia-modeset"
   ];
+
+  services.xserver.videoDrivers = [ "nouveau" ];
+
+#  services.xserver.videoDrivers = [ "nvidia" ];
 
 #  boot.kernelModules = [
 #    "nvidia"
@@ -32,8 +30,6 @@
 #    nvidia-vaapi-driver
 #  ];
 
-  services.xserver.videoDrivers = [ "nouveau" ];
-
 #  hardware.nvidia = {
 #    modesetting.enable = true;
 #    powerManagement.enable = true;
@@ -41,41 +37,5 @@
 #    open = true;
 #    nvidiaSettings = true;
 #    package = config.boot.kernelPackages.nvidiaPackages.production;
-#  };
-
-#  systemd.services = {
-#    "gnome-suspend" = {
-#      description = "suspend gnome shell";
-#      before = [
-#        "systemd-suspend.service"
-#        "systemd-hibernate.service"
-#        "nvidia-suspend.service"
-#        "nvidia-hibernate.service"
-#      ];
-#      wantedBy = [
-#        "systemd-suspend.service"
-#        "systemd-hibernate.service"
-#      ];
-#      serviceConfig = {
-#        Type = "oneshot";
-#        ExecStart = ''${pkgs.procps}/bin/pkill -f -STOP ${pkgs.gnome-shell}/bin/gnome-shell'';
-#      };
-#    };
-#    "gnome-resume" = {
-#      description = "resume gnome shell";
-#      after = [
-#        "systemd-suspend.service"
-#        "systemd-hibernate.service"
-#        "nvidia-resume.service"
-#      ];
-#      wantedBy = [
-#        "systemd-suspend.service"
-#        "systemd-hibernate.service"
-#      ];
-#      serviceConfig = {
-#        Type = "oneshot";
-#        ExecStart = ''${pkgs.procps}/bin/pkill -f -CONT ${pkgs.gnome-shell}/bin/gnome-shell'';
-#      };
-#    };
 #  };
 }

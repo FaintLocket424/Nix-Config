@@ -33,7 +33,7 @@ in {
       brave # Web Browser
       xviewer # Image Viewer
       celluloid # Media Player
-      nemo-with-extensions # File Browser
+#      nemo-with-extensions # File Browser
       notepad-next # Text Editor
       zapzap # Whatsapp desktop app
       vesktop # Lightweight linux discord client
@@ -64,11 +64,11 @@ in {
 
     udiskie = {
       enable = true;
-      settings = {
-        program_options = {
-          file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
-        };
-      };
+#      settings = {
+#        program_options = {
+#          file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
+#        };
+#      };
     };
 
     blueman-applet.enable = true;

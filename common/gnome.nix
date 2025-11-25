@@ -7,11 +7,11 @@
     desktopManager.gnome.enable = true;
   };
 
-  services.gnome = {
-    games.enable = false;
-    core-apps.enable = false;
-    core-developer-tools.enable = false;
-  };
+#  services.gnome = {
+#    games.enable = false;
+#    core-apps.enable = false;
+#    core-developer-tools.enable = false;
+#  };
 
   xdg.terminal-exec = {
     enable = true;

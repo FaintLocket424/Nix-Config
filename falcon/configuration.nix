@@ -11,31 +11,25 @@
   ];
 
   boot.blacklistedKernelModules = [
-    "nvidia"
-    "nvidiafb"
-    "nvidia-drm"
-    "nvidia-uvm"
-    "nvidia-modeset"
+    "nouveau"
   ];
 
-  services.xserver.videoDrivers = [ "nouveau" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
-#  services.xserver.videoDrivers = [ "nvidia" ];
+  boot.kernelModules = [
+    "nvidia"
+  ];
 
-#  boot.kernelModules = [
-#    "nvidia"
-#  ];
+  hardware.graphics.extraPackages = with pkgs; [
+    nvidia-vaapi-driver
+  ];
 
-#  hardware.graphics.extraPackages = with pkgs; [
-#    nvidia-vaapi-driver
-#  ];
-
-#  hardware.nvidia = {
-#    modesetting.enable = true;
-#    powerManagement.enable = true;
-#    powerManagement.finegrained = false;
-#    open = true;
-#    nvidiaSettings = true;
-#    package = config.boot.kernelPackages.nvidiaPackages.production;
-#  };
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+  };
 }

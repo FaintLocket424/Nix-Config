@@ -32,7 +32,11 @@
       zotero # Research reference manager
       godot # FOSS game engine
       arduino-ide # IDE for working with Arduino hardware
-
+      mesa-demos
+      vulkan-tools
+      clinfo
+      libva-utils
+      vdpauinfo
 
 
       # Controller libs

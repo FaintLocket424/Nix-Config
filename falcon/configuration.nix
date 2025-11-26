@@ -33,6 +33,7 @@
 #    package = config.boot.kernelPackages.nvidiaPackages.beta;
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "580.105.08";
+      sha256_64bit = "sha256-2cboGIZy8+t03QTPpp3VhHn6HQFiyMKMjRdiV2MpNHU=";
     };
   };
 }

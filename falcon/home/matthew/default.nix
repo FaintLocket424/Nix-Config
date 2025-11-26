@@ -51,7 +51,7 @@
   };
 
   home.packages = with pkgs; [
-    symlinkJoin {
+    (symlinkJoin {
       name = "modrinth-app-fixed";
       paths = [ modrinth-app ];
       nativeBuildInputs = [ makeWrapper ];
@@ -63,6 +63,6 @@
         makeWrapper "${modrinth-app}/bin/ModrinthApp" "$out/bin/ModrinthApp" \
           --set WEBKIT_DISABLE_DMABUF_RENDERER 1
       '';
-    }
+    })
   ];
 }

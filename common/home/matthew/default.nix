@@ -43,7 +43,7 @@
       libva-utils
       vdpauinfo
 
-      wineWowPackages.stable
+#      wineWowPackages.stable
 #      wine
       winetricks
       wineWowPackages.waylandFull

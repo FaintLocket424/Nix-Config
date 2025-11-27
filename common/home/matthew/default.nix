@@ -43,6 +43,11 @@
       libva-utils
       vdpauinfo
 
+      wineWowPackages.stable
+      wine64
+      wineWowPackages.staging
+      winetricks
+      wineWowPackages.waylandFull
 
       # Controller libs
       xwiimote # Driver for wiimotes

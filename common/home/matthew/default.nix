@@ -44,7 +44,7 @@
       vdpauinfo
 
       wineWowPackages.stable
-      wine
+#      wine
       winetricks
       wineWowPackages.waylandFull
 

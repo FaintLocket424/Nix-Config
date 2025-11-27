@@ -18,7 +18,10 @@
 
     targets = {
       qt.platform = "qtct";
-      waybar.font = "sansSerif";
+
+      firefox = {
+        profileNames = [ "home" "work" ];
+      };
     };
 
     iconTheme = {

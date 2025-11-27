@@ -19,9 +19,9 @@
     targets = {
       qt.platform = "qtct";
 
-      firefox = {
-        profileNames = [ "Home" ];
-      };
+#      firefox = {
+#        profileNames = [ "Home" ];
+#      };
     };
 
     iconTheme = {

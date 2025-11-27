@@ -20,7 +20,7 @@
       qt.platform = "qtct";
 
       firefox = {
-        profileNames = [ "home" "work" ];
+        profileNames = [ "Home" ];
       };
     };
 

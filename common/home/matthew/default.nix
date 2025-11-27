@@ -135,7 +135,8 @@
       profiles = {
         home = {
           name = "Home";
-          isDefault = true;
+          id = 0;
+
           bookmarks = {
             force = true;
             settings = [
@@ -152,7 +153,7 @@
         };
         work = {
           name = "Work";
-          isDefault = false;
+          id = 1;
 
           bookmarks = {
             force = true;

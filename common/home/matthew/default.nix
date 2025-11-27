@@ -124,6 +124,11 @@
   programs = {
     git.enable = true;
 
+    firefox = {
+      enable = true;
+      enableGnomeExtensions = true;
+    };
+
     ssh = {
       enable = true;
       matchBlocks = {

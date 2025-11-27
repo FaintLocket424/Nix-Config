@@ -13,7 +13,7 @@
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
-#      systemd-boot.enable = true;
+      systemd-boot.enable = true;
       timeout = 0;
     };
 
@@ -45,6 +45,20 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
+    ];
+
+    config = {
+      common.default = [ "gnome" "gtk" ];
+      gnome.default = [ "gnome" "gtk" ];
     };
   };
 

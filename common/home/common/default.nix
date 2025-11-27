@@ -33,9 +33,8 @@ in {
       brave # Web Browser
       xviewer # Image Viewer
       celluloid # Media Player
-      nemo-with-extensions # File Browser
+#      nemo-with-extensions # File Browser
       notepad-next # Text Editor
-      zapzap # Whatsapp desktop app
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
       parsec-bin # Remote Desktop
@@ -64,11 +63,11 @@ in {
 
     udiskie = {
       enable = true;
-      settings = {
-        program_options = {
-          file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
-        };
-      };
+#      settings = {
+#        program_options = {
+#          file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
+#        };
+#      };
     };
 
     blueman-applet.enable = true;
@@ -85,7 +84,7 @@ in {
 
   programs = {
     home-manager.enable = true;
-    btop.enable = true;
+#    btop.enable = true;
 
     kitty = {
       enable = true;

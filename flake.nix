@@ -7,6 +7,11 @@
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -37,6 +42,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nur,
     home-manager,
     stylix,
     ...
@@ -59,6 +65,7 @@
         ./common/configuration.nix      # System Config - All Machines
         ./${hostname}/configuration.nix # System Config - Machine Specific
 
+        nur.modules.nixos.default
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
 

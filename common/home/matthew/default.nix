@@ -7,6 +7,11 @@
   pkgs-unstable,
   ...
 }: {
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ inputs.nur.overlays.default ];
+  };
+
   imports = [
     ./stylix.nix
     ./git.nix
@@ -32,7 +37,11 @@
       zotero # Research reference manager
       godot # FOSS game engine
       arduino-ide # IDE for working with Arduino hardware
-
+      mesa-demos
+      vulkan-tools
+      clinfo
+      libva-utils
+      vdpauinfo
 
 
       # Controller libs
@@ -119,6 +128,78 @@
 
   programs = {
     git.enable = true;
+
+    firefox = {
+      enable = true;
+      package = pkgs.firefox.override {
+        nativeMessagingHosts = [
+          pkgs.gnome-browser-connector
+        ];
+      };
+
+      profiles = {
+        home = {
+          id = 0;
+
+          search = {
+            force = true;
+            default = "ddg";
+            privateDefault = "ddg";
+
+            engines = {
+              nix-packages = {
+                name = "Nix Packages";
+                urls = [{
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    { name = "type"; value = "packages"; }
+                    { name = "query"; value = "{searchTerms}"; }
+                  ];
+                }];
+
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "@np" ];
+              };
+            };
+          };
+
+          bookmarks = {
+            force = true;
+            settings = [
+              {
+                name = "YouTube";
+                tags = [ "youtube" ];
+                keyword = "youtube";
+                url = "https://www.youtube.com/feed/subscriptions";
+              }
+            ];
+          };
+
+          extensions = {
+            force = true;
+            packages = with pkgs.nur.repos.rycee.firefox-addons; [
+              privacy-badger
+            ];
+          };
+        };
+#        work = {
+#          name = "Work";
+#          id = 1;
+#
+#          bookmarks = {
+#            force = true;
+#            settings = [
+#              {
+#                name = "YouTube Music";
+#                tags = [ "youtube" "music" ];
+#                keyword = "youtubemusic";
+#                url = "https://music.youtube.com/";
+#              }
+#            ];
+#          };
+#        };
+      };
+    };
 
     ssh = {
       enable = true;

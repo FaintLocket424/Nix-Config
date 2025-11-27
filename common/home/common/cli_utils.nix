@@ -35,6 +35,7 @@ in
     bat
     eza
     pfetch-rs
+    pciutils
   ]
   ++ scriptPackages;
 }

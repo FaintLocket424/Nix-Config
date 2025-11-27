@@ -7,6 +7,11 @@
   pkgs-unstable,
   ...
 }: {
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ inputs.nur.overlays.default ];
+  };
+
   imports = [
     ./stylix.nix
     ./git.nix

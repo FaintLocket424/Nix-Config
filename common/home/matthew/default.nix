@@ -142,7 +142,10 @@
           id = 0;
 
           search = {
+            force = true;
             default = "ddg";
+            privateDefault = "ddg";
+
             engines = {
               nix-packages = {
                 name = "Nix Packages";

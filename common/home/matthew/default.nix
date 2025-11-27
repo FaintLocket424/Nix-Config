@@ -47,6 +47,7 @@
 #      wine
       winetricks
       wineWowPackages.waylandFull
+      bottles
 
       # Controller libs
       xwiimote # Driver for wiimotes

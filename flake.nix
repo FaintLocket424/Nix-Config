@@ -42,6 +42,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nur,
     home-manager,
     stylix,
     ...

@@ -9,9 +9,6 @@
 
   services.gnome = {
     gnome-browser-connector.enable = true;
-#    games.enable = false;
-#    core-apps.enable = false;
-#    core-developer-tools.enable = false;
   };
 
   environment.gnome.excludePackages = with pkgs; [

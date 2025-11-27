@@ -126,7 +126,47 @@
 
     firefox = {
       enable = true;
-      enableGnomeExtensions = true;
+      package = pkgs.firefox.override {
+        nativeMessagingHosts = [
+          pkgs.gnome-browser-connector
+        ];
+      };
+
+      profiles = {
+        home = {
+          name = "Home";
+          isDefault = true;
+          bookmarks = {
+            force = true;
+            settings = [
+              {
+                name = "YouTube";
+                tags = [ "youtube" ];
+                keyword = "youtube";
+                url = "https://www.youtube.com/feed/subscriptions";
+              }
+            ];
+          };
+
+
+        };
+        work = {
+          name = "Work";
+          isDefault = false;
+
+          bookmarks = {
+            force = true;
+            settings = [
+              {
+                name = "YouTube Music";
+                tags = [ "youtube" "music" ];
+                keyword = "youtubemusic";
+                url = "https://music.youtube.com/";
+              }
+            ];
+          };
+        };
+      };
     };
 
     ssh = {

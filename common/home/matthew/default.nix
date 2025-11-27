@@ -139,7 +139,6 @@
 
       profiles = {
         home = {
-          name = "Home";
           id = 0;
 
           bookmarks = {

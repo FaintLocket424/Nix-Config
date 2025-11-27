@@ -149,24 +149,29 @@
             ];
           };
 
-
-        };
-        work = {
-          name = "Work";
-          id = 1;
-
-          bookmarks = {
+          extensions = {
             force = true;
-            settings = [
-              {
-                name = "YouTube Music";
-                tags = [ "youtube" "music" ];
-                keyword = "youtubemusic";
-                url = "https://music.youtube.com/";
-              }
+            packages = with pkgs.nur.repos.rycee.firefox-addons; [
+              privacy-badger
             ];
           };
         };
+#        work = {
+#          name = "Work";
+#          id = 1;
+#
+#          bookmarks = {
+#            force = true;
+#            settings = [
+#              {
+#                name = "YouTube Music";
+#                tags = [ "youtube" "music" ];
+#                keyword = "youtubemusic";
+#                url = "https://music.youtube.com/";
+#              }
+#            ];
+#          };
+#        };
       };
     };
 

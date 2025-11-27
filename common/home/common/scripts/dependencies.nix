@@ -11,6 +11,14 @@
     pkgs.git
   ];
 
+  "rebuild-nogit" = [
+    pkgs.git
+  ];
+
+  "rebuild-test" = [
+#    pkgs.git
+  ];
+
   # You can also define a default set of dependencies for scripts not listed here
   "default" = [
 #    pkgs.bash

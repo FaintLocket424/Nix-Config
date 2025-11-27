@@ -65,6 +65,7 @@
         ./common/configuration.nix      # System Config - All Machines
         ./${hostname}/configuration.nix # System Config - Machine Specific
 
+        nur.modules.nixos.default
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
 

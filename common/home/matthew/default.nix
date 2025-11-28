@@ -47,6 +47,7 @@
 #      wine
       winetricks
       wineWowPackages.waylandFull
+      wineWowPackages.fonts
       (bottles.override {
         removeWarningPopup = true;
       })

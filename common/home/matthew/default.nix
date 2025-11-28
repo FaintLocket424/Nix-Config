@@ -47,7 +47,9 @@
 #      wine
       winetricks
       wineWowPackages.waylandFull
-      bottles
+      (bottles.override {
+        removeWarningPopup = true;
+      })
 
       # Controller libs
       xwiimote # Driver for wiimotes

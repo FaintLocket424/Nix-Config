@@ -4,6 +4,7 @@
   lib,
   inputs,
   hostname,
+  pkgs-25_05,
   ...
 }: {
   services.syncthing.settings = {
@@ -51,6 +52,6 @@
   };
 
   home.packages = with pkgs; [
-    modrinth-app
+    pkgs-25_05.modrinth-app
   ];
 }

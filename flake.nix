@@ -4,7 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
-
+    nixpkgs-25_05.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nur = {
@@ -41,6 +41,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-25_05,
     nixpkgs-unstable,
     nur,
     home-manager,
@@ -51,6 +52,11 @@
     system = "x86_64-linux";
 
     pkgs-unstable = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
+    pkgs-25_05 = import nixpkgs-25_05 {
       inherit system;
       config.allowUnfree = true;
     };
@@ -71,40 +77,16 @@
 
         {
           nixpkgs.overlays = [
-            (final: prev: {
-              modrinth-app-unwrapped =
-                prev.modrinth-app-unwrapped.overrideAttrs (old: rec {
-                  version = "0.10.5";
 
-                  src = prev.fetchFromGitHub {
-                    owner = "modrinth";
-                    repo = "code";
-                    tag = "v${version}";
-                    hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";
-                  };
-
-                  cargoHash = prev.lib.fakeSha256;
-
-                  patches = builtins.filter
-                    (p: !prev.lib.hasSuffix "remove-spotless.patch" (toString p))
-                    old.patches;
-                });
-
-              # <<<< THIS was missing
-              modrinth-app = prev.modrinth-app.override {
-                modrinth-app-unwrapped = final.modrinth-app-unwrapped;
-              };
-            })
           ];
         }
-
 
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
 
-            extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
+            extraSpecialArgs = { inherit inputs hostname pkgs-unstable pkgs-25_05; };
 
             users = nixpkgs.lib.genAttrs myUsers (username:
               { config, pkgs, ...}: {

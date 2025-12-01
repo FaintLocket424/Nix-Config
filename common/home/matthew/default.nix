@@ -31,7 +31,7 @@
       freecad # FOSS 3D Modelling Software
       obs-studio # FOSS for Screen Recording and Streaming
       obsidian # FOSS for Markdown Note-taking
-      protonup # IDK - Something for steam proton.
+      protonup-ng # IDK - Something for steam proton.
       dolphin-emu # FOSS for running Wii and Gamecube games
       scrcpy # Android screen mirroring
       zotero # Research reference manager

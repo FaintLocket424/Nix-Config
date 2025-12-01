@@ -72,30 +72,32 @@
         {
           nixpkgs.overlays = [
             (final: prev: {
-              modrinth-app-unwrapped = prev.modrinth-app-unwrapped.overrideAttrs (old: rec {
-                version = "0.10.5";
+              modrinth-app-unwrapped =
+                prev.modrinth-app-unwrapped.overrideAttrs (old: rec {
+                  version = "0.10.5";
 
-                src = prev.fetchFromGitHub {
-                  owner = "modrinth";
-                  repo = "code";
-                  tag = "v${version}";
-                  hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";
-                };
+                  src = prev.fetchFromGitHub {
+                    owner = "modrinth";
+                    repo = "code";
+                    tag = "v${version}";
+                    hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";
+                  };
 
-#                cargoDeps = old.cargoDeps.overrideAttrs (prev.lib.const {
-#                  name = "${old.pname}-${version}-vendor.tar.gz";
-#                  inherit src;
-#                  outputHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-#                });
+                  cargoHash = prev.lib.fakeSha256;
 
-                cargoHash = prev.lib.fakeSha256;
-
-                patches = builtins.filter (p: !prev.lib.hasSuffix "remove-spotless.patch" (toString p))
+                  patches = builtins.filter
+                    (p: !prev.lib.hasSuffix "remove-spotless.patch" (toString p))
                     old.patches;
-              });
+                });
+
+              # <<<< THIS was missing
+              modrinth-app = prev.modrinth-app.override {
+                modrinth-app-unwrapped = final.modrinth-app-unwrapped;
+              };
             })
           ];
         }
+
 
         {
           home-manager = {

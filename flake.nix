@@ -85,7 +85,7 @@
                 };
 
                 cargoDeps = old.cargoDeps.overrideAttrs (prev.lib.const {
-                  outputHash = prev.lib.fakeSha256;
+                  outputHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
                 });
 
                 patches = builtins.filter (p: !prev.lib.hasSuffix "remove-spotless.patch" (toString p))

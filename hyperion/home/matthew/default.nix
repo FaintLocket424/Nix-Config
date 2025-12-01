@@ -51,6 +51,9 @@
   };
 
   home.packages = with pkgs; [
-    modrinth-app
+#    modrinth-app
+    (modrinth-app.overrideAttrs (oldAttrs: {
+      RUSTFLAGS = (oldAttrs.RUSTFLAGS or "") + " -A dead-code";
+    }))
   ];
 }

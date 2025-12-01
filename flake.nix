@@ -83,7 +83,7 @@
                 };
 
                 cargoDeps = old.cargoDeps.overrideAttrs (prev.lib.const {
-                  name = "${old.pname}-${version}-vendor";
+                  name = "${old.pname}-${version}-vendor.tar.gz";
                   inherit src;
                   outputHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
                 });

@@ -71,20 +71,20 @@
 
         {
           nixpkgs.overlays = [
-            (final: prev: let
-              newVersion = "0.10.5";
-            in {
-              modrinth-app-unwrapped = prev.modrinth-app-unwrapped.overrideAttrs (old: {
-                version = newVersion;
+            (final: prev: {
+              modrinth-app-unwrapped = prev.modrinth-app-unwrapped.overrideAttrs (old: rec {
+                version = "0.10.5";
 
                 src = prev.fetchFromGitHub {
                   owner = "modrinth";
                   repo = "code";
-                  tag = "v${newVersion}";
+                  tag = "v${version}";
                   hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";
                 };
 
                 cargoDeps = old.cargoDeps.overrideAttrs (prev.lib.const {
+                  name = "${old.name}-vendor.tar.gz";
+                  inherit src;
                   outputHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
                 });
 

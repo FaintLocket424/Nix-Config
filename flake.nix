@@ -70,13 +70,23 @@
         home-manager.nixosModules.home-manager
 
         {
-          home-manager = {
-            extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
+          nixpkgs.overlays = [
+            (final: prev: {
+              modrinth-app = prev.modrinth-app.overrideAttrs (oldAttrs: {
+                postPatch = (oldAttrs.postPatch or "") + ''
+                  sed -i 's/pub struct OfflinePayload {/#[allow(dead_code)] pub struct OfflinePayload {/' packages/app-lib/src/event/mod.rs
+                '';
+              });
+            })
+          ];
+        }
 
-#            sharedModules = [
-#              import ./common/home/common      # Home Manager -   All Machines   - All Users
-#              import ./${hostname}/home/common # Home Manager - Machine Specific - All Users
-#            ];
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+
+            extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
 
             users = nixpkgs.lib.genAttrs myUsers (username:
               { config, pkgs, ...}: {

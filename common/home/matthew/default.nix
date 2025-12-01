@@ -7,25 +7,6 @@
   pkgs-unstable,
   ...
 }: {
-  nixpkgs = {
-    config.allowUnfree = true;
-    overlays = [
-      inputs.nur.overlays.default
-#      (final: prev: {
-#        modrinth-app = prev.modrinth-app.overrideAttrs (oldAttrs: {
-#          RUSTFLAGS = (oldAttrs.RUSTFLAGS or "") + " -A dead_code";
-#        });
-#      })
-      (final: prev: {
-        modrinth-app = prev.modrinth-app.overrideAttrs (oldAttrs: {
-          # Modify the source code to allow dead code for the failing struct
-          postPatch = (oldAttrs.postPatch or "") + ''
-            sed -i 's/pub struct OfflinePayload {/#[allow(dead_code)] pub struct OfflinePayload {/' packages/app-lib/src/event/mod.rs
-          '';
-        });
-      })
-    ];
-  };
 
   imports = [
     ./stylix.nix

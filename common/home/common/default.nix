@@ -12,11 +12,6 @@ in {
     ./cli_utils.nix
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    system = pkgs.system;
-  };
-
   fonts.fontconfig.enable = true;
 
   home = {

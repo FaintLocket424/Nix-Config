@@ -2,7 +2,7 @@
   pkgs,
   ...
 }: {
-  services.xserver = {
+  services = {
     # Enable the GNOME Desktop Environment
     desktopManager.gnome.enable = true;
   };

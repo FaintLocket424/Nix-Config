@@ -6,9 +6,10 @@
 
   programs.git = {
     enable = true;
-    userName = "FaintLocket424";
-    userEmail = "github.grill135@passinbox.com";
-    extraConfig = {
+    settings = {
+      user.name = "FaintLocket424";
+      user.email = "github.grill135@passinbox.com";
+
       init.defaultBranch = "main";
       core.autocrlf = "input";
 

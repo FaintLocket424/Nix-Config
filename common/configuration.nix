@@ -131,11 +131,11 @@
 
     automatic-timezoned.enable = true;
     fstrim.enable = true;
+    displayManager.gdm.enable = true;
 
     xserver = {
       enable = true;
       xkb.layout = "gb";
-      displayManager.gdm.enable = true;
       excludePackages = [ pkgs.xterm ];
     };
 

@@ -81,7 +81,7 @@
                   owner = "modrinth";
                   repo = "code";
                   tag = "v${newVersion}";
-                  hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";  # fix after first build
+                  hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";  # fix after first build
                 };
 
                 cargoHash = "sha256-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB="; # fix after first cargo hash error

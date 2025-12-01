@@ -73,9 +73,11 @@
           nixpkgs.overlays = [
             (final: prev: {
               modrinth-app = prev.modrinth-app.overrideAttrs (oldAttrs: {
-                postPatch = (oldAttrs.postPatch or "") + ''
-                  sed -i 's/pub struct OfflinePayload {/#[allow(dead_code)] pub struct OfflinePayload {/' packages/app-lib/src/event/mod.rs
-                '';
+                # Set RUSTFLAGS to allow dead code, silencing the error
+                RUSTFLAGS = (oldAttrs.RUSTFLAGS or "") + " -A dead_code";
+
+                # Alternatively, you can cap all lints to warnings if other errors pop up:
+                # RUSTFLAGS = (oldAttrs.RUSTFLAGS or "") + " --cap-lints warn";
               });
             })
           ];

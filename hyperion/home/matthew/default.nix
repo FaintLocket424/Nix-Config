@@ -28,7 +28,7 @@
       };
       sharedDocuments = {
         enable = true;
-        devices = [ "falcon" ];
+        devices = [ "falcon" "s25" ];
         id = "sharedDocuments";
         label = "Shared Documents";
         path = "~/sharedDocuments";

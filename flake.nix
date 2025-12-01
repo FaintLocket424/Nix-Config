@@ -84,7 +84,7 @@
                   hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";  # fix after first build
                 };
 
-                cargoHash = "sha256-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB="; # fix after first cargo hash error
+                cargoHash = ""; # fix after first cargo hash error
 
                 patches = builtins.filter (p: !prev.lib.hasSuffix "remove-spotless.patch" (toString p))
                     old.patches;

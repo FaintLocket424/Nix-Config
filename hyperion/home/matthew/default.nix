@@ -51,6 +51,6 @@
   };
 
   home.packages = with pkgs; [
-    modrinth-app-unwrapped
+    modrinth-app
   ];
 }

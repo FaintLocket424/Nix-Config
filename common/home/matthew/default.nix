@@ -9,7 +9,14 @@
 }: {
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [ inputs.nur.overlays.default ];
+    overlays = [
+      inputs.nur.overlays.default
+      (final: prev: {
+        modrinth-app = prev.modrinth-app.overrideAttrs (oldAttrs: {
+          RUSTFLAGS = (oldAttrs.RUSTFLAGS or "") + " -A dead_code";
+        });
+      })
+    ];
   };
 
   imports = [
@@ -211,6 +218,7 @@
 
     ssh = {
       enable = true;
+      enableDefaultConfig = true;
       matchBlocks = {
         "Hamilton" = {
           hostname = "hamilton8.dur.ac.uk";

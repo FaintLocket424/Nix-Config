@@ -51,9 +51,6 @@
   };
 
   home.packages = with pkgs; [
-#    modrinth-app
-    (modrinth-app.overrideAttrs (oldAttrs: {
-      RUSTFLAGS = "-A warnings";
-    }))
+    modrinth-app
   ];
 }

@@ -182,7 +182,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.symbols-only
     corefonts
-    vistafonts
+    vista-fonts
     google-fonts
   ];
 

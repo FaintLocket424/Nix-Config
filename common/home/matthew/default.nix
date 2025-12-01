@@ -62,11 +62,11 @@
 
 
       # Runtimes and Compilers
-      (hiPrio jdk21) # Dev Kit and runtime for Java 21
+      (lib.hiPrio jdk21) # Dev Kit and runtime for Java 21
       jdk17 # Dev Kit and runtime for Java 17
       jdk8 # Dev Kit and runtime for Java 8
       gradle # Build tool for Java and Kotlin
-      (hiPrio python314) # Python 3.14
+      (lib.hiPrio python314) # Python 3.14
       python313 # Python 3.13
       python312 # Python 3.12
       gnumake # Building make

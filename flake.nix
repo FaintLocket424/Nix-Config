@@ -84,7 +84,9 @@
                   hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";
                 };
 
-                cargoHash = "sha256-jWMHii65hTnTmiBFHxZ4xO5V+Qt/MPCy75eJvnlyE4c=";
+                cargoDeps = old.cargoDeps.overrideAttrs (prev.lib.const {
+                  outputHash = "";
+                });
 
                 patches = builtins.filter (p: !prev.lib.hasSuffix "remove-spotless.patch" (toString p))
                     old.patches;

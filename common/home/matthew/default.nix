@@ -11,9 +11,17 @@
     config.allowUnfree = true;
     overlays = [
       inputs.nur.overlays.default
+#      (final: prev: {
+#        modrinth-app = prev.modrinth-app.overrideAttrs (oldAttrs: {
+#          RUSTFLAGS = (oldAttrs.RUSTFLAGS or "") + " -A dead_code";
+#        });
+#      })
       (final: prev: {
         modrinth-app = prev.modrinth-app.overrideAttrs (oldAttrs: {
-          RUSTFLAGS = (oldAttrs.RUSTFLAGS or "") + " -A dead_code";
+          # Modify the source code to allow dead code for the failing struct
+          postPatch = (oldAttrs.postPatch or "") + ''
+            sed -i 's/pub struct OfflinePayload {/#[allow(dead_code)] pub struct OfflinePayload {/' packages/app-lib/src/event/mod.rs
+          '';
         });
       })
     ];
@@ -96,39 +104,6 @@
   };
 
   services = {
-#    hyprpaper.enable = true;
-#
-#    hyprsunset = {
-#      enable = true;
-#      transitions = {
-#        sunrise = {
-#          calendar = "*-*-* 06:00:00";
-#          requests = [
-#            [ "temperature" "6500" ]
-#            [ "gamma 100" ]
-#          ];
-#        };
-#        sunset = {
-#          calendar = "*-*-* 19:00:00";
-#          requests = [
-#            [ "temperature" "3500" ]
-#          ];
-#        };
-#      };
-#    };
-
-    # Wayland Notifications
-#    mako = {
-#      enable = true;
-#      settings = {
-#        default-timeout = "5000";
-#        border-radius = "5";
-#        icons = "true";
-#        max-icon-size = "96";
-#        layer = "top";
-#      };
-#    };
-
     syncthing = {
       enable = true;
       settings = {
@@ -144,76 +119,12 @@
   programs = {
     git.enable = true;
 
-    firefox = {
+    chromium = {
       enable = true;
-      package = pkgs.firefox.override {
-        nativeMessagingHosts = [
-          pkgs.gnome-browser-connector
-        ];
-      };
-
-      profiles = {
-        home = {
-          id = 0;
-
-          search = {
-            force = true;
-            default = "ddg";
-            privateDefault = "ddg";
-
-            engines = {
-              nix-packages = {
-                name = "Nix Packages";
-                urls = [{
-                  template = "https://search.nixos.org/packages";
-                  params = [
-                    { name = "type"; value = "packages"; }
-                    { name = "query"; value = "{searchTerms}"; }
-                  ];
-                }];
-
-                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                definedAliases = [ "@np" ];
-              };
-            };
-          };
-
-          bookmarks = {
-            force = true;
-            settings = [
-              {
-                name = "YouTube";
-                tags = [ "youtube" ];
-                keyword = "youtube";
-                url = "https://www.youtube.com/feed/subscriptions";
-              }
-            ];
-          };
-
-          extensions = {
-            force = true;
-            packages = with pkgs.nur.repos.rycee.firefox-addons; [
-              privacy-badger
-            ];
-          };
-        };
-#        work = {
-#          name = "Work";
-#          id = 1;
-#
-#          bookmarks = {
-#            force = true;
-#            settings = [
-#              {
-#                name = "YouTube Music";
-#                tags = [ "youtube" "music" ];
-#                keyword = "youtubemusic";
-#                url = "https://music.youtube.com/";
-#              }
-#            ];
-#          };
-#        };
-      };
+      package = pkgs.brave;
+      nativeMessagingHosts = with pkgs; [
+        gnome-browser-connector
+      ];
     };
 
     ssh = {

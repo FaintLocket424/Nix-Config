@@ -30,7 +30,7 @@ in {
       pwvucontrol
       networkmanagerapplet
 
-      brave # Web Browser
+#      brave # Web Browser
       xviewer # Image Viewer
       celluloid # Media Player
 #      nemo-with-extensions # File Browser

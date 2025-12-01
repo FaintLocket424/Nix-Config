@@ -82,11 +82,13 @@
                   hash = "sha256-KqC+5RLLvg3cyjY7Ecw9qxQ5XUKsK7Tfxl4WC1OwZeI=";
                 };
 
-                cargoDeps = old.cargoDeps.overrideAttrs (prev.lib.const {
-                  name = "${old.pname}-${version}-vendor.tar.gz";
-                  inherit src;
-                  outputHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-                });
+#                cargoDeps = old.cargoDeps.overrideAttrs (prev.lib.const {
+#                  name = "${old.pname}-${version}-vendor.tar.gz";
+#                  inherit src;
+#                  outputHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+#                });
+
+                cargoHash = prev.lib.fakeSha256;
 
                 patches = builtins.filter (p: !prev.lib.hasSuffix "remove-spotless.patch" (toString p))
                     old.patches;

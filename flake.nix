@@ -77,7 +77,13 @@
 
         {
           nixpkgs.overlays = [
-
+            (final: prev: {
+              papers = prev.papers.overrideAttrs (old: {
+                preBuild = (old.preBuild or "") + ''
+                  export RUST_MIN_STACK=16777216
+                '';
+              });
+            })
           ];
         }
 

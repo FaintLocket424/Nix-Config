@@ -38,6 +38,7 @@
       clinfo
       libva-utils
       vdpauinfo
+      distrobox
 
 #      wineWowPackages.stable
 #      wine

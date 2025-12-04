@@ -12,14 +12,9 @@
 
   boot = {
     loader = {
-      grub = {
-        enable = true;
-        efiSupport = true;
-        device = "nodev";
-      };
       efi.canTouchEfiVariables = true;
-      efi.efiSysMountPoint = "/boot/efi";
-#      systemd-boot.enable = true;
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 20;
       timeout = 0;
     };
 

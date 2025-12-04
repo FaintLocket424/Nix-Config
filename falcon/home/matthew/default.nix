@@ -4,6 +4,7 @@
   lib,
   inputs,
   hostname,
+  pkgs-25_05,
   ...
 }: {
   services.syncthing.settings = {
@@ -53,14 +54,14 @@
   home.packages = with pkgs; [
     (symlinkJoin {
       name = "modrinth-app-fixed";
-      paths = [ modrinth-app ];
+      paths = [ pkgs-25_05.modrinth-app ];
       nativeBuildInputs = [ makeWrapper ];
       postBuild = ''
         # 1. We must remove the symlink to the original binary so we can replace it
         rm "$out/bin/ModrinthApp"
 
         # 2. Create a wrapper script in its place that sets the variable
-        makeWrapper "${modrinth-app}/bin/ModrinthApp" "$out/bin/ModrinthApp" \
+        makeWrapper "${pkgs-25_05.modrinth-app}/bin/ModrinthApp" "$out/bin/ModrinthApp" \
           --set WEBKIT_DISABLE_DMABUF_RENDERER 1
       '';
     })

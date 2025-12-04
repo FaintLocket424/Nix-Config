@@ -49,6 +49,8 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   nix = {
     settings = {
       trusted-users = [ "matthew" ];
@@ -198,7 +200,7 @@
         description = "Matthew Peters";
         hashedPassword = "$6$QFNCuGDTRlfYTgyI$94qSvsOwnDEDQsNFgMx/.wQLsoOk3JhUBp4oTqYagKyzXuBn2JJG.r/Hu0fg4QZJC6sHSps2U0Tj0ME7YWyhP0";
         isNormalUser = true;
-        extraGroups = ["wheel" "networkmanager" "video" "dialout"];
+        extraGroups = [ "wheel" "networkmanager" "video" "dialout" "docker" ];
 
         shell = pkgs.fish;
       };

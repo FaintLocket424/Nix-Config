@@ -67,14 +67,14 @@ in {
 
     blueman-applet.enable = true;
 
-    gnome-keyring = {
-      enable = true;
-      components = [
-        "pkcs11"
-        "secrets"
-        "ssh"
-      ];
-    };
+#    gnome-keyring = {
+#      enable = true;
+#      components = [
+#        "pkcs11"
+#        "secrets"
+#        "ssh"
+#      ];
+#    };
   };
 
   programs = {

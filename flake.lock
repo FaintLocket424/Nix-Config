@@ -294,7 +294,7 @@
       "inputs": {
         "flake-schemas": "flake-schemas",
         "nixpkgs": [
-          "nixpkgs-25_05"
+          "nixpkgs"
         ]
       },
       "locked": {

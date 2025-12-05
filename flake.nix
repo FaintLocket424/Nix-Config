@@ -22,6 +22,11 @@
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    quickemu = {
+      url = "https://flakehub.com/f/quickemu-project/quickemu/4.9.7";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -46,6 +51,7 @@
     nur,
     home-manager,
     stylix,
+    quickemu,
     ...
   } @ inputs:
   let
@@ -74,6 +80,7 @@
         nur.modules.nixos.default
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
+        quickemu.nixosModules.quickemu
 
         {
           nixpkgs.overlays = [

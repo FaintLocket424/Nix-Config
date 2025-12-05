@@ -40,7 +40,7 @@
       vdpauinfo
       distrobox
       gnome-boxes
-      quickemu
+#      quickemu
 
 #      wineWowPackages.stable
 #      wine

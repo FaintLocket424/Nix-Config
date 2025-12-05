@@ -8,6 +8,7 @@
   imports = [
     ./theme
     ./gnome.nix
+    ./vm.nix
   ];
 
   boot = {
@@ -47,20 +48,6 @@
       enable = true;
       enable32Bit = true;
     };
-  };
-
-  virtualisation = {
-    docker.enable = true;
-
-    libvirtd = {
-      enable = true;
-
-      qemu = {
-        swtpm.enable = true;
-      };
-    };
-
-    spiceUSBRedirection.enable = true;
   };
 
   nix = {
@@ -212,7 +199,7 @@
         description = "Matthew Peters";
         hashedPassword = "$6$QFNCuGDTRlfYTgyI$94qSvsOwnDEDQsNFgMx/.wQLsoOk3JhUBp4oTqYagKyzXuBn2JJG.r/Hu0fg4QZJC6sHSps2U0Tj0ME7YWyhP0";
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "video" "dialout" "docker" "libvirtd" "kvm" ];
+        extraGroups = [ "wheel" "networkmanager" "video" "dialout" ];
 
         shell = pkgs.fish;
       };

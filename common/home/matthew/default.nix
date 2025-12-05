@@ -38,9 +38,9 @@
       clinfo
       libva-utils
       vdpauinfo
-      distrobox
-      gnome-boxes
-      quickemu
+#      distrobox
+#      gnome-boxes
+#      quickemu
       unityhub
 
 #      wineWowPackages.stable
@@ -150,7 +150,7 @@
 
     ssh = {
       enable = true;
-      enableDefaultConfig = false;
+      enableDefaultConfig = true;
 
       matchBlocks = {
         "*" = {

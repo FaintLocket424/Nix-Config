@@ -18,7 +18,7 @@
   };
 
   programs.ssh = {
-    addKeysToAgent = "yes";
+#    addKeysToAgent = "yes";
 
     matchBlocks = {
       "github.com" = {

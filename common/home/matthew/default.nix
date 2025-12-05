@@ -41,6 +41,7 @@
       distrobox
       gnome-boxes
 #      quickemu
+      inputs.quickemu.packages.${pkgs.system}.default
 
 #      wineWowPackages.stable
 #      wine

@@ -24,7 +24,7 @@
     };
 
     quickemu = {
-      url = "https://flakehub.com/f/quickemu-project/quickemu/4.9.7";
+      url = "github:quickemu-project/quickemu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -80,7 +80,6 @@
         nur.modules.nixos.default
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
-        quickemu.nixosModules.quickemu
 
         {
           nixpkgs.overlays = [

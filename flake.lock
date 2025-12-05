@@ -298,16 +298,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1735561406,
-        "narHash": "sha256-vDYqaMz7cEzFmmwZTptwpznHezWzjnR80yWcSgQ+Znc=",
-        "rev": "2a9d45530799837fd40495b0e720cf1ea01e4de7",
-        "revCount": 2099,
-        "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/quickemu-project/quickemu/4.9.7/0194178b-26e5-7aa4-9330-b18d2f595e4c/source.tar.gz"
+        "lastModified": 1761989451,
+        "narHash": "sha256-Eo6XDg/h5e/Bin4wUe8R8RRXguUMvD8M36gUacrslek=",
+        "owner": "quickemu-project",
+        "repo": "quickemu",
+        "rev": "703fe861f8a1be7210e9371f06c35104b5f7469d",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://flakehub.com/f/quickemu-project/quickemu/4.9.7"
+        "owner": "quickemu-project",
+        "repo": "quickemu",
+        "type": "github"
       }
     },
     "root": {

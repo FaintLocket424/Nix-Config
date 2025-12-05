@@ -25,7 +25,7 @@
 
     quickemu = {
       url = "github:quickemu-project/quickemu";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-25_05";
     };
   };
 

@@ -22,11 +22,6 @@
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    quickemu = {
-      url = "github:quickemu-project/quickemu";
-#      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   nixConfig = {
@@ -51,7 +46,6 @@
     nur,
     home-manager,
     stylix,
-    quickemu,
     ...
   } @ inputs:
   let

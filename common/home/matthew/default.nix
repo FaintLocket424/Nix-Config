@@ -40,8 +40,8 @@
       vdpauinfo
       distrobox
       gnome-boxes
-#      quickemu
-      inputs.quickemu.packages.${pkgs.system}.default
+      quickemu
+      unityhub
 
 #      wineWowPackages.stable
 #      wine

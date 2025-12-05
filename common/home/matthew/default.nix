@@ -39,6 +39,7 @@
       libva-utils
       vdpauinfo
       distrobox
+      gnome-boxes
 
 #      wineWowPackages.stable
 #      wine

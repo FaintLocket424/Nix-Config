@@ -49,7 +49,20 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+
+    libvirtd = {
+      enable = true;
+
+      qemu = {
+        swtpm.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
+    };
+
+    spiceUSBRedirection.enable = true;
+  };
 
   nix = {
     settings = {
@@ -200,7 +213,7 @@
         description = "Matthew Peters";
         hashedPassword = "$6$QFNCuGDTRlfYTgyI$94qSvsOwnDEDQsNFgMx/.wQLsoOk3JhUBp4oTqYagKyzXuBn2JJG.r/Hu0fg4QZJC6sHSps2U0Tj0ME7YWyhP0";
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "video" "dialout" "docker" ];
+        extraGroups = [ "wheel" "networkmanager" "video" "dialout" "docker" "libvirtd" "kvm" ];
 
         shell = pkgs.fish;
       };
@@ -210,6 +223,8 @@
   environment.systemPackages = with pkgs; [
     wireguard-tools
     protonvpn-gui
+    dnsmasq
+    phodav
   ];
 
   # Set Hostname

@@ -18,8 +18,6 @@
   };
 
   programs.ssh = {
-#    addKeysToAgent = "yes";
-
     matchBlocks = {
       "github.com" = {
         hostname = "github.com";

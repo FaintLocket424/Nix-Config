@@ -25,7 +25,7 @@
 
     quickemu = {
       url = "github:quickemu-project/quickemu";
-      inputs.nixpkgs.follows = "nixpkgs";
+#      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -89,9 +89,6 @@
                   export RUST_MIN_STACK=16777216
                 '';
               });
-            })
-            (final: prev: {
-              glxinfo = prev.mesa-demos;
             })
           ];
         }

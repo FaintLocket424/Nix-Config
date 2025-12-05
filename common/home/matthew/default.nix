@@ -151,12 +151,11 @@
     ssh = {
       enable = true;
       enableDefaultConfig = true;
-      addKeysToAgent = true;
 
       matchBlocks = {
-#        "*" = {
-#          addKeysToAgent = "yes";
-#        };
+        "*" = {
+          addKeysToAgent = "yes";
+        };
 
         "Hamilton" = {
           hostname = "hamilton8.dur.ac.uk";

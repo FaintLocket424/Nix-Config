@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-#  home.packages = with pkgs; [
-#    git-credential-manager
-#  ];
-
   programs.git = {
     enable = true;
     settings = {
@@ -18,11 +14,6 @@
           insteadOf = "https://github.com/";
         };
       };
-
-#      credential = {
-#        credentialStore = "secretservice";
-#        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
-#      };
     };
   };
 

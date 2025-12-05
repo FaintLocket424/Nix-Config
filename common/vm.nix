@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.dconf.enable = true;
 
-  users.users.matthew.extraGroups = [ "libvirtd" "kvm" "docker" ];
+  users.users.matthew.extraGroups = [ "libvirtd" "kvm" "docker" "vboxusers" ];
 
   environment.systemPackages = with pkgs; [
     virt-manager
@@ -23,6 +23,10 @@
         swtpm.enable = true;
       };
     };
+
+    virtualbox.host.enable = true;
+    virtualbox.host.enableExtensionPack = true;
+
     spiceUSBRedirection.enable = true;
   };
 

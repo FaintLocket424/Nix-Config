@@ -11,7 +11,7 @@
     devices = {
       falcon = {
         name = "Falcon";
-        id = "XFGFHYX-PW2S6YQ-AUZQRZK-HDW63XF-G5VBUSQ-QZJEDK7-GBBSNW3-5YU4YQE";
+        id = "5P3PM4N-LPNZ6UR-AS2NZHK-LPOBUKB-42TYS4O-HPZCTUF-XFXQHCW-M6K7GAR";
       };
       s25 = {
         name = "S25";

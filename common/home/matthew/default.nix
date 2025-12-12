@@ -75,7 +75,7 @@
       pandoc # Document compiler
       texliveFull # LaTeX
       ghc # The Glasgow Haskell Compiler
-      mono
+      msbuild
 
 
       # Code Editors

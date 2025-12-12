@@ -76,9 +76,9 @@
       texliveFull # LaTeX
       ghc # The Glasgow Haskell Compiler
       msbuild
-      mono
-#      dotnet-sdk_9
-#      dotnet-runtime_9
+#      mono
+      dotnet-sdk_9
+      dotnet-runtime_9
 
 
       # Code Editors

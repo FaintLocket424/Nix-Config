@@ -77,7 +77,8 @@
       ghc # The Glasgow Haskell Compiler
       msbuild
       mono
-      dotnet-sdk_9
+#      dotnet-sdk_9
+#      dotnet-runtime_9
 
 
       # Code Editors

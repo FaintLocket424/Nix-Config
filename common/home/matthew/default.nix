@@ -75,8 +75,8 @@
       pandoc # Document compiler
       texliveFull # LaTeX
       ghc # The Glasgow Haskell Compiler
-      msbuild
-#      mono
+      (lib.hiPrio msbuild)
+      mono
       dotnet-sdk_9
       dotnet-runtime_9
 

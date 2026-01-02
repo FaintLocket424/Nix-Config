@@ -159,8 +159,8 @@
     };
 
     firewall = {
-      allowedTCPPorts = [ /*8384*/ 22000 ];
-      allowedUDPPorts = [ 22000 21027 ];
+      allowedTCPPorts = [ /*8384*/ 22000 17432 ];
+      allowedUDPPorts = [ 22000 21027 17432 ];
       checkReversePath = false;
     };
   };

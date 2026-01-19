@@ -21,6 +21,8 @@
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   nixConfig = {
@@ -54,7 +56,10 @@
       config.allowUnfree = true;
     };
 
-    formatter.${system} = nixpkgs.nixfmt-tree;
+    formatter.${system} = nixpkgs.nixfmt-tree.lib.evalModule nixpkgs {
+      projectRootFile = "flake.nix";
+      programs.nixfmt.enable = true;
+    }.config.build.wrapper;
 
     myUsers = [ "matthew" ];
 

@@ -4,7 +4,6 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
-    nixpkgs-25_05.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nur = {
@@ -41,7 +40,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-25_05,
     nixpkgs-unstable,
     nur,
     home-manager,
@@ -56,10 +54,7 @@
       config.allowUnfree = true;
     };
 
-    pkgs-25_05 = import nixpkgs-25_05 {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    formatter.${system} = nixpkgs.nixfmt-tree;
 
     myUsers = [ "matthew" ];
 
@@ -92,7 +87,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
 
-            extraSpecialArgs = { inherit inputs hostname pkgs-unstable pkgs-25_05; };
+            extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
 
             users = nixpkgs.lib.genAttrs myUsers (username:
               { config, pkgs, ...}: {

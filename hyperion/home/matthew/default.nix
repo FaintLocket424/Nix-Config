@@ -6,7 +6,8 @@
   hostname,
   pkgs-25_05,
   ...
-}: {
+}:
+{
   services.syncthing.settings = {
     devices = {
       falcon = {
@@ -29,7 +30,10 @@
       };
       sharedDocuments = {
         enable = true;
-        devices = [ "falcon" "s25" ];
+        devices = [
+          "falcon"
+          "s25"
+        ];
         id = "sharedDocuments";
         label = "Shared Documents";
         path = "~/sharedDocuments";
@@ -52,20 +56,20 @@
   };
 
   home.packages = with pkgs; [
-#    modrinth-app
+    #    modrinth-app
     prismlauncher
-#    (symlinkJoin {
-#      name = "modrinth-app-fixed";
-#      paths = [ pkgs-25_05.modrinth-app ];
-#      nativeBuildInputs = [ makeWrapper ];
-#      postBuild = ''
-#        # 1. We must remove the symlink to the original binary so we can replace it
-#        rm "$out/bin/ModrinthApp"
-#
-#        # 2. Create a wrapper script in its place that sets the variable
-#        makeWrapper "${pkgs-25_05.modrinth-app}/bin/ModrinthApp" "$out/bin/ModrinthApp" \
-#          --set WEBKIT_DISABLE_DMABUF_RENDERER 1
-#      '';
-#    })
+    #    (symlinkJoin {
+    #      name = "modrinth-app-fixed";
+    #      paths = [ pkgs-25_05.modrinth-app ];
+    #      nativeBuildInputs = [ makeWrapper ];
+    #      postBuild = ''
+    #        # 1. We must remove the symlink to the original binary so we can replace it
+    #        rm "$out/bin/ModrinthApp"
+    #
+    #        # 2. Create a wrapper script in its place that sets the variable
+    #        makeWrapper "${pkgs-25_05.modrinth-app}/bin/ModrinthApp" "$out/bin/ModrinthApp" \
+    #          --set WEBKIT_DISABLE_DMABUF_RENDERER 1
+    #      '';
+    #    })
   ];
 }

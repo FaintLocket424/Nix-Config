@@ -4,7 +4,8 @@
   inputs,
   hostname,
   ...
-}: {
+}:
+{
   imports = [
     ./theme
     ./gnome.nix
@@ -23,7 +24,7 @@
   };
 
   hardware = {
-#    steam-hardware.enable = true;
+    #    steam-hardware.enable = true;
     xone.enable = true;
     enableAllFirmware = true;
 
@@ -87,25 +88,25 @@
       ];
     };
 
-#    gamescope.enable = true;
+    #    gamescope.enable = true;
 
-#    gamemode = {
-#      enable = true;
-#      enableRenice = true;
-#      settings.general.renice = 10;
-#    };
+    #    gamemode = {
+    #      enable = true;
+    #      enableRenice = true;
+    #      settings.general.renice = 10;
+    #    };
 
   };
 
-#  security.pam.services.login.enableGnomeKeyring = true;
+  #  security.pam.services.login.enableGnomeKeyring = true;
 
   services = {
     joycond.enable = true;
     blueman.enable = true;
     udisks2.enable = true;
-	flatpak.enable = true;
+    flatpak.enable = true;
 
-#    gnome.gnome-keyring.enable = true;
+    #    gnome.gnome-keyring.enable = true;
 
     dbus.implementation = "broker";
 
@@ -160,27 +161,37 @@
     };
 
     firewall = {
-      allowedTCPPorts = [ /*8384*/ 22000 17432 ];
-      allowedUDPPorts = [ 22000 21027 17432 ];
+      allowedTCPPorts = [
+        # 8384
+        22000
+        17432
+      ];
+      allowedUDPPorts = [
+        22000
+        21027
+        17432
+      ];
       checkReversePath = false;
     };
   };
 
-  i18n = let
-    locale = "en_GB.UTF-8";
-  in {
-    defaultLocale = locale;
-    extraLocaleSettings = {
-      LC_ADDRESS = locale;
-      LC_IDENTIFICATION = locale;
-      LC_MEASUREMENT = locale;
-      LC_MONETARY = locale;
-      LC_NAME = locale;
-      LC_NUMERIC = locale;
-      LC_PAPER = locale;
-      LC_TELEPHONE = locale;
+  i18n =
+    let
+      locale = "en_GB.UTF-8";
+    in
+    {
+      defaultLocale = locale;
+      extraLocaleSettings = {
+        LC_ADDRESS = locale;
+        LC_IDENTIFICATION = locale;
+        LC_MEASUREMENT = locale;
+        LC_MONETARY = locale;
+        LC_NAME = locale;
+        LC_NUMERIC = locale;
+        LC_PAPER = locale;
+        LC_TELEPHONE = locale;
+      };
     };
-  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.symbols-only
@@ -191,7 +202,7 @@
 
   console.keyMap = "uk";
 
-# Configure your system-wide user settings (groups, etc)
+  # Configure your system-wide user settings (groups, etc)
   users = {
     mutableUsers = false;
     users = {
@@ -200,7 +211,12 @@
         description = "Matthew Peters";
         hashedPassword = "$6$QFNCuGDTRlfYTgyI$94qSvsOwnDEDQsNFgMx/.wQLsoOk3JhUBp4oTqYagKyzXuBn2JJG.r/Hu0fg4QZJC6sHSps2U0Tj0ME7YWyhP0";
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "video" "dialout" ];
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+          "video"
+          "dialout"
+        ];
 
         shell = pkgs.fish;
       };

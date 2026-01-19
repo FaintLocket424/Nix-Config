@@ -28,8 +28,7 @@
     homeDirectory = "/home/matthew";
 
     sessionVariables = {
-        STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-            "\${HOME}/.steam/root/compatibilitytools.d";
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     };
 
     packages = with pkgs; [
@@ -42,7 +41,7 @@
 
       brave # Web Browser
       xviewer # Image Viewer
-	    photoflare # Image Editor like Paint.NET
+      photoflare # Image Editor like Paint.NET
       celluloid # Media Player
       nemo-with-extensions # File Browser
       notepad-next # Text Editor
@@ -58,14 +57,13 @@
       protonup # IDK - Something for steam proton.
       gdlauncher-carbon # FOSS for launching Minecraft
       modrinth-app # FOSS for launching Minecraft
-#      dolphin-emu # FOSS for running Wii and Gamecube games
+      #      dolphin-emu # FOSS for running Wii and Gamecube games
       libressl # IDK
       geteduroam # Software for getting on eduroam
       scrcpy # Android screen mirroring
-	    zotero # Research reference manager
-	    godot # FOSS game engine
-	    arduino-ide # IDE for working with Arduino hardware
-
+      zotero # Research reference manager
+      godot # FOSS game engine
+      arduino-ide # IDE for working with Arduino hardware
 
       # Controller libs
       xwiimote # Driver for wiimotes
@@ -74,7 +72,6 @@
       antimicrox
       linuxConsoleTools
       jstest-gtk
-
 
       # Runtimes and Compilers
       jdk21 # Dev Kit and runtime for Java 21
@@ -88,7 +85,6 @@
       pandoc # Document compiler
       texliveFull # LaTeX
       ghc # The Glasgow Haskell Compiler
-
 
       # QT Fixes/packages
       kdePackages.qtwayland
@@ -129,14 +125,20 @@
         sunrise = {
           calendar = "*-*-* 06:00:00";
           requests = [
-            [ "temperature" "6500" ]
+            [
+              "temperature"
+              "6500"
+            ]
             [ "gamma 100" ]
           ];
         };
         sunset = {
           calendar = "*-*-* 19:00:00";
           requests = [
-            [ "temperature" "3500" ]
+            [
+              "temperature"
+              "3500"
+            ]
           ];
         };
       };
@@ -168,12 +170,12 @@
     blueman-applet.enable = true;
 
     gnome-keyring = {
-     enable = true;
-     components = [
-       "pkcs11"
-       "secrets"
-       "ssh"
-     ];
+      enable = true;
+      components = [
+        "pkcs11"
+        "secrets"
+        "ssh"
+      ];
     };
 
     syncthing = {
@@ -195,14 +197,14 @@
         folders = {
           programming = {
             enable = true;
-            devices = ["falcon"];
+            devices = [ "falcon" ];
             id = "programming";
             label = "Programming";
             path = "~/programming";
           };
           sharedDocuments = {
             enable = true;
-            devices = ["falcon"];
+            devices = [ "falcon" ];
             id = "sharedDocuments";
             label = "Shared Documents";
             path = "~/sharedDocuments";
@@ -260,16 +262,14 @@
     };
   };
 
-#  home.file."${config.xdg.configHome}/libvirt/qemu.conf" = {
-#      source = ./qemu.conf;
-#  };
-  
-#  home.file.".local/bin/extractMojangJar.sh" = {
-#    source = ./scripts/extractMojangJar.sh;
-#    executable = true;
-#  };
+  #  home.file."${config.xdg.configHome}/libvirt/qemu.conf" = {
+  #      source = ./qemu.conf;
+  #  };
 
-
+  #  home.file.".local/bin/extractMojangJar.sh" = {
+  #    source = ./scripts/extractMojangJar.sh;
+  #    executable = true;
+  #  };
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

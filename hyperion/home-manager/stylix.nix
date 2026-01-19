@@ -1,11 +1,12 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   stylix = {
     targets = {
       qt.platform = "qtct";
-#      waybar.font = "sansSerif";
+      #      waybar.font = "sansSerif";
     };
 
     iconTheme = {

@@ -5,9 +5,11 @@
   inputs,
   hostname,
   ...
-}: let
+}:
+let
   username = config.home.username;
-in {
+in
+{
   imports = [
     ./cli_utils.nix
   ];
@@ -25,10 +27,10 @@ in {
       pwvucontrol
       networkmanagerapplet
 
-#      brave # Web Browser
+      #      brave # Web Browser
       xviewer # Image Viewer
       celluloid # Media Player
-#      nemo-with-extensions # File Browser
+      #      nemo-with-extensions # File Browser
       notepad-next # Text Editor
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
@@ -40,7 +42,6 @@ in {
       kdePackages.kwayland
       kdePackages.kservice
       libsForQt5.qtwayland
-
 
       # LibreOffice and Dictionaries
       libreoffice-qt6-fresh
@@ -58,28 +59,28 @@ in {
 
     udiskie = {
       enable = true;
-#      settings = {
-#        program_options = {
-#          file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
-#        };
-#      };
+      #      settings = {
+      #        program_options = {
+      #          file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
+      #        };
+      #      };
     };
 
     blueman-applet.enable = true;
 
-#    gnome-keyring = {
-#      enable = true;
-#      components = [
-#        "pkcs11"
-#        "secrets"
-#        "ssh"
-#      ];
-#    };
+    #    gnome-keyring = {
+    #      enable = true;
+    #      components = [
+    #        "pkcs11"
+    #        "secrets"
+    #        "ssh"
+    #      ];
+    #    };
   };
 
   programs = {
     home-manager.enable = true;
-#    btop.enable = true;
+    #    btop.enable = true;
 
     kitty = {
       enable = true;

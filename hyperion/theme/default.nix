@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   stylix = {
     enable = true;
     image = ./backgrounds/toothless_1.jpg;

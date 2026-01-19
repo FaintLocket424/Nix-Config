@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   stylix = {
     enable = true;
     image = ./backgrounds/toothless_1.jpg;
@@ -19,9 +20,9 @@
     targets = {
       qt.platform = "qtct";
 
-#      firefox = {
-#        profileNames = [ "home" ];
-#      };
+      #      firefox = {
+      #        profileNames = [ "home" ];
+      #      };
     };
 
     iconTheme = {

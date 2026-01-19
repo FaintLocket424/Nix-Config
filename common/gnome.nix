@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   services = {
     # Enable the GNOME Desktop Environment
     desktopManager.gnome.enable = true;
@@ -31,7 +32,7 @@
     totem
     yelp
     cheese
-	papers
+    papers
   ];
 
   xdg.terminal-exec = {
@@ -53,8 +54,14 @@
     ];
 
     config = {
-      common.default = [ "gnome" "gtk" ];
-      gnome.default = [ "gnome" "gtk" ];
+      common.default = [
+        "gnome"
+        "gtk"
+      ];
+      gnome.default = [
+        "gnome"
+        "gtk"
+      ];
     };
   };
 

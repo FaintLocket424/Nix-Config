@@ -1,7 +1,7 @@
 {
   imports = [
     ./hyprland
-#    ./bar
+    #    ./bar
     ./idle
   ];
 }

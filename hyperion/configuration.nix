@@ -4,15 +4,16 @@
   inputs,
   hostname,
   ...
-}: {
+}:
+{
   imports = [
     # nixos-generate-config --root .
     ./hardware-configuration.nix
   ];
 
   boot = {
-#    loader.systemd-boot.enable = true;
-    extraModulePackages = [config.boot.kernelPackages.ddcci-driver];
+    #    loader.systemd-boot.enable = true;
+    extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
 
     kernelParams = [
       "workqueue.power_efficient=true"
@@ -25,20 +26,20 @@
     vpl-gpu-rt
     libvdpau-va-gl
   ];
-  
+
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
   };
 
   services = {
-#    tlp = {
-#      enable = true;
-#      settings = {
-#        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-#        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-#        PLATFORM_PROFILE_ON_AC = "performance";
-#        PLATFORM_PROFILE_ON_BAT = "low-power";
-#      };
-#    };
+    #    tlp = {
+    #      enable = true;
+    #      settings = {
+    #        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    #        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    #        PLATFORM_PROFILE_ON_AC = "performance";
+    #        PLATFORM_PROFILE_ON_BAT = "low-power";
+    #      };
+    #    };
   };
 }

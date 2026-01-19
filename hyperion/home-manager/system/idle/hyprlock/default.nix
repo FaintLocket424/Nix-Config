@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   programs.hyprlock = {
     enable = true;
 
@@ -36,12 +37,12 @@
         dots_size = 0.2;
         dots_spacing = 0.35;
         dots_center = true;
-#        outer_color = "rgba(0, 0, 0, 0)";
-#        inner_color = "rgba(0, 0, 0, 0.2)";
-#        font_color = "$foregound";
+        #        outer_color = "rgba(0, 0, 0, 0)";
+        #        inner_color = "rgba(0, 0, 0, 0.2)";
+        #        font_color = "$foregound";
         fade_on_empty = true;
         rounding = -1;
-#        check_color = "rgb(204, 136, 34)";
+        #        check_color = "rgb(204, 136, 34)";
         placeholder_text = "<i><span foreground=\"##cdd6f4\">Input Password...</span></i>";
         hide_input = false;
         position = "0, -200";

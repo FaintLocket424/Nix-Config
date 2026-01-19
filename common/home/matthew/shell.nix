@@ -10,13 +10,13 @@
         cat = "bat";
       };
     };
-	
+
     zoxide = {
       enable = true;
       enableFishIntegration = true;
       options = [ "--cmd cd" ];
     };
-	
+
     starship = {
       enable = true;
       settings = {

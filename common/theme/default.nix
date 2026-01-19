@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   stylix = {
     enable = true;
     image = ./wallpapers/system-default.jpg;

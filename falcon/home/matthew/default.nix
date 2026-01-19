@@ -6,7 +6,8 @@
   hostname,
   pkgs-25_05,
   ...
-}: {
+}:
+{
   services.syncthing.settings = {
     devices = {
       hyperion = {

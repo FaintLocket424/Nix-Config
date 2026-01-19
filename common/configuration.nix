@@ -103,6 +103,7 @@
     joycond.enable = true;
     blueman.enable = true;
     udisks2.enable = true;
+	flatpak.enable = true;
 
 #    gnome.gnome-keyring.enable = true;
 

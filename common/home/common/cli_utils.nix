@@ -36,7 +36,7 @@ in
     eza
     pfetch-rs
     pciutils
-	nixfmt-tree
+	  nixfmt-tree
   ]
   ++ scriptPackages;
 }

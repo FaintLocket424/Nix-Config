@@ -81,14 +81,13 @@
       dotnet-runtime_9
 
 
-      # Code Editors
-      # jetbrains-toolbox
-	jetbrains.idea-ultimate
-	jetbrains.pycharm-professional
-	jetbrains.goland
-	jetbrains.webstorm
-	jetbrains.clion
-	jetbrains.rider
+      # Code Editor
+      jetbrains.clion
+      jetbrains.goland
+      jetbrains.idea
+      jetbrains.pycharm
+      jetbrains.rider
+      jetbrains.webstorm
       vscode
     ]) ++ (with pkgs-unstable; [
 

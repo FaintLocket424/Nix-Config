@@ -31,6 +31,7 @@
     totem
     yelp
     cheese
+	papers
   ];
 
   xdg.terminal-exec = {

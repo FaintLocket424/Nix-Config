@@ -14,7 +14,8 @@
       unityhub # Manager for Unity game engine
 
       # Runtimes and Compilers
-      (lib.hiPrio jdk21) # Dev Kit and runtime for Java 21
+      (lib.hiPrio jdk25) # Dev Kit and runtime for Java 25
+      jdk21 # Dev Kit and runtime for Java 21
       jdk17 # Dev Kit and runtime for Java 17
       jdk8 # Dev Kit and runtime for Java 8
       gradle # Build tool for Java and Kotlin

@@ -10,6 +10,7 @@
 {
 
   imports = [
+    ./stylix.nix
   ];
 
   myHome = {

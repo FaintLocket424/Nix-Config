@@ -28,13 +28,11 @@
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
-      #      "https://stylix.cachix.org"
       "https://home-manager.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      #      "stylix.cachix.org-1:iTycMb+viP8aTqhRDvV5qjs1jtNJKH9Jjvqyg4DYxhw="
       "home-manager.cachix.org-1:wLVmpPs9J1Na6uhEkqcJcdSmPR61rd76jOnlps6zvM8="
     ];
   };
@@ -59,44 +57,28 @@
         config.allowUnfree = true;
       };
 
-      myUsers = [ "matthew" ];
-
-      mkSystem =
-        hostname:
+      mkHost =
+        hostname: system:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs hostname; };
-
           modules = [
-            ./common/configuration.nix # System Config - All Machines
-            ./${hostname}/configuration.nix # System Config - Machine Specific
+            ./hosts/${hostname} # Host Specific
+
+            ./modules/nixos/core
+            ./modules/nixos/features/desktop.nix
+            ./modules/nixos/features/connectivity.nix
+            ./modules/nixos/features/gaming.nix
+            ./users
 
             nur.modules.nixos.default
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
-
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-
                 extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
-
-                users = nixpkgs.lib.genAttrs myUsers (
-                  username:
-                  { config, pkgs, ... }:
-                  {
-                    home.username = username;
-                    home.homeDirectory = "/home/${username}";
-
-                    imports = [
-                      ./common/home/common # Home Manager -   All Machines   - All Users
-                      ./${hostname}/home/common # Home Manager - Machine Specific - All Users
-                      ./common/home/${username} # Home Manager -   All Machines   - User Specific
-                      ./${hostname}/home/${username} # Home Manager - Machine Specific - User Specific
-                    ];
-                  }
-                );
               };
             }
 
@@ -116,6 +98,10 @@
 
       # NixOS configuration entrypoints
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = nixpkgs.lib.genAttrs [ "falcon" "hyperion" ] mkSystem;
+      #      nixosConfigurations = nixpkgs.lib.genAttrs [ "falcon" "hyperion" ] mkSystem;
+      nixosConfigurations = {
+        falcon = mkHost "falcon" "x86_64-linux";
+        hyperion = mkHost "hyperion" "x86_64-linux";
+      };
     };
 }

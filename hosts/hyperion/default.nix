@@ -1,0 +1,41 @@
+{
+  config,
+  pkgs,
+  inputs,
+  hostname,
+  ...
+}:
+{
+  imports = [
+    # nixos-generate-config --root .
+    ./hardware-configuration.nix
+  ];
+
+  myFeatures = {
+    desktop.enable = true;
+    gaming.enable = true;
+    connectivity.enable = true;
+    allUsers.enable = true;
+  };
+
+  boot = {
+    extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
+
+    kernelParams = [
+      "workqueue.power_efficient=true"
+      "i915.force_probe=a7a1"
+    ];
+  };
+
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-media-driver
+    vpl-gpu-rt
+    libvdpau-va-gl
+  ];
+
+  hardware.brillo.enable = true;
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
+}

@@ -10,10 +10,6 @@
 {
 
   imports = [
-    ./stylix.nix
-    ./git.nix
-    ./shell.nix
-    ./syncthing.nix
   ];
 
   myHome = {

@@ -49,6 +49,7 @@
       sharedModules = [
         ./modules/development.nix
         ./modules/gaming.nix
+        ./modules/desktop.nix
       ];
 
       users = {

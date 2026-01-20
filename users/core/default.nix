@@ -24,10 +24,8 @@
       pwvucontrol
       networkmanagerapplet
 
-      #      brave # Web Browser
       xviewer # Image Viewer
       celluloid # Media Player
-      #      nemo-with-extensions # File Browser
       notepad-next # Text Editor
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
@@ -59,20 +57,10 @@
     };
 
     blueman-applet.enable = true;
-
-    #    gnome-keyring = {
-    #      enable = true;
-    #      components = [
-    #        "pkcs11"
-    #        "secrets"
-    #        "ssh"
-    #      ];
-    #    };
   };
 
   programs = {
     home-manager.enable = true;
-    #    btop.enable = true;
 
     kitty = {
       enable = true;

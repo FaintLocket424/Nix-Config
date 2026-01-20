@@ -47,6 +47,7 @@
       extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
 
       sharedModules = [
+        ./core
         ./modules/development.nix
         ./modules/gaming.nix
         ./modules/desktop.nix

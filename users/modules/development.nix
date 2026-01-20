@@ -14,14 +14,9 @@
       unityhub # Manager for Unity game engine
 
       # Runtimes and Compilers
-      (lib.hiPrio jdk25) # Dev Kit and runtime for Java 25
-      jdk21 # Dev Kit and runtime for Java 21
-      jdk17 # Dev Kit and runtime for Java 17
-      jdk8 # Dev Kit and runtime for Java 8
+      jdk25 # Dev Kit and runtime for Java 25
       gradle # Build tool for Java and Kotlin
-      (lib.hiPrio python314) # Python 3.14
-      python313 # Python 3.13
-      python312 # Python 3.12
+      python314 # Python 3.14
       gnumake # Building make
       gcc # GNU Compiler Collection
       arduino-cli # CLI for working with Arduino hardware
@@ -45,11 +40,20 @@
 
     programs.ssh = {
       enable = true;
-      enableDefaultConfig = true;
+      enableDefaultConfig = false;
 
       matchBlocks = {
         "*" = {
           addKeysToAgent = "yes";
+          forwardAgent = false;
+          compression = false;
+          serverAliveInterval = 0;
+          serverAliveCountMax = 3;
+          hashKnownHosts = false;
+          userKnownHostsFile = "~/.ssh/known_hosts";
+          controlMaster = "no";
+          controlPath = "~/.ssh/master-%r@%n:%p";
+          controlPersist = "no";
         };
 
         "github.com" = {

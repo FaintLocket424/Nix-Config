@@ -14,18 +14,22 @@
     };
     services.blueman.enable = true;
 
-    services.printing = {
-      enable = true;
-      drivers = [
-        pkgs.gutenprint
-        pkgs.canon-cups-ufr2
-      ];
-    };
+    services = {
+      printing = {
+        enable = true;
+        drivers = [
+          pkgs.gutenprint
+          pkgs.canon-cups-ufr2
+        ];
+      };
 
-    services.avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
+      avahi = {
+        enable = true;
+        nssmdns4 = true;
+        openFirewall = true;
+      };
+
+      tailscale.enable = true;
     };
 
     environment.systemPackages = with pkgs; [

@@ -57,8 +57,6 @@
     };
 
     blueman-applet.enable = true;
-
-    tailscale.enable = true;
   };
 
   programs = {

@@ -60,15 +60,15 @@ in
           ];
         };
 
-        "modrinth-instances" = {
-          id = "modrinth-instances";
-          label = "Modrinth Instances";
-          path = "~/Games/Standalone Games/Minecraft/ModrinthApp/profiles";
-          devices = others [
-            "falcon"
-            "hyperion"
-          ];
-        };
+        #        "modrinth-instances" = {
+        #          id = "modrinth-instances";
+        #          label = "Modrinth Instances";
+        #          path = "~/Games/Standalone Games/Minecraft/ModrinthApp/profiles";
+        #          devices = others [
+        #            "falcon"
+        #            "hyperion"
+        #          ];
+        #        };
       };
     };
   };

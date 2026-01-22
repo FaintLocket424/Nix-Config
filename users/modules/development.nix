@@ -23,6 +23,7 @@
       pandoc # Document compiler
       texliveFull # LaTeX
       ghc # The Glasgow Haskell Compiler
+      haskell-language-server
       (lib.hiPrio msbuild) # C# Compiler related
       mono # C# Compiler related
       dotnet-sdk_9 # C# Compiler related

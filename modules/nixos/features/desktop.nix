@@ -17,7 +17,7 @@
 
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
-      flatpak.enable = true;
+      #      flatpak.enable = true;
       udisks2.enable = true;
       automatic-timezoned.enable = true;
 

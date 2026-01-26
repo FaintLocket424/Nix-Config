@@ -32,7 +32,7 @@
       obs-studio # FOSS for Screen Recording and Streaming
       obsidian # FOSS for Markdown Note-taking
       scrcpy # Android screen mirroring
-      zotero # Research reference manager
+      #      zotero # Research reference manager
     ];
   };
 

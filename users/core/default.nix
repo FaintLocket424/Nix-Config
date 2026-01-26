@@ -31,6 +31,7 @@
       geteduroam # Software for getting on eduroam
       parsec-bin # Remote Desktop
       gnome-calculator # Calculator
+      flatpak
 
       # QT Fixes/packages
       kdePackages.qtwayland
@@ -39,7 +40,7 @@
       libsForQt5.qtwayland
 
       # LibreOffice and Dictionaries
-      libreoffice-qt6-fresh
+      #      libreoffice-qt6-fresh
       hunspell
       hunspellDicts.en_GB-ise
       aspell

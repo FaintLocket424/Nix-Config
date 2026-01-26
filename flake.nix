@@ -8,10 +8,10 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #    nur = {
+    #      url = "github:nix-community/NUR";
+    #      inputs.nixpkgs.follows = "nixpkgs";
+    #    };
 
     # Home Manager
     home-manager = {
@@ -42,7 +42,7 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      nur,
+      #      nur,
       home-manager,
       stylix,
       treefmt-nix,
@@ -71,7 +71,7 @@
             ./modules/nixos/features/gaming.nix
             ./users
 
-            nur.modules.nixos.default
+            #            nur.modules.nixos.default
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {

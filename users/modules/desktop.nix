@@ -13,7 +13,7 @@
       package = pkgs.brave;
       nativeMessagingHosts = with pkgs; [
         gnome-browser-connector
-        gnome-software
+        #        gnome-software
       ];
     };
   };

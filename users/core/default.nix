@@ -31,7 +31,7 @@
       geteduroam # Software for getting on eduroam
       parsec-bin # Remote Desktop
       gnome-calculator # Calculator
-      flatpak
+      #      flatpak
 
       # QT Fixes/packages
       kdePackages.qtwayland

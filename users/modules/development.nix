@@ -12,6 +12,7 @@
       godot # FOSS game engine
       arduino-ide # IDE for working with Arduino hardware
       unityhub # Manager for Unity game engine
+      paraview # 3D Data Analysis
 
       # Runtimes and Compilers
       jdk25 # Dev Kit and runtime for Java 25

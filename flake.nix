@@ -8,11 +8,6 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
-    #    nur = {
-    #      url = "github:nix-community/NUR";
-    #      inputs.nixpkgs.follows = "nixpkgs";
-    #    };
-
     # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -42,7 +37,6 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      #      nur,
       home-manager,
       stylix,
       treefmt-nix,
@@ -71,7 +65,6 @@
             ./modules/nixos/features/gaming.nix
             ./users
 
-            #            nur.modules.nixos.default
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
@@ -98,7 +91,6 @@
 
       # NixOS configuration entrypoints
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      #      nixosConfigurations = nixpkgs.lib.genAttrs [ "falcon" "hyperion" ] mkSystem;
       nixosConfigurations = {
         falcon = mkHost "falcon" "x86_64-linux";
         hyperion = mkHost "hyperion" "x86_64-linux";

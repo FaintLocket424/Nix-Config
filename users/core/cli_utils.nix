@@ -45,6 +45,7 @@ in
       eza
       pfetch-rs
       pciutils
+      p7zip
     ]
     ++ scriptPackages;
 }

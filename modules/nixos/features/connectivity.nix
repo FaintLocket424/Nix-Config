@@ -30,6 +30,7 @@
       };
 
       tailscale.enable = true;
+      resolved.enable = true;
     };
 
     environment.systemPackages = with pkgs; [

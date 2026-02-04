@@ -29,6 +29,7 @@
       mono # C# Compiler related
       dotnet-sdk_9 # C# Compiler related
       dotnet-runtime_9 # C# Compiler related
+      go # Compiler for Go
 
       # Code Editors
       jetbrains.clion

@@ -30,6 +30,7 @@
       dotnet-sdk_9 # C# Compiler related
       dotnet-runtime_9 # C# Compiler related
       go # Compiler for Go
+      androidenv.androidPkgs.platform-tools # android sdk tools
 
       # Code Editors
       jetbrains.clion

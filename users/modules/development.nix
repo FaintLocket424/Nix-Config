@@ -32,6 +32,7 @@
       go # Compiler for Go
       androidenv.androidPkgs.platform-tools # android sdk tools
       ollama # Local LLM runtime
+      lmstudio # Desktop UI for local LLM models
 
       # Code Editors
       jetbrains.clion

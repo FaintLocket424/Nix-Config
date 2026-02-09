@@ -1,12 +1,11 @@
 #!/usr/bin/env fish
 
-# Navigate to config directory
 set CONFIG_DIR "$HOME/programming/Production/nixos-config"
 cd $CONFIG_DIR || exit 1
 
 # Handle arguments
 set MODE "switch"
-set EXTRA_FLAGS ""
+set OFFLINE_FLAG ""
 set HOST (hostname)
 set OFFLINE 0
 
@@ -15,10 +14,10 @@ for arg in $argv
         case -c --check
             echo "Running in CHECK mode (dry-build)..."
             set MODE "dry-build"
-            set EXTRA_FLAGS "--offline"
+            set OFFLINE_FLAG "--offline"
         case -o --offline
             echo "Running in OFFLINE mode"
-            set EXTRA_FLAGS "--offline"
+            set OFFLINE_FLAG "--offline"
             set OFFLINE 1
         case "*"
             echo "Unknown argument: $arg"
@@ -47,7 +46,7 @@ else
     echo "No changes to commit."
 end
 
-set REBUILD_CMD "sudo nixos-rebuild $MODE --flake .#$HOST $EXTRA_FLAGS"
+set REBUILD_CMD "sudo nixos-rebuild $MODE --flake .#$HOST $OFFLINE_FLAG"
 
 echo --------------------------------------------------
 echo "COMMAND: $REBUILD_CMD"

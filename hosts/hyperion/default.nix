@@ -24,6 +24,7 @@
     kernelParams = [
       "workqueue.power_efficient=true"
       "i915.force_probe=a7a1"
+      "hp_wmi.rfkill=0"
     ];
   };
 

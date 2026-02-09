@@ -32,7 +32,9 @@
       go # Compiler for Go
       androidenv.androidPkgs.platform-tools # android sdk tools
       ollama # Local LLM runtime
-      lmstudio # Desktop UI for local LLM models
+      #      lmstudio # Desktop UI for local LLM models
+      filezilla # FTP file transfers
+      fish-lsp # Language Server for Fish scripts
 
       # Code Editors
       jetbrains.clion

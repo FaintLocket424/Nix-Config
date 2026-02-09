@@ -46,7 +46,7 @@ else
     echo "No changes to commit."
 end
 
-set REBUILD_CMD "sudo nixos-rebuild $MODE --flake .#$HOST $OFFLINE_FLAG"
+set REBUILD_CMD "sudo nixos-rebuild $MODE --flake path:.#$HOST $OFFLINE_FLAG"
 
 echo --------------------------------------------------
 echo "COMMAND: $REBUILD_CMD"

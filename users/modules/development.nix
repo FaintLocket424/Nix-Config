@@ -93,6 +93,9 @@
     programs.git = {
       enable = true;
       settings = {
+        safe = {
+          directory = "/home/matthew/programming/Production/nixos-config";
+        };
         init.defaultBranch = "main";
         core.autocrlf = "input";
 

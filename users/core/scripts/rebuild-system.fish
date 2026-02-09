@@ -16,6 +16,9 @@ for arg in $argv
             # --offline: prevents downloading new binaries
             set MODE dry-build
             set EXTRA_FLAGS --offline
+        case -o --offline
+            echo "Running in OFFLINE mode"
+            set EXTRA_FLAGS --offline
         case "*"
             echo "Unknown argument: $arg"
             exit 1
@@ -40,5 +43,11 @@ else
     echo "No changes to commit."
 end
 
-echo "Executing: nixos-rebuild $MODE --flake .#(hostname) $EXTRA_FLAGS"
-sudo nixos-rebuild $MODE --flake .#(hostname) $EXTRA_FLAGS
+set REBUILD_CMD "sudo nixos-rebuild $MODE --flake .#$HOST $EXTRA_FLAGS"
+
+echo --------------------------------------------------
+echo "COMMAND: $REBUILD_CMD"
+echo --------------------------------------------------
+
+# Execute the command
+eval $REBUILD_CMD

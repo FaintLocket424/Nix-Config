@@ -31,7 +31,6 @@
       dotnet-runtime_9 # C# Compiler related
       go # Compiler for Go
       androidenv.androidPkgs.platform-tools # android sdk tools
-      ollama # Local LLM runtime
       lmstudio # Desktop UI for local LLM models
       filezilla # FTP file transfers
       fish-lsp # Language Server for Fish scripts
@@ -83,6 +82,12 @@
     };
 
     services.ssh-agent.enable = true;
+
+    services.ollama = {
+      enable = true;
+      package = pkgs.ollama-vulkan;
+#      loadModels = [ "llama3.2:3b" "deepseek-r1:1.5b"];
+    };
 
     programs.direnv = {
       enable = true;

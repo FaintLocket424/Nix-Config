@@ -36,7 +36,10 @@
       fish-lsp # Language Server for Fish scripts
 
       # Code Editors
-      jetbrains.clion
+      (jetbrains.clion.overrideAttrs (old: {
+        postInstall = (old.postInstall or "") + ''
+        '';
+      }))
       jetbrains.goland
       jetbrains.idea
       jetbrains.pycharm

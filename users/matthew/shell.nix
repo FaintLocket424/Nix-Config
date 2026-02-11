@@ -12,6 +12,7 @@
     nh
     pciutils
     p7zip
+    ncdu
   ];
 
   programs = {

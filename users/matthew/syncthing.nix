@@ -23,7 +23,13 @@ in
 {
   services.syncthing = {
     enable = true;
+    overrideDevices = true;
+    overrideFolders = true;
     settings = {
+      openDefaultPorts = true;
+      options.localAnnounceEnabled = true;
+      options.urAccepted = -1;
+
       # Include all devices EXCEPT the current host
       devices = builtins.removeAttrs devices [ hostname ];
 
@@ -59,16 +65,6 @@ in
             "hyperion"
           ];
         };
-
-        #        "modrinth-instances" = {
-        #          id = "modrinth-instances";
-        #          label = "Modrinth Instances";
-        #          path = "~/Games/Standalone Games/Minecraft/ModrinthApp/profiles";
-        #          devices = others [
-        #            "falcon"
-        #            "hyperion"
-        #          ];
-        #        };
       };
     };
   };

@@ -33,7 +33,7 @@
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 20;
+      systemd-boot.configurationLimit = 10;
     };
     initrd.systemd.enable = true;
   };

@@ -12,9 +12,12 @@
     ./stylix.nix
     ./shell.nix
     ./syncthing.nix
+    ./gnome.nix
+    ./hyprland.nix
   ];
 
   myHome = {
+    desktop.environment = "gnome";
     development.enable = true;
     gaming.enable = true;
   };
@@ -33,19 +36,6 @@
       scrcpy # Android screen mirroring
       #      zotero # Research reference manager
     ];
-  };
-
-  services = {
-    syncthing = {
-      enable = true;
-      settings = {
-        openDefaultPorts = true;
-        options.localAnnounceEnabled = true;
-        options.urAccepted = -1;
-      };
-      overrideDevices = true;
-      overrideFolders = true;
-    };
   };
 
   programs = {

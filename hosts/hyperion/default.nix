@@ -13,6 +13,7 @@
 
   myFeatures = {
     desktop.gnome.enable = true;
+    desktop.hyprland.enable = true;
     gaming.enable = true;
     connectivity.enable = true;
     allUsers.enable = true;

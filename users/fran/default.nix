@@ -14,7 +14,7 @@
   ];
 
   myHome = {
-    gaming.enable = true;
+    desktop.environment = "gnome";
   };
 
   home = {

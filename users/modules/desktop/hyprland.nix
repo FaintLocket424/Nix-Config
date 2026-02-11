@@ -1,28 +1,21 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, config, pkgs, ... }:
 
 {
-  options.myHome.desktop.hyprland.enable = lib.mkEnableOption "Hyprland User Config";
+  config = lib.mkIf (config.myHome.desktop.environment == "hyprland") {
+    wayland.windowManager.hyprland.enable = true;
 
-  config = lib.mkIf config.myHome.desktop.hyprland.enable {
-    wayland.windowManager.hyprland = {
-      enable = true;
-      settings = {
-        "$mod" = "SUPER";
-        bind = [
-          "$mod, Return, exec, kitty"
-        ];
-      };
+    # Shared Hyprland environment variables
+    home.sessionVariables = {
+      QT_QPA_PLATFORM = "wayland";
+      SDL_VIDEODRIVER = "wayland";
+      XDG_CURRENT_DESKTOP = "Hyprland";
     };
 
     home.packages = with pkgs; [
       waybar
       rofi-wayland
-      dunst
+      swww # Wallpaper daemon
+      grimblast # Screenshots
     ];
   };
 }

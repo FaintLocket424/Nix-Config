@@ -1,22 +1,20 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ lib, config, pkgs, ... }:
 
 {
-  options.myHome.desktop.gnome.enable = lib.mkEnableOption "GNOME User Config";
-
-  config = lib.mkIf config.myHome.desktop.gnome.enable {
-
-    # 1. GNOME Browser Connector (User side)
+  config = lib.mkIf (config.myHome.desktop.environment == "gnome") {
     programs.chromium.nativeMessagingHosts = [
       pkgs.gnome-browser-connector
     ];
 
-    # 2. Dconf Settings (Kitty as default, shortcuts)
     dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        enable-hot-corners = false;
+      };
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = "appmenu:minimize,maximize,close";
+      };
+
       "org/gnome/desktop/default-applications/terminal" = {
         exec = "kitty";
         exec-arg = "";
@@ -43,10 +41,11 @@
       };
     };
 
-    # 3. Required packages for extensions
     home.packages = with pkgs; [
       nautilus-open-any-terminal
       gnome-tweaks
+      gnomeExtensions.appindicator
+      gnomeExtensions.blur-my-shell
     ];
   };
 }

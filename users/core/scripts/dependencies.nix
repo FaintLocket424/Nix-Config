@@ -12,9 +12,9 @@
   ];
 
   "durham-vpn" = [
-      pkgs.openconnect
-      pkgs.vpnc-scripts
-    ];
+    pkgs.openconnect
+    pkgs.vpnc-scripts
+  ];
 
   # You can also define a default set of dependencies for scripts not listed here
   "default" = [

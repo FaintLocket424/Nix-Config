@@ -62,15 +62,6 @@
 
   programs = {
     home-manager.enable = true;
-
-    kitty = {
-      enable = true;
-      settings = {
-        font_features = "JetBrainsMono Nerd Font Mono +calt";
-        window_padding_width = 0;
-        "modify_font cell_height" = "120%";
-      };
-    };
   };
 
   # Nicely reload system units when changing configs

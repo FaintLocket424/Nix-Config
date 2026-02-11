@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    bat       # A better 'cat' with syntax highlighting
-    eza       # A faster, modern 'ls' replacement
-    fd        # A faster 'find'
-    ripgrep   # A faster 'grep'
+    bat # A better 'cat' with syntax highlighting
+    eza # A faster, modern 'ls' replacement
+    fd # A faster 'find'
+    ripgrep # A faster 'grep'
     pfetch-rs
     fastfetch
     playerctl
@@ -23,6 +23,7 @@
       };
 
       settings = {
+        font_features = "JetBrainsMono Nerd Font Mono +calt";
         input_delay = 0;
         repaint_delay = 10;
         sync_to_monitor = "yes";
@@ -30,6 +31,7 @@
         window_padding_width = 4;
         enable_audio_bell = "no";
         confirm_os_window_close = 0;
+        "modify_font cell_height" = "120%";
       };
 
       shellIntegration.enableFishIntegration = true;
@@ -39,7 +41,7 @@
       enable = true;
 
       shellAliases = {
-#        edit = "$EDITOR";
+        #        edit = "$EDITOR";
         ls = "eza --icons --group-directories-first";
         cat = "bat";
         ll = "eza -l --icons --git -a";

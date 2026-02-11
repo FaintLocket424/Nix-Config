@@ -30,8 +30,8 @@
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
       parsec-bin # Remote Desktop
-      gnome-calculator # Calculator
-      #      flatpak
+      qalc # Calculator
+      btop # Process Monitor
 
       # QT Fixes/packages
       kdePackages.qtwayland

@@ -27,7 +27,6 @@
         input_delay = 0;
         repaint_delay = 10;
         sync_to_monitor = "yes";
-        hide_window_decorations = "yes";
         window_padding_width = 4;
         enable_audio_bell = "no";
         confirm_os_window_close = 0;

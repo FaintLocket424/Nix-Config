@@ -6,6 +6,8 @@
 }:
 
 {
+  options.myHome.desktop.common.enable = lib.mkEnableOption "Desktop User Config";
+
   # Only enable this if the SYSTEM has common desktop features enabled
   config = lib.mkIf config.myHome.desktop.common.enable {
 

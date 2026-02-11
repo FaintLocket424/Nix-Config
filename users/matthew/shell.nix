@@ -17,10 +17,10 @@
   programs = {
     kitty = {
       enable = true;
-#      font = {
-#        #        name = "JetBrainsMono Nerd Font";
-#        size = 12;
-#      };
+      #      font = {
+      #        #        name = "JetBrainsMono Nerd Font";
+      #        size = 12;
+      #      };
 
       settings = {
         font_features = "JetBrainsMono Nerd Font Mono +calt";

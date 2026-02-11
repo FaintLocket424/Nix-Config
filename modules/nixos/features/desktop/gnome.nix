@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.myFeatures.desktop.gnome.enable = lib.mkEnableOption "GNOME Desktop Environment";
@@ -68,8 +73,14 @@
         xdg-desktop-portal-gtk
       ];
       config = {
-        common.default = [ "gnome" "gtk" ];
-        gnome.default = [ "gnome" "gtk" ];
+        common.default = [
+          "gnome"
+          "gtk"
+        ];
+        gnome.default = [
+          "gnome"
+          "gtk"
+        ];
       };
     };
   };

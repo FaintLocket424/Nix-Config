@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.myFeatures.desktop.common.enable = lib.mkEnableOption "Common Desktop Infrastructure";

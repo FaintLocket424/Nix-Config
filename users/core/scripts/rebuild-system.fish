@@ -7,7 +7,7 @@ cd $CONFIG_DIR || exit 1
 set MODE switch
 set OFFLINE_FLAG ""
 set HOST (hostname)
-set OFFLINE 0
+set SKIP_GIT 0
 
 for arg in $argv
     switch $arg
@@ -15,10 +15,11 @@ for arg in $argv
             echo "Running in CHECK mode (dry-build)..."
             set MODE dry-build
             set OFFLINE_FLAG --offline
+            set SKIP_GIT 1
         case -o --offline
             echo "Running in OFFLINE mode"
             set OFFLINE_FLAG --offline
-            set OFFLINE 1
+            set SKIP_GIT 1
         case "*"
             echo "Unknown argument: $arg"
             exit 1
@@ -34,7 +35,7 @@ if not git diff --cached --quiet
     echo "Changes detected, committing..."
     git commit -m "Automatic commit from update script"
 
-    if test $OFFLINE -eq 1
+    if test $SKIP_GIT -eq 1
         echo "Offline mode, skipping git pull & push"
     else
         echo "Syncing with remote..."

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.myHome.desktop.hyprland.enable = lib.mkEnableOption "Hyprland User Config";

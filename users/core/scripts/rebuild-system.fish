@@ -38,7 +38,7 @@ if not git diff --cached --quiet
         echo "Offline mode, skipping git pull & push"
     else
         echo "Syncing with remote..."
-        git pull --rebase; or echo "Warning: git pull failed"
+        git pull; or echo "Warning: git pull failed"
         git push; or echo "Warning: git push failed"
     end
 

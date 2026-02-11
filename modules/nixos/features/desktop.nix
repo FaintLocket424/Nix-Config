@@ -36,28 +36,45 @@
     };
 
     environment.gnome.excludePackages = with pkgs; [
-      epiphany
-      evince
-      geary
-      gedit
-      gnome-music
-      gnome-photos
       gnome-tour
-      gnome-font-viewer
+      gnome-connections
+
+      epiphany
+      geary
+      gnome-contacts
       gnome-maps
       gnome-weather
-      gnome-characters
-      gnome-calendar
-      gnome-notes
-      gnome-contacts
-      gnome-text-editor
-      simple-scan
+
       totem
+      gnome-music
+      gnome-photos
+      loupe
+      snapshot
+
+      gnome-calculator
+      gnome-calendar
+      gnome-clocks
+      simple-scan
+
+      gnome-system-monitor
+      gnome-disk-utility
+      baebab
+      gnome-logs
+      gnome-font-viewer
+      gnome-characters
       yelp
+
+      gnome-software
+
+      gnome-temrinal
+      gnome-console
+
+      evince
+      gedit
+      gnome-notes
+      gnome-text-editor
       cheese
       papers
-      gnome-terminal
-      gnome-console
     ];
 
     programs.nautilus-open-any-terminal.enable = true;

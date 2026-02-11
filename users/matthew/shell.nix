@@ -17,10 +17,10 @@
   programs = {
     kitty = {
       enable = true;
-      font = {
-#        name = "JetBrainsMono Nerd Font";
-        size = 12;
-      };
+#      font = {
+#        #        name = "JetBrainsMono Nerd Font";
+#        size = 12;
+#      };
 
       settings = {
         font_features = "JetBrainsMono Nerd Font Mono +calt";
@@ -58,10 +58,6 @@
         {
           name = "tide";
           src = pkgs.fishPlugins.tide.src;
-        }
-        {
-          name = "fish-syntax-highlighting";
-          src = pkgs.fishPlugins.fish-synctax-highlighting.src;
         }
         {
           name = "done";

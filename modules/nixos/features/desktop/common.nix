@@ -16,6 +16,8 @@
       excludePackages = [ pkgs.xterm ];
     };
 
+    services.displayManager.gdm.enable = true;
+
     # 2. Hardware / System Utilities
     services.udisks2.enable = true;
     services.automatic-timezoned.enable = true;

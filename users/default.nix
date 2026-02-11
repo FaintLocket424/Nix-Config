@@ -52,6 +52,7 @@
         ./modules/gaming.nix
         ./modules/desktop/common.nix
         ./modules/desktop/gnome.nix
+        ./modules/desktop/hyprland.nix
       ];
 
       users = {

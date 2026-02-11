@@ -62,6 +62,7 @@
             ./modules/nixos/core
             ./modules/nixos/features/desktop/common.nix
             ./modules/nixos/features/desktop/gnome.nix
+            ./modules/nixos/features/desktop/hyprland.nix
             ./modules/nixos/features/connectivity.nix
             ./modules/nixos/features/gaming.nix
             ./users

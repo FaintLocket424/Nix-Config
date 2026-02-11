@@ -1,12 +1,14 @@
 {
   pkgs,
   lib,
-  osConfig,
+  config,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.myFeatures.desktop.gnome.enable {
+  options.myHome.desktop.gnome.enable = lib.mkEnableOption "GNOME User Config";
+
+  config = lib.mkIf config.myHome.desktop.gnome.enable {
 
     # 1. GNOME Browser Connector (User side)
     programs.chromium.nativeMessagingHosts = [
@@ -44,6 +46,7 @@
     # 3. Required packages for extensions
     home.packages = with pkgs; [
       nautilus-open-any-terminal
+      gnome-tweaks
     ];
   };
 }

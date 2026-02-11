@@ -13,10 +13,7 @@
     myFeatures.desktop.common.enable = true;
 
     # 2. Display Manager & Desktop Manager
-    services.xserver = {
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-    };
+    services.desktopManager.gnome.enable = true;
 
     services.gnome.gnome-browser-connector.enable = true;
 

@@ -34,7 +34,7 @@ if not git diff --cached --quiet
     echo "Changes detected, committing..."
     git commit -m "Automatic commit from update script"
 
-    if test $OFFLINE -eq 0
+    if test $OFFLINE -eq 1
       echo "Offline mode, skipping git pull & push"
     else
       echo "Syncing with remote..."

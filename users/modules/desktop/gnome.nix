@@ -18,10 +18,6 @@
         accent-color = "black";
       };
 
-      "org/gnome/desktop/input-sources" = {
-        xkb-options = [ "ctrl:nocaps" ];
-      };
-
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,maximize,close";
       };

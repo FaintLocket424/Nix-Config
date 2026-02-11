@@ -39,7 +39,7 @@
     LIBVA_DRIVER_NAME = "iHD";
   };
 
-  services.udev.hwdb.extraConfig = ''
+  services.udev.extraHwdb = ''
     # Disable airplane mode trigger on HP x360 tilt/lid
     evdev:name:Intel HID events:*
      KEYBOARD_KEY_08=unknown

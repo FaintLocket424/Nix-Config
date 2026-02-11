@@ -37,6 +37,7 @@
       #      zotero # Research reference manager
       openconnect
       vpn-slice
+      vpnc-scripts
     ];
   };
 

@@ -35,7 +35,8 @@
       obsidian # FOSS for Markdown Note-taking
       scrcpy # Android screen mirroring
       #      zotero # Research reference manager
-      gof5
+      openconnect
+      vpn-slice
     ];
   };
 

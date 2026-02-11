@@ -18,7 +18,7 @@
       gnome = {
         gnome-browser-connector.enable = true;
         core-apps.enable = false;
-        core-developer-tools = false;
+        core-developer-tools.enable = false;
         games.enable = false;
       };
     };

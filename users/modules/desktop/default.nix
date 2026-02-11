@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.myHome.desktop;
@@ -11,7 +16,11 @@ in
 
   options.myHome.desktop = {
     environment = lib.mkOption {
-      type = lib.types.enum [ "gnome" "hyprland" "none" ];
+      type = lib.types.enum [
+        "gnome"
+        "hyprland"
+        "none"
+      ];
       default = "none";
       description = "The desktop environment to enable for this user.";
     };

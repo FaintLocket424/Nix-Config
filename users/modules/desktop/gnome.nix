@@ -1,7 +1,21 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   config = lib.mkIf (config.myHome.desktop.environment == "gnome") {
+    services.gnome.core-apps.enable = false;
+    services.gnome.core-developer-tools = false;
+    services.gnome.games.enable = false;
+
+    environment.gnome.excludePackages = with pkgs; [
+      gnome-tour
+      gnome-user-docs
+    ];
+
     programs.chromium.nativeMessagingHosts = [
       pkgs.gnome-browser-connector
     ];
@@ -10,7 +24,13 @@
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         enable-hot-corners = false;
+        accent-color = "black";
       };
+
+      "org/gnome/desktop/input-sources" = {
+        xkb-options = [ "ctrl:nocaps" ];
+      };
+
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,maximize,close";
       };
@@ -44,6 +64,9 @@
     home.packages = with pkgs; [
       nautilus-open-any-terminal
       gnome-tweaks
+      refine
+      gnomeExtensions.just-perfection
+      gnomeExtensions.arc-menu
       gnomeExtensions.appindicator
       gnomeExtensions.blur-my-shell
     ];

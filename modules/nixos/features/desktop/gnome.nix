@@ -30,7 +30,7 @@
 
     environment.systemPackages = with pkgs; [
       gnome-tweaks
-      nautilous
+      nautilus
     ];
 
     programs.nautilus-open-any-terminal.enable = true;

@@ -7,15 +7,6 @@
 
 {
   config = lib.mkIf (config.myHome.desktop.environment == "gnome") {
-    services.gnome.core-apps.enable = false;
-    services.gnome.core-developer-tools = false;
-    services.gnome.games.enable = false;
-
-    environment.gnome.excludePackages = with pkgs; [
-      gnome-tour
-      gnome-user-docs
-    ];
-
     programs.chromium.nativeMessagingHosts = [
       pkgs.gnome-browser-connector
     ];

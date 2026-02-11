@@ -12,48 +12,22 @@
     # 1. Enable Common Desktop features automatically
     myFeatures.desktop.common.enable = true;
 
-    # 2. Display Manager & Desktop Manager
-    services.desktopManager.gnome.enable = true;
+    services = {
+      desktopManager.gnome.enable = true;
 
-    services.gnome.gnome-browser-connector.enable = true;
+      gnome = {
+        gnome-browser-connector.enable = true;
+        core-apps.enable = false;
+        core-developer-tools = false;
+        games.enable = false;
+      };
+    };
 
-    # 3. Cleanup / Debloat
     environment.gnome.excludePackages = with pkgs; [
       gnome-tour
-      gnome-connections
-      epiphany
-      geary
-      gnome-contacts
-      gnome-maps
-      gnome-weather
-      totem
-      gnome-music
-      gnome-photos
-      loupe
-      snapshot
-      gnome-calculator
-      gnome-calendar
-      gnome-clocks
-      simple-scan
-      gnome-system-monitor
-      gnome-disk-utility
-      baobab
-      gnome-logs
-      gnome-font-viewer
-      gnome-characters
-      yelp
-      gnome-software
-      gnome-terminal
-      gnome-console
-      evince
-      gedit
-      gnome-notes
-      gnome-text-editor
-      cheese
-      papers
+      gnome-user-docs
     ];
 
-    # 4. GNOME Specific Packages & Tweaks
     environment.systemPackages = with pkgs; [
       gnome-tweaks
     ];

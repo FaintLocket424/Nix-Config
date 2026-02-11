@@ -50,7 +50,8 @@
         ./core
         ./modules/development.nix
         ./modules/gaming.nix
-        ./modules/desktop.nix
+        ./modules/desktop/common.nix
+        ./modules/desktop/gnome.nix
       ];
 
       users = {

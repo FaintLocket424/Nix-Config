@@ -12,7 +12,7 @@
   ];
 
   myFeatures = {
-    desktop.enable = true;
+    desktop.gnome.enable = true;
     gaming.enable = true;
     connectivity.enable = true;
     allUsers.enable = true;

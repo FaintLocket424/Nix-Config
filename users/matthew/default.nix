@@ -17,7 +17,6 @@
   myHome = {
     development.enable = true;
     gaming.enable = true;
-    desktop.enable = true;
   };
 
   home = {

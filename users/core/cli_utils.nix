@@ -38,15 +38,7 @@ in
   home.packages =
     with pkgs;
     [
-      playerctl
-      fastfetch
-      wl-clipboard
-      nh
-      bat
-      eza
-      pfetch-rs
-      pciutils
-      p7zip
+
     ]
     ++ scriptPackages;
 }

@@ -1,14 +1,71 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    bat       # A better 'cat' with syntax highlighting
+    eza       # A faster, modern 'ls' replacement
+    fd        # A faster 'find'
+    ripgrep   # A faster 'grep'
+    pfetch-rs
+    fastfetch
+    playerctl
+    wl-clipboard
+    nh
+    pciutils
+    p7zip
+  ];
+
   programs = {
+    kitty = {
+      enable = true;
+      font = {
+        name = "JetBrainsMono Nerd Font";
+        size = 12;
+      };
+
+      settings = {
+        input_delay = 0;
+        repaint_delay = 10;
+        sync_to_monitor = "yes";
+        hide_window_decorations = "yes";
+        window_padding_width = 4;
+        enable_audio_bell = "no";
+        confirm_os_window_close = 0;
+      };
+
+      shellIntegration.enableFishIntegration = true;
+    };
+
     fish = {
       enable = true;
-      interactiveShellInit = "fastfetch; set fish_greeting";
+
       shellAliases = {
-        edit = "$EDITOR";
+#        edit = "$EDITOR";
         ls = "eza --icons --group-directories-first";
         cat = "bat";
+        ll = "eza -l --icons --git -a";
+        find = "fd";
+        grep = "rg";
       };
+
+      interactiveShellInit = ''
+        pfetch
+        set fish_greeting
+      '';
+
+      plugins = [
+        {
+          name = "tide";
+          src = pkgs.fishPlugins.tide.src;
+        }
+        {
+          name = "fish-syntax-highlighting";
+          src = pkgs.fishPlugins.fish-synctax-highlighting.src;
+        }
+        {
+          name = "done";
+          src = pkgs.fishPlugins.done.src;
+        }
+      ];
     };
 
     zoxide = {
@@ -19,7 +76,12 @@
 
     starship = {
       enable = true;
+      enableFishIntegration = true;
+
       settings = {
+        add_newline = false;
+        command_timeout = 10;
+
         format = "[](green)$username[](bg:cyan fg:green)$directory[](fg:cyan bg:blue)$git_branch$git_status[](fg:blue bg:bright-black)$time[ ](fg:bright-black)$line_break$character";
 
         username = {
@@ -54,6 +116,12 @@
           format = "[[  $time ](fg:white bg:bright-black)]($style)";
         };
       };
+    };
+
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+      defaultCommand = "fd --type f";
     };
   };
 }

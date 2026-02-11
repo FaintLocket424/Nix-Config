@@ -56,7 +56,11 @@
       yelp
       cheese
       papers
+      gnome-terminal
+      gnome-console
     ];
+
+    programs.nautilus-open-any-terminal.enable = true;
 
     xdg.terminal-exec = {
       enable = true;
@@ -86,8 +90,6 @@
 
     environment.systemPackages = with pkgs; [
       gnome-tweaks
-      #      gnomeExtensions.user-themes
-      #      gnomeExtensions.lockscreen-extension
     ];
 
     fonts.packages = with pkgs; [

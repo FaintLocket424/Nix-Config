@@ -86,7 +86,9 @@
     services.ollama = {
       enable = true;
       package = pkgs.ollama-vulkan;
-      #      loadModels = [ "llama3.2:3b" "deepseek-r1:1.5b"];
+      environmentVariables = {
+        GGML_VK_DISABLE_INTEGER_DOT_PRODUCT = "1";
+      };
     };
 
     programs.direnv = {

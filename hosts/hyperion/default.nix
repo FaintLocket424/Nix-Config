@@ -29,9 +29,11 @@
   };
 
   hardware.graphics.extraPackages = with pkgs; [
-    intel-media-driver
-    vpl-gpu-rt
-    libvdpau-va-gl
+    intel-media-driver # QuickSync
+    intel-compute-runtime # OpenCL/LevelZero (Highly recommended)
+    vpl-gpu-rt # Video processing
+    vulkan-loader
+    vulkan-intel # Ensure Intel Vulkan driver is explicitly present
   ];
 
   hardware.brillo.enable = true;

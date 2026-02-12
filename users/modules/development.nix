@@ -86,9 +86,9 @@
     services.ollama = {
       enable = true;
       package = pkgs.ollama-vulkan;
-      environmentVariables = {
-        GGML_VK_DISABLE_INTEGER_DOT_PRODUCT = "1";
-      };
+#      environmentVariables = {
+#        GGML_VK_DISABLE_INTEGER_DOT_PRODUCT = "1";
+#      };
     };
 
     programs.direnv = {

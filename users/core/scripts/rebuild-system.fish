@@ -49,9 +49,5 @@ end
 
 set REBUILD_CMD "sudo nixos-rebuild $MODE --flake path:.#$HOST $OFFLINE_FLAG"
 
-echo --------------------------------------------------
-echo "COMMAND: $REBUILD_CMD"
-echo --------------------------------------------------
-
 # Execute the command
 eval $REBUILD_CMD

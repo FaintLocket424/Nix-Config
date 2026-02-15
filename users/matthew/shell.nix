@@ -78,7 +78,7 @@
 
       settings = {
         add_newline = false;
-        command_timeout = 10;
+        command_timeout = 20;
 
         format = "[](green)$username[](bg:cyan fg:green)$directory[](fg:cyan bg:blue)$git_branch$git_status[](fg:blue bg:bright-black)$time[ ](fg:bright-black)$line_break$character";
 

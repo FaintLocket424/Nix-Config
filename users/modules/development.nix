@@ -49,6 +49,11 @@
       enable = true;
       enableDefaultConfig = false;
 
+      extraConfig = ''
+        Host *
+            WarnWeakCrypto no
+      '';
+
       matchBlocks = {
         "*" = {
           addKeysToAgent = "yes";

@@ -44,6 +44,7 @@
       jetbrains.rider
       jetbrains.webstorm
       vscode
+      eclipses.eclipse-java
     ];
 
     programs.ssh = {

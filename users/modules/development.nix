@@ -13,6 +13,9 @@
       arduino-ide # IDE for working with Arduino hardware
       unityhub # Manager for Unity game engine
       paraview # 3D Data Analysis
+      lmstudio # Desktop UI for local LLM models
+      filezilla # FTP file transfers
+      httrack # Website copier
 
       # Runtimes and Compilers
       jdk25 # Dev Kit and runtime for Java 25
@@ -31,8 +34,6 @@
       dotnet-runtime_9 # C# Compiler related
       go # Compiler for Go
       androidenv.androidPkgs.platform-tools # android sdk tools
-      lmstudio # Desktop UI for local LLM models
-      filezilla # FTP file transfers
       fish-lsp # Language Server for Fish scripts
 
       # Code Editors

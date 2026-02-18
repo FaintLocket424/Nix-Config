@@ -36,11 +36,6 @@
       systemd-boot.configurationLimit = 10;
     };
     initrd.systemd.enable = true;
-    kernel.sysctl = {
-"net.ipv4.conf.all.rp_filter" = 2;
-  "net.ipv4.conf.default.rp_filter" = 2;
-  "net.ipv4.conf.wlo1.rp_filter" = 2;
-    };
   };
 
   # LOCALE (The "Matthew" Standard)
@@ -74,13 +69,6 @@
   # NETWORKING BASE
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
-  networking.firewall.checkReversePath = "loose";
-  networking.firewall.allowedUDPPortRanges = [
-    {
-      from = 50000;
-      to = 65535;
-    }
-  ];
 
   # SHELL & TOOLS
   programs.fish.enable = true;

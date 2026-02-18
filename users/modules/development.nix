@@ -35,6 +35,7 @@
       go # Compiler for Go
       androidenv.androidPkgs.platform-tools # android sdk tools
       fish-lsp # Language Server for Fish scripts
+      bear # Compilation Database?
 
       # Code Editors
       jetbrains.clion

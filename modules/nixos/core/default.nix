@@ -70,6 +70,7 @@
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
   networking.firewall.checkReversePath = "loose";
+  networking.firewall.allowedUDPPortRanges = [{from = 50000; to = 65535;}];
 
   # SHELL & TOOLS
   programs.fish.enable = true;

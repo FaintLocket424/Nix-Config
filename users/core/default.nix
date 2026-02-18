@@ -28,7 +28,6 @@
       celluloid # Media Player
       notepad-next # Text Editor
       vesktop # Lightweight linux discord client
-      discord
       geteduroam # Software for getting on eduroam
       parsec-bin # Remote Desktop
       qalculate-qt # Calculator

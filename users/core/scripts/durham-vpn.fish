@@ -7,4 +7,4 @@ echo "Step 1: Connecting to Durham VPN..."
 echo "Keep this terminal open to stay connected."
 echo "----------------------------------------"
 
-sudo openconnect --protocol=f5 access.durham.ac.uk --script $vpnc_path
+sudo openconnect --protocol=f5 access.durham.ac.uk --script $vpnc_path --no-dtls

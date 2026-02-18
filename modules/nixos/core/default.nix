@@ -69,6 +69,7 @@
   # NETWORKING BASE
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
+  networking.firewall.checkReversePath = "loose";
 
   # SHELL & TOOLS
   programs.fish.enable = true;

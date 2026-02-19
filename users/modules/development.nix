@@ -16,6 +16,7 @@
       lmstudio # Desktop UI for local LLM models
       filezilla # FTP file transfers
       httrack # Website copier
+      sshfs # SSH File System
 
       # Runtimes and Compilers
       jdk25 # Dev Kit and runtime for Java 25
@@ -35,7 +36,6 @@
       go # Compiler for Go
       androidenv.androidPkgs.platform-tools # android sdk tools
       fish-lsp # Language Server for Fish scripts
-      bear # Compilation Database?
 
       # Code Editors
       jetbrains.clion

@@ -86,6 +86,14 @@
             TERM = "xterm-256color";
           };
         };
+
+        "NCC" = {
+          hostname = "ncc1.clients.dur.ac.uk";
+          user = "qcsc66";
+          setEnv = {
+            TERM = "xterm-256color";
+          };
+        };
       };
     };
 

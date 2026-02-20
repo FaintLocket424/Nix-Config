@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.myHome.development.enable {
     home.packages = with pkgs; [
-      godot # FOSS game engine
+      godotPackages_4_6.godot # FOSS game engine
       arduino-ide # IDE for working with Arduino hardware
       unityhub # Manager for Unity game engine
       paraview # 3D Data Analysis

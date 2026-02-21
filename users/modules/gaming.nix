@@ -13,6 +13,7 @@
       protonup-ng # IDK - Something for steam proton.
       dolphin-emu # FOSS for running Wii and Gamecube games
       modrinth-app # Minecraft Launcher
+      prismlauncher # Minecraft Launcher
 
       #      mesa-demos
       #      vulkan-tools

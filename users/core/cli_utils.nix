@@ -38,7 +38,7 @@ in
   home.packages =
     with pkgs;
     [
-
+    steam-run
     ]
     ++ scriptPackages;
 }

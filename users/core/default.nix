@@ -29,7 +29,8 @@
       notepad-next # Text Editor
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
-      parsec-bin # Remote Desktop
+      parsec-bin # Parsec Remote Desktop
+      rustdesk # Rustdesk Remote Desktop
       qalculate-qt # Calculator
       btop # Process Monitor
 

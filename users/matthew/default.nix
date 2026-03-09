@@ -35,6 +35,7 @@
       obsidian # FOSS for Markdown Note-taking
       scrcpy # Android screen mirroring
       #      zotero # Research reference manager
+      mcaselector # Tool for filtering chunks in Minecraft worlds
     ];
   };
 

@@ -95,6 +95,11 @@
             TERM = "xterm-256color";
           };
         };
+
+        "Falcon" = {
+          hostname = "100.70.23.49";
+          user = "matthew";
+        };
       };
     };
 

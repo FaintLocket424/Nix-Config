@@ -30,7 +30,7 @@
       vesktop # Lightweight linux discord client
       geteduroam # Software for getting on eduroam
       parsec-bin # Parsec Remote Desktop
-      rustdesk # Rustdesk Remote Desktop
+      rustdesk-flutter # Rustdesk Remote Desktop
       qalculate-qt # Calculator
       btop # Process Monitor
 

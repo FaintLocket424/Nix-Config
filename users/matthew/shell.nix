@@ -13,16 +13,11 @@
     pciutils
     p7zip
     ncdu
-    wget
   ];
 
   programs = {
     kitty = {
       enable = true;
-      #      font = {
-      #        #        name = "JetBrainsMono Nerd Font";
-      #        size = 12;
-      #      };
 
       settings = {
         font_features = "JetBrainsMono Nerd Font Mono +calt";

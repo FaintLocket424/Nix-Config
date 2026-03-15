@@ -13,7 +13,7 @@
   # NIX SETTINGS (The Engine)
   nix = {
     settings = {
-      trusted-users = [ "matthew" ]; # Move 'root' here too if needed
+      trusted-users = [ "matthew" ];
       experimental-features = [
         "nix-command"
         "flakes"

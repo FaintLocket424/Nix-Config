@@ -121,8 +121,9 @@
     taskwarrior = {
       enable = true;
       package = pkgs.taskwarrior3;
+      dataLocation = "~/.local/share/task";
       config = {
-        data.location = "~/.local/share/task";
+
       };
     };
   };

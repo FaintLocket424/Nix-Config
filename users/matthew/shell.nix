@@ -122,6 +122,7 @@
     taskwarrior = {
       enable = true;
       package = pkgs.taskwarrior3;
+      colorTheme = "dark-violets-256";
       config = {
         # Sort tasks by project, then urgency
         report.next.sort = "project+,urgency-";

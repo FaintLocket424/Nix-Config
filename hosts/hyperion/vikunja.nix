@@ -19,7 +19,7 @@
       service = {
         # Leave this true initially so you can create your admin account.
         # You can change it to false later to prevent others from making accounts.
-        enableregistration = true;
+        enableregistration = false;
         timezone = "Europe/London";
       };
       # Default to SQLite for a lightweight, zero-maintenance laptop database

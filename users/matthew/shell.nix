@@ -122,7 +122,6 @@
     taskwarrior = {
       enable = true;
       package = pkgs.taskwarrior3;
-      dataLocation = "~/.local/share/task";
       config = {
         # Sort tasks by project, then urgency
         report.next.sort = "project+,urgency-";

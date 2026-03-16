@@ -13,6 +13,7 @@
     pciutils
     p7zip
     ncdu
+    tasksh # REPL for task warrior
   ];
 
   programs = {

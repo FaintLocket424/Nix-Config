@@ -9,6 +9,8 @@
   imports = [
     # nixos-generate-config --root .
     ./hardware-configuration.nix
+
+    ./vikunja.nix
   ];
 
   myFeatures = {

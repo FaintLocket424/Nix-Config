@@ -34,7 +34,7 @@
       obs-studio # FOSS for Screen Recording and Streaming
       obsidian # FOSS for Markdown Note-taking
       scrcpy # Android screen mirroring
-      taskwarrior # Terminal Project Manager
+      taskwarrior3 # Terminal Project Manager
       #      zotero # Research reference manager
       #mcaselector # Tool for filtering chunks in Minecraft worlds
     ];

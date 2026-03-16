@@ -117,5 +117,13 @@
       enableFishIntegration = true;
       defaultCommand = "fd --type f";
     };
+
+    taskwarrior = {
+      enable = true;
+      package = pkgs.taskwarrior3;
+      config = {
+        data.location = "~/.local/share/task";
+      };
+    };
   };
 }

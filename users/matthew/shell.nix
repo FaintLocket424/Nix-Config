@@ -124,7 +124,14 @@
       package = pkgs.taskwarrior3;
       dataLocation = "~/.local/share/task";
       config = {
+        # Sort tasks by project, then urgency
+        report.next.sort = "project+,urgency-";
 
+        # Hide blocked tasks (so you only see the next step)
+        report.next.filter = "(status:pending or status:waiting) and +next -blocked";
+
+        # Visual preference
+        uda.priority.values = "L,M,H";
       };
     };
   };

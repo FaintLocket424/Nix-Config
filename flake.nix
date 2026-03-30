@@ -32,12 +32,14 @@
 
       mkSystem = { hostname, system ? "x86_64-linux" }:
         nixpkgs.lib.nixosSystem {
-          inherit system;
           specialArgs = {
             inherit inputs hostname;
           };
 
           modules = [
+          {
+          nixpkgs.hostPlatform = system;
+          }
             {
               nixpkgs.config = {
                 allowUnfree = false;

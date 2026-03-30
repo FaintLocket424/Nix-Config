@@ -14,4 +14,7 @@
   "modrinth-app-unwrapped"
 
   "obsidian"
+
+  "nvidia-x11"
+  "nvidia-settings"
 ]

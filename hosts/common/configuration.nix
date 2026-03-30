@@ -19,7 +19,7 @@ in
     kernel.sysctl = {
       "net.ipv4.ip_unprivileged_port_start" = 443;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
     kernelParams = [
       "quiet"
       "splash"

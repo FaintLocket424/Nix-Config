@@ -5,6 +5,7 @@
     ./scripts.nix
     ./kde.nix
     ./hyprland.nix
+    ./firefox.nix
   ];
 
   home.sessionVariables = {

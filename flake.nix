@@ -37,9 +37,9 @@
           };
 
           modules = [
-          {
-          nixpkgs.hostPlatform = system;
-          }
+            {
+              nixpkgs.hostPlatform = system;
+            }
             {
               nixpkgs.config = {
                 allowUnfree = false;

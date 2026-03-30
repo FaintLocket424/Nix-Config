@@ -29,7 +29,7 @@ in
     ];
   };
 
-  # --- Hardware ---
+  # --- - ---
   hardware = {
     #    enableAllFirmware = true;
     enableRedistributableFirmware = true;
@@ -186,7 +186,7 @@ in
     enable = true;
 
     qemu = {
-      swtpm.enable = true;
+      runAsRoot = true;
       # ovmf.packages = [ pkgs.OVMFFull.fd ];
     };
   };

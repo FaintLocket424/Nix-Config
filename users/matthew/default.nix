@@ -1,66 +1,11 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  hostname,
-  pkgs-unstable,
-  ...
-}:
-{
-  imports = [
-    ./stylix.nix
-    ./shell.nix
-    ./syncthing.nix
-    ./gnome.nix
-    ./hyprland.nix
-  ];
+{ config, pkgs, ... }: {
+  users.users.matthew = {
+    isNormalUser = true;
+    description = "Matthew Peters";
+    extraGroups = [ "networkmanager" "wheel" "dialout" "video" "input" "audio" "render" "libvirtd" "kvm" ];
 
-  myHome = {
-    desktop.environment = "gnome";
-    development.enable = true;
-    gaming.enable = true;
+    hashedPassword = "$6$QFNCuGDTRlfYTgyI$94qSvsOwnDEDQsNFgMx/.wQLsoOk3JhUBp4oTqYagKyzXuBn2JJG.r/Hu0fg4QZJC6sHSps2U0Tj0ME7YWyhP0";
   };
 
-  home = {
-    username = "matthew";
-    homeDirectory = "/home/matthew";
-
-    packages = with pkgs; [
-      photoflare # Image Editor like Paint.NET
-      popsicle # ISO Writer
-      bambu-studio # 3D Printing Slicer for Bambu Labs Printers
-      freecad # FOSS 3D Modelling Software
-      obs-studio # FOSS for Screen Recording and Streaming
-      obsidian # FOSS for Markdown Note-taking
-      scrcpy # Android screen mirroring
-      vit # TUI for Task Warrior
-      #      zotero # Research reference manager
-      #mcaselector # Tool for filtering chunks in Minecraft worlds
-    ];
-  };
-
-  programs = {
-    git = {
-      enable = true;
-      settings.user = {
-        name = "FaintLocket424";
-        email = "github.grill135@passinbox.com";
-      };
-    };
-
-    fuzzel = {
-      enable = true;
-      settings = {
-        main = {
-          terminal = "${pkgs.kitty}/bin/kitty";
-          width = 60;
-          horizontal-pad = 8;
-          vertical-pad = 4;
-          icon-theme = "Papirus-Dark";
-        };
-        border.radius = 2;
-      };
-    };
-  };
+  home-manager.users.matthew = import ./home.nix;
 }

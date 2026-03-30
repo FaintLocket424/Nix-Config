@@ -1,101 +1,94 @@
 {
-  description = "A very basic flake";
+  description = "Matthew's NixOS Gaming Laptop Configuration";
 
   inputs = {
-    # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-
-    # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:nix-community/stylix/release-25.11";
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://home-manager.cachix.org"
-    ];
-
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "home-manager.cachix.org-1:wLVmpPs9J1Na6uhEkqcJcdSmPR61rd76jOnlps6zvM8="
-    ];
-  };
-
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nixpkgs-unstable,
-      home-manager,
-      stylix,
-      treefmt-nix,
-      ...
-    }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, treefmt-nix, ... }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      systems = [ "x86_64-linux" "aarch64-linux" ];
 
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      forAllSystems = nixpkgs.lib.genAttrs systems;
 
-      mkHost =
-        hostname: system:
+      allowedUnfree = import ./lib/unfree-list.nix;
+
+      mkSystem = { hostname, system ? "x86_64-linux" }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs hostname; };
+          specialArgs = {
+            inherit inputs hostname;
+          };
+
           modules = [
-            ./hosts/${hostname} # Host Specific
-
-            ./modules/nixos/core
-            ./modules/nixos/features/desktop/common.nix
-            ./modules/nixos/features/desktop/gnome.nix
-            ./modules/nixos/features/desktop/hyprland.nix
-            ./modules/nixos/features/connectivity.nix
-            ./modules/nixos/features/gaming.nix
-            ./users
-
-            stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
             {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs hostname pkgs-unstable; };
+              nixpkgs.config = {
+                allowUnfree = false;
+                allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) allowedUnfree;
               };
             }
+            ./hosts/common/configuration.nix
+            ./hosts/${hostname}/configuration.nix
+            ./users
 
+            home-manager.nixosModules.home-manager
             {
-              nixpkgs.config.allowUnfree = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.extraSpecialArgs = {
+                inherit inputs hostname;
+              };
+
+              home-manager.backupFileExtension = "backup";
+
+              home-manager.sharedModules = [
+                ./users/common
+                plasma-manager.homeModules.plasma-manager
+                {
+                  nixpkgs.config = {
+                    allowUnfree = false;
+                    allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) allowedUnfree;
+                  };
+                }
+              ];
             }
           ];
         };
-
-      treefmtConfig = treefmt-nix.lib.evalModule pkgs {
-        projectRootFile = "flake.nix";
-        programs.nixfmt.enable = true;
-      };
     in
     {
-      formatter.${system} = treefmtConfig.config.build.wrapper;
+      # Generate the formatter for each supported system
+      formatter = forAllSystems (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
 
-      # NixOS configuration entrypoints
-      # Available through 'nixos-rebuild --flake .#your-hostname'
+          treefmtEval = treefmt-nix.lib.evalModule pkgs {
+            projectRootFile = "flake.nix";
+            programs.nixpkgs-fmt.enable = true;
+          };
+        in
+        treefmtEval.config.build.wrapper
+      );
+
       nixosConfigurations = {
-        falcon = mkHost "falcon" "x86_64-linux";
-        hyperion = mkHost "hyperion" "x86_64-linux";
+        hyperion = mkSystem { hostname = "hyperion"; };
+        falcon = mkSystem { hostname = "falcon"; };
       };
     };
 }

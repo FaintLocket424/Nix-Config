@@ -10,7 +10,7 @@
     "vfio_virqfd"
   ];
 
-  boot.kernelParmas = [
+  boot.kernelParams = [
     "amd_pstate=active"
   ];
 

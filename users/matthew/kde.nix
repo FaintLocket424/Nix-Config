@@ -1,13 +1,13 @@
 { pkgs, lib, ... }: {
-#  home.activation.setWallpaperAllScreens = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-#    ${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${./wallpaper.jpg}
-#  '';
+  home.activation.setWallpaperAllScreens = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    ${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${./wallpaper.jpg}
+  '';
 
   # https://nix-community.github.io/plasma-manager/options.xhtml
   programs.plasma = {
-#    workspace = {
-#      wallpaper = "${./wallpaper.jpg}";
-#    };
+    workspace = {
+      wallpaper = "${./wallpaper.jpg}";
+    };
 
     kwin = {
       effects = {
@@ -25,6 +25,6 @@
       "services/org.kde.konsole.desktop"."_launch" = "Ctrl+Alt+T";
     };
 
- #   kscreenlocker.appearance.wallpaper = "${./wallpaper.jpg}";
+    kscreenlocker.appearance.wallpaper = "${./wallpaper.jpg}";
   };
 }

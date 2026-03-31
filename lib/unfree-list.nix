@@ -15,6 +15,6 @@
 
   "obsidian"
 
-  "nvidia-x11"
+  "nvidia-x11" # Nvidia Driver
   "nvidia-settings"
 ]

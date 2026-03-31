@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ ... }: {
   users.users.matthew = {
     isNormalUser = true;
     description = "Matthew Peters";

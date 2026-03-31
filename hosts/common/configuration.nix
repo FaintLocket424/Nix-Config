@@ -1,4 +1,4 @@
-{ pkgs, hostname, lib, inputs, ... }:
+{ config, pkgs, hostname, lib, inputs, ... }:
 let
   locale = "en_GB.UTF-8";
 
@@ -16,10 +16,10 @@ in
       timeout = 5;
     };
     initrd.systemd.enable = true;
-    kernel.sysctl = {
-      "net.ipv4.ip_unprivileged_port_start" = 443;
-    };
-    kernelPackages = pkgs.linuxPackages;
+    extraModulePackages = with config.boot.kernelPackages; [
+      hid-tmff2
+    ];
+    kernelPackages = pkgs.linuxPackages_6_18;
     kernelParams = [
       "quiet"
       "splash"
@@ -139,6 +139,7 @@ in
     udev.packages = with pkgs; [
       platformio-core.udev
       openocd
+      oversteer
     ];
   };
 
@@ -186,8 +187,9 @@ in
     enable = true;
 
     qemu = {
+      package = pkgs.qemu_kvm;
       runAsRoot = true;
-      # ovmf.packages = [ pkgs.OVMFFull.fd ];
+      vhostUserPackages = [ pkgs.virtiofsd ];
     };
   };
 
@@ -245,6 +247,8 @@ in
     custom-sddm-theme
     dnsmasq
     phodav
+    oversteer
+    ansible
   ];
 
   environment.etc."libinput/local-overrides.quirks".text = ''

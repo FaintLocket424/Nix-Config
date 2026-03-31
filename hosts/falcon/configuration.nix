@@ -3,22 +3,30 @@
     ./hardware-configuration.nix
   ];
 
-  boot.kernelModules = [
+  boot.initrd.kernelModules = [
     "vfio_pci"
     "vfio"
     "vfio_iommu_type1"
-    "vfio_virqfd"
   ];
 
-  boot.kernelParams = [
-    "amd_pstate=active"
-  ];
+  boot = {
+    kernelParams = [
+      "amd_pstate=active"
+      "amd_iommu=on"
+      "iommu=pt"
+
+      "vfio-pci.ids=10de:1b06,10de:10ef"
+    ];
+
+    blacklistedKernelModules = [
+      "noveau"
+    ];
+  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
-
     open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;

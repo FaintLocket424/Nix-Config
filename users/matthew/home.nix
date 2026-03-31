@@ -6,6 +6,7 @@
     ./kde.nix
     ./hyprland.nix
     ./firefox.nix
+    ./ansible.nix
   ];
 
   home.sessionVariables = {

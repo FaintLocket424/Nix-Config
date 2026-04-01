@@ -263,7 +263,6 @@ in
     dnsmasq
     phodav
     oversteer
-    ansible
     looking-glass-client
   ];
 

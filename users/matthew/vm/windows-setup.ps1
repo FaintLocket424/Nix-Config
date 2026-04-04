@@ -48,7 +48,7 @@ Expand-Archive -Path $debloatZip -DestinationPath $env:TEMP -Force
 # Parameters: -Silent, -RemoveApps, -DisableTelemetry, -DisableBing
 $debloatScriptPath = "$debloatDir\Win11Debloat.ps1"
 if (Test-Path $debloatScriptPath) {
-    & $debloatScriptPath -Silent -RemoveApps -DisableTelemetry -DisableBing -RemoveCommApps -RemoveW11Outlook -ForceRemoveEdge
+    & $debloatScriptPath -Silent -RemoveApps -DisableTelemetry -DisableBing -RemoveCommApps -RemoveW11Outlook -ForceRemoveEdge -EnableDarkMode -TaskbarAlignLeft -PreventUpdateAutoReboot -DisableStickyKeys -RevertContextMenu -DisableEdgeAI -DisablePaintAI -DisableNotepadAI
 }
 
 # Cleanup Debloat files

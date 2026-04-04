@@ -267,6 +267,10 @@ in
     spice-vdagent
   ];
 
+  networking.firewall.interfaces."virbr0".allowedUDPPorts = [ 4010 ];
+
+  services.spice-vdagentd.enable = true;
+
   environment.etc."libinput/local-overrides.quirks".text = ''
     [Logitech G502 Remove High Res Scrolling]
     MatchName=*

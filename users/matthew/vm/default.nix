@@ -27,6 +27,7 @@ in
 {
   home.packages = [
     rebuild-win11-vm
+    pkgs.scream
   ];
 
   # home.file."VM-Shared/windows-setup.ps1".source = ./windows-setup.ps1;
@@ -39,4 +40,17 @@ in
     cp ${./windows-setup.ps1} $HOME/VM-Shared/windows-setup.ps1
     chmod 755 $HOME/VM-Shared/windows-setup.ps1
   '';
+
+  systemd.user.services.scream-receiver = {
+    Unit = {
+      Description = "Scream audio receiver for windows vm";
+      After = [ "pipewire.service" "pulseaudio.service" ];
+    };
+    Install = { WantedBy = [ "default.target" ]; };
+    Service = {
+      ExecStart = "${pkgs.scream}/bin/scream -i virbr0";
+      Restart = "always";
+      RestartSec = 5;
+    };
+  };
 }

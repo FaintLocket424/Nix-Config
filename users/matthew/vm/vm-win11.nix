@@ -90,13 +90,11 @@
       <input type="keyboard" bus="ps2"/>
       <input type="keyboard" bus="virtio"/>
 
-      <graphics type="spice" autoport="yes">
-        <listen type="address"/>
+      <graphics type="spice" port="5900" autoport="no" listen="127.0.0.1">
+        <listen type="address" address="127.0.0.1"/>
         <image compression="off"/>
+        <clipboard copypaste="yes"/>
       </graphics>
-
-      <sound model="ich9"/>
-      <audio id="1" type="spice"/>
 
       <video>
         <model type="none"/>

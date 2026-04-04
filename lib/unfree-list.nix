@@ -10,8 +10,8 @@
   "xow_dongle-firmware" # Xbox Controller Firmware
   "canon-cups-ufr2" # Printer firmware
 
-  "modrinth-app" # Modrinth
-  "modrinth-app-unwrapped"
+  # "modrinth-app" # Modrinth
+  # "modrinth-app-unwrapped"
 
   "obsidian"
 

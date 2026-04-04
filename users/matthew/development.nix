@@ -126,6 +126,7 @@
         "fish"
         "nvim-nightfox"
         "git-firefly"
+        "powershell"
       ];
 
       userSettings = {

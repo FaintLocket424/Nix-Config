@@ -264,6 +264,7 @@ in
     phodav
     oversteer
     looking-glass-client
+    spice-vdagent
   ];
 
   environment.etc."libinput/local-overrides.quirks".text = ''

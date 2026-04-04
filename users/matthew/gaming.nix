@@ -9,7 +9,7 @@ in
   home.packages = with pkgs; [
     # Minecraft
     prismlauncher # Minecraft Launcher
-    modrinth-app # Modded Minecraft Launcher
+    # modrinth-app # Modded Minecraft Launcher
     mcaselector # Tool for filtering chunks in Minecraft worlds
     worldpainter # Minecraft world creator
 

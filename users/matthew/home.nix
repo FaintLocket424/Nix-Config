@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   imports = [
     ./gaming.nix
     ./development.nix
@@ -6,6 +6,7 @@
     ./kde.nix
     ./hyprland.nix
     ./firefox.nix
+    ./vm
   ];
 
   home.sessionVariables = {

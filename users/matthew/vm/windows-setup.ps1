@@ -1,47 +1,100 @@
-Write-Host "Starting Declarative Windows 11 Provisioning..." -ForegroundColor Green
-
-# 1. Ensure Winget is working
-$wingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
-if (-not $wingetPath) {
-    Write-Warning "Winget not found. Ensure the Windows Store is updated."
+# 1. Check for Administrative Privileges
+if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Error "This script must be run as Administrator."
     exit
 }
 
-# 2. Define packages
-$packages = @(
-    "Mozilla.Firefox"
-    "Git.Git"
-    "Valve.Steam"
-)
+Write-Host "Starting Declarative Windows 11 Provisioning..." -ForegroundColor Green
 
-# 3. Install packages (Winget is naturally idempotent, but we suppress errors if already installed)
-foreach ($pkg in $packages) {
-    Write-Host "Checking $pkg..."
-    # Winget skips installation if the package is already present
-    & $wingetPath install --id $pkg -e --accept-package-agreements --accept-source-agreements
+# Function to clear desktop shortcuts (Winget/Installers often ignore --no-shortcut)
+function Clear-DesktopShortcuts {
+    $paths = @(
+        [Environment]::GetFolderPath("CommonDesktopDirectory"),
+        [Environment]::GetFolderPath("Desktop")
+    )
+    foreach ($path in $paths) {
+        if (Test-Path $path) {
+            Get-ChildItem -Path $path -Filter "*.lnk" | Remove-Item -Force
+        }
+    }
 }
 
-# 4. Idempotent Looking Glass Setup
-Write-Host "Checking Looking Glass Host status..." -ForegroundColor Cyan
+# 2. Install Packages via Winget
+# Nvidia.Driver.Display will install the latest drivers for the 1080 Ti
+$packages = @(
+    "Mozilla.Firefox",
+    "Git.Git",
+    "Valve.Steam",
+    "TechPowerUp.NVCleanstall"
+    "AppWork.JDownloader"
+)
 
-# Check if the Looking Glass executable already exists
+foreach ($pkg in $packages) {
+    Write-Host "Installing $pkg..." -ForegroundColor Cyan
+    winget install --id $pkg -e --silent --accept-package-agreements --accept-source-agreements
+    Clear-DesktopShortcuts
+}
+
+# 3. Run Win11Debloat (Fix: Download and run locally)
+Write-Host "Downloading and running Win11Debloat..." -ForegroundColor Magenta
+$debloatZip = "$env:TEMP\Win11Debloat.zip"
+$debloatDir = "$env:TEMP\Win11Debloat-master"
+$url = "https://github.com/Raphire/Win11Debloat/archive/refs/heads/master.zip"
+
+Invoke-WebRequest -Uri $url -OutFile $debloatZip
+Expand-Archive -Path $debloatZip -DestinationPath $env:TEMP -Force
+
+# Execute the local script with default parameters
+# Parameters: -Silent, -RemoveApps, -DisableTelemetry, -DisableBing
+$debloatScriptPath = "$debloatDir\Win11Debloat.ps1"
+if (Test-Path $debloatScriptPath) {
+    & $debloatScriptPath -Silent -RemoveApps -DisableTelemetry -DisableBing -RemoveCommApps -RemoveW11Outlook -ForceRemoveEdge
+}
+
+# Cleanup Debloat files
+Remove-Item $debloatZip -Force
+Remove-Item $debloatDir -Recurse -Force
+
+# 4. Robust Activation Check
+Write-Host "Checking Windows activation status..." -ForegroundColor Cyan
+
+# We query for Windows products that have a partial product key (the ones actually installed)
+$licenseStatus = (Get-CimInstance -ClassName SoftwareLicensingProduct -Filter "PartialProductKey IS NOT NULL AND Name LIKE '%Windows%'").LicenseStatus
+
+# Status 1 = Licensed (Activated)
+if ($licenseStatus -contains 1) {
+    Write-Host "Windows is already activated. Skipping MAS." -ForegroundColor DarkGray
+} else {
+    Write-Host "Windows is not activated (Status: $licenseStatus). Running MAS HWID Activation..." -ForegroundColor Yellow
+    $masUri = "https://get.activated.win"
+    $masScript = Invoke-RestMethod -Uri $masUri
+    & ([scriptblock]::Create($masScript)) /HWID
+}
+
+# 5. Looking Glass Host Setup
+Write-Host "Checking Looking Glass Host status..." -ForegroundColor Cyan
 $lgInstallPath = "C:\Program Files\Looking Glass (Host)\looking-glass-host.exe"
 
 if (Test-Path $lgInstallPath) {
     Write-Host "Looking Glass is already installed. Skipping." -ForegroundColor DarkGray
 } else {
-    Write-Host "Looking Glass missing. Downloading and installing..." -ForegroundColor Yellow
+    Write-Host "Looking Glass missing. Downloading..." -ForegroundColor Yellow
+    $lgZip = "$env:TEMP\lg-host.zip"
+    $lgExtract = "$env:TEMP\lg-host"
+    Invoke-WebRequest -Uri "https://looking-glass.io/artifact/stable/host" -OutFile $lgZip
 
-    $lgSetupPath = "$env:TEMP\looking-glass-host-setup.exe"
-    $lgUrl = "https://looking-glass.io/artifact/stable/host"
+    Expand-Archive -Path $lgZip -DestinationPath $lgExtract -Force
+    $installer = Get-ChildItem -Path $lgExtract -Recurse -Filter "looking-glass-host-setup.exe" | Select-Object -First 1
 
-    Invoke-WebRequest -Uri $lgUrl -OutFile $lgSetupPath
+    if ($installer) {
+        Write-Host "Installing Looking Glass..."
+        Start-Process -FilePath $installer.FullName -ArgumentList "/S" -Wait
+    }
 
-    Write-Host "Executing silent installation..."
-    Start-Process -FilePath $lgSetupPath -ArgumentList "/S" -Wait -NoNewWindow
-
-    Remove-Item -Path $lgSetupPath -Force
-    Write-Host "Looking Glass successfully installed!" -ForegroundColor Green
+    Remove-Item $lgZip -Force
+    Remove-Item $lgExtract -Recurse -Force
 }
 
-Write-Host "Provisioning Complete!" -ForegroundColor Green
+# Final cleanup
+Clear-DesktopShortcuts
+Write-Host "Provisioning Complete! A restart is highly recommended." -ForegroundColor Green

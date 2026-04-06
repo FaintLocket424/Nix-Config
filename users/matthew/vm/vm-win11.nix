@@ -4,7 +4,7 @@
   <domain type="kvm">
     <name>win11</name>
     <uuid>882430f5-db64-4041-a9d7-2e314503dd27</uuid>
-    <memory unit="GiB">24</memory>
+    <memory unit="GiB">16</memory>
     <vcpu placement="static">12</vcpu>
 
     <memoryBacking>

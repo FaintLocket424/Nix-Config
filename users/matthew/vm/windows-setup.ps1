@@ -97,34 +97,6 @@ if (Test-Path $lgInstallPath) {
     Remove-Item $lgExtract -Recurse -Force
 }
 
-# 7. Idempotent Scream Virtual Audio Setup (Zero Latency Audio)
-Write-Host "Checking Scream Audio installation..." -ForegroundColor Cyan
-
-$screamInstalled = Get-CimInstance Win32_SoundDevice | Where-Object { $_.ProductName -match "Scream" }
-
-if ($screamInstalled) {
-    Write-Host "Scream Audio is already installed. Skipping." -ForegroundColor DarkGray
-} else {
-    Write-Host "Scream Audio missing. Downloading and installing..." -ForegroundColor Yellow
-    $screamZip = "$env:TEMP\scream.zip"
-    $screamDir = "$env:TEMP\scream-driver"
-
-    # Download Scream 4.0 (Highly stable for Windows 11)
-    Invoke-WebRequest -Uri "https://github.com/duncanthrax/scream/releases/download/4.0/Scream4.0.zip" -OutFile $screamZip
-    Expand-Archive -Path $screamZip -DestinationPath $screamDir -Force
-
-    # Write-Host "Trusting publisher certificate for silent install..."
-    # Import-Certificate -FilePath "$screamDir\Install\driver\scream.cer" -CertStoreLocation Cert:\LocalMachine\TrustedPublisher | Out-Null
-
-    Write-Host "Installing virtual audio device..."
-    Start-Process -FilePath "$screamDir\Install\Install-x64.bat" -WorkingDirectory "$screamDir\Install" -Wait -WindowStyle Hidden
-
-    Remove-Item -Path $screamZip -Force
-    Remove-Item -Path $screamDir -Recurse -Force
-
-    Write-Host "Scream Audio successfully installed!" -ForegroundColor Green
-}
-
 # Final cleanup
 Clear-DesktopShortcuts
 Write-Host "Provisioning Complete! A restart is highly recommended." -ForegroundColor Green

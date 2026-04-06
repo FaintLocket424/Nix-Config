@@ -120,7 +120,7 @@
 
       <shmem name="looking-glass">
         <model type="ivshmem-plain"/>
-        <size unit="M">64</size>
+        <size unit="M">128</size>
       </shmem>
 
       <controller type="virtio-serial" index="0"/>

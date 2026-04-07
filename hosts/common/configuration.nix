@@ -141,6 +141,13 @@ in
       openocd
       oversteer
     ];
+
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
   };
 
   security.rtkit.enable = true;

@@ -181,6 +181,14 @@ in
     };
 
     ssh.askPassword = lib.mkForce "";
+
+    obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        droidcam-obs
+      ];
+    };
   };
 
   virtualisation = {
@@ -268,6 +276,7 @@ in
     oversteer
     looking-glass-client
     spice-vdagent
+    android-tools
   ];
 
   networking.firewall.interfaces."virbr0".allowedUDPPorts = [ 4010 ];

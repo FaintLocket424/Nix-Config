@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./gaming.nix
     ./development.nix
@@ -25,7 +25,7 @@
     photoflare # Image Editor
     bambu-studio # 3D Printing Slicer
     freecad # 3D Modelling
-    obs-studio # Screen Recording
+    # obs-studio # Screen Recording
     obsidian # Note-taking App
     scrcpy # Android Screen Mirroring
     dolphin-emu # Dolphin Wii Emulator

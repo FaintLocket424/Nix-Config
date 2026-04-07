@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, nixos-branding, ... }: {
   programs.firefox.profiles.matthew = {
     id = 0;
     name = "Matthew";
@@ -85,6 +85,11 @@
       privateDefault = "ddg";
 
       engines = {
+        ddg = {
+          urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
+          definedAliases = [ "@ddg" ];
+        };
+
         "Nix Packages" = {
           urls = [
             {
@@ -96,7 +101,7 @@
             }
           ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@np" ];
+          definedAliases = [ "@np" "@nixpkgs" ];
         };
 
         "Nix Options" = {
@@ -110,7 +115,21 @@
             }
           ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@no" ];
+          definedAliases = [ "@no" "@nixoptions" ];
+        };
+
+        "Home Manager Options" = {
+          urls = [
+            {
+              template = "https://home-manager-options.extranix.com";
+              params = [
+                { name = "release"; value = "release-25.11"; }
+                { name = "query"; value = "{searchTerms}"; }
+              ];
+            }
+          ];
+          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          definedAliases = [ "@hm" "@homemanager" ];
         };
 
         "NixOS Wiki" = {
@@ -123,8 +142,14 @@
             }
           ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@nw" ];
+          definedAliases = [ "@nixwix" "@nixoswiki" ];
         };
+
+        bing.metaData.hidden = true;
+        google.metaData.hidden = true;
+        eBay.metaData.hidden = true;
+        perplexity.metaData.hidden = true;
+        wikipedia.metaData.hidden = true;
       };
     };
   };

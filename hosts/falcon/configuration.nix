@@ -36,14 +36,7 @@
 
   hardware.cpu.amd.updateMicrocode = true;
 
-  hardware.firmware = [
-    (pkgs.runCommand "broadcom-bt-firmware" { } ''
-      mkdir -p $out/lib/firmware/brcm
-      # Download the specific firmware file from the well-known winterheart repository
-      cp ${pkgs.fetchurl {
-        url = "https://github.com/winterheart/broadcom-bt-firmware/raw/master/brcm/BCM20702A1-0a5c-21ec.hcd";
-        sha256 = "sha256-RIn4857O6kZ2D11V7lP7l6f9i783Eon4hE8V7R6a7V8=";
-      }} $out/lib/firmware/brcm/BCM20702A1-0a5c-21ec.hcd
-    '')
+  environment.systemPackages = with pkgs; [
+    broadcom-bt-firmware
   ];
 }

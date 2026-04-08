@@ -1,11 +1,4 @@
-{ config, pkgs, inputs, ... }:
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    inherit (pkgs) system;
-    config = config.nixpkgs.config;
-  };
-in
-{
+{ config, pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     # Minecraft
     prismlauncher # Minecraft Launcher
@@ -22,12 +15,10 @@ in
     mangohud
     goverlay
     heroic
-  ]
-  ++ (with pkgs-unstable; [
     lutris
 
     wineWow64Packages.stable
 
     (bottles.override { removeWarningPopup = true; })
-  ]);
+  ];
 }

@@ -56,6 +56,12 @@
           };
         };
       };
+      ignores = [
+        "result"
+        "result-*"
+        ".direnv/"
+        ".envrc"
+      ];
     };
 
     direnv = {

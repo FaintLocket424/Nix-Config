@@ -61,7 +61,7 @@
                 { name = "Pebblehost"; url = "https://panel.pebblehost.com/server/3e437777"; }
               ];
             }
-            { name = "Stop Misusing Rate Limiting in Go - 5 Real-World Fixes"; url = "https://www.linkedin.com/pulse/stop-writing-dumb-rate-limiters-go-do-thisinstead-archit-argarwal-xjuac"; }
+            { name = "Stop Misusing Rate Limiting in Go - 5 Real-World Fixes"; url = "https://www.linkedin.com/pulse/stop-writing-dumb-rate-limiters-go-do-thisinstead-archit-agarwal-xjuac"; }
           ];
         }
       ];

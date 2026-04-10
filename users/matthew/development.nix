@@ -21,10 +21,11 @@
     # mono # C# Compiler related
     # dotnet-sdk_9 # .NET 9 SDK
     # dotnet-runtime_9 # .NET 9 Runtime
-    # go # Go Compiler
     # android-tools # Android platform tools (adb, fastboot)
     # vegeta # API Testing
-    # go-task # Taskfile.dev replacement for make
+
+    nixd # Nix LSP
+    nixpkgs-fmt # Nix formatter
 
     # Utilities
     # httrack # Website copier
@@ -152,9 +153,16 @@
         # Editor
         buffer_font_size = 14;
         buffer_font_family = "JetBrains Mono";
+        buffer_font_features = {
+          calt = true;
+        };
 
         terminal = {
           font_family = "JetBrains Mono";
+
+          font_features = {
+            calt = true;
+          };
         };
 
         collaboration_panel.button = false;
@@ -193,11 +201,6 @@
           fish-lsp.binary.ignore_system_version = false;
         };
       };
-
-      extraPackages = with pkgs; [
-        nixd # Nix LSP
-        nixpkgs-fmt # Nix formatter
-      ];
     };
   };
 }

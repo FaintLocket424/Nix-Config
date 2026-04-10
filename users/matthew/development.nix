@@ -155,7 +155,6 @@
         buffer_font_family = "JetBrains Mono";
         buffer_font_features = {
           calt = true;
-          liga = true;
         };
 
         terminal = {
@@ -163,7 +162,6 @@
 
           font_features = {
             calt = true;
-            liga = true;
           };
         };
 

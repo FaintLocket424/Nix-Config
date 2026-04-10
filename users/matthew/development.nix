@@ -155,6 +155,7 @@
         buffer_font_family = "JetBrainsMono Nerd Font";
         buffer_font_features = {
           calt = true;
+          liga = true;
         };
 
         terminal = {
@@ -162,6 +163,7 @@
 
           font_features = {
             calt = true;
+            liga = true;
           };
         };
 

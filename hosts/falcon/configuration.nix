@@ -36,7 +36,7 @@
 
   hardware.cpu.amd.updateMicrocode = true;
 
-  environment.systemPackages = with pkgs; [
+  hardware.firmware = with pkgs; [
     broadcom-bt-firmware
   ];
 }

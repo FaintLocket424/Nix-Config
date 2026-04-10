@@ -3,9 +3,23 @@ let
   wallpaper = ./wallpapers/art002e009301-large.jpg;
 in
 {
-  home.activation.setWallpaperAllScreens = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${wallpaper}
-  '';
+  systemd.user.services.set-plasma-wallpaper = {
+    Unit = {
+      Description = "Set Plasma Wallpaper";
+      After = [ "graphical-session.target" ];
+      PartOf = [ "graphical-session.target" ];
+    };
+
+    Install.WantedBy = [ "graphical-session.target" ];
+
+    Service = {
+      ExecStart = "${pkgs.writeShellScript "set-wallpaper" ''
+        sleep 2
+        ${pkgs.kdePackages.plasma-workspace}/bin/plasma-apply-wallpaperimage ${wallpaper}
+      ''}";
+      Type = "oneshot";
+    };
+  };
 
   # https://nix-community.github.io/plasma-manager/options.xhtml
   programs.plasma = {

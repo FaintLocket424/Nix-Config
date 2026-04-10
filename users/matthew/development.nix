@@ -152,14 +152,14 @@
 
         # Editor
         buffer_font_size = 14;
-        buffer_font_family = "JetBrainsMono Nerd Font";
+        buffer_font_family = "JetBrains Mono";
         buffer_font_features = {
           calt = true;
           liga = true;
         };
 
         terminal = {
-          font_family = "JetBrainsMono Nerd Font";
+          font_family = "JetBrains Mono";
 
           font_features = {
             calt = true;

@@ -241,15 +241,14 @@ in
       vista-fonts
       google-fonts
 
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.fira-code
+      jetbrains-mono
       nerd-fonts.symbols-only
     ];
 
     fontconfig.defaultFonts = {
       sansSerif = [ "Noto Sans" "Arial" ];
       serif = [ "Noto Serif" "Times New Roman" ];
-      monospace = [ "JetBrainsMono Nerd Font" "Consolas" ];
+      monospace = [ "JetBrains Mono" "Consolas" ];
     };
   };
 

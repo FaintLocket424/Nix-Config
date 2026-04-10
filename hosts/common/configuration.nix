@@ -248,7 +248,7 @@ in
     fontconfig.defaultFonts = {
       sansSerif = [ "Noto Sans" "Arial" ];
       serif = [ "Noto Serif" "Times New Roman" ];
-      monospace = [ "JetBrains Mono" "Consolas" ];
+      monospace = [ "JetBrainsMono Nerd Font" "Consolas" ];
     };
   };
 

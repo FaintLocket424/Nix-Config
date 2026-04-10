@@ -39,7 +39,7 @@
     };
 
     fonts = {
-      fixedWidth = { family = "JetBrains Mono"; pointSize = 10; };
+      fixedWidth = { family = "JetBrainsMono Nerd Font"; pointSize = 10; };
       general = { family = "Noto Sans"; pointSize = 10; };
     };
 

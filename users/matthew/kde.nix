@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-  wallpaper = ./wallpapers/art002e009288orig.jpg;
+  wallpaper = ./wallpapers/art002e009301-large.jpg;
 in
 {
   home.activation.setWallpaperAllScreens = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

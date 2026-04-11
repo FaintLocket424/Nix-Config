@@ -52,7 +52,7 @@
         init.defaultBranch = "main";
         core.autocrlf = "input";
         url = {
-          " git@github.com:" = {
+          "git@github.com:" = {
             insteadOf = "https://github.com/";
           };
         };

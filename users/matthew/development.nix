@@ -50,9 +50,9 @@
         user.name = "FaintLocket424";
         user.email = "github.grill135@passinbox.com";
         init.defaultBranch = "main";
-        core.autocrlf = true;
+        core.autocrlf = "input";
         url = {
-          "git@github.com:" = {
+          " git@github.com:" = {
             insteadOf = "https://github.com/";
           };
         };

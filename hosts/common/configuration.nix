@@ -26,6 +26,7 @@ in
     ];
     kernelModules = [
       "ntsync"
+      "hid-wiimote"
     ];
   };
 

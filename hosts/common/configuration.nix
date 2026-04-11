@@ -41,6 +41,7 @@ in
       settings.General.Experimental = true;
     };
     xone.enable = true;
+    uinput.enable = true;
 
     logitech.wireless = {
       enable = true;
@@ -140,6 +141,7 @@ in
       platformio-core.udev
       openocd
       oversteer
+      game-devices-udev-rules
     ];
 
     sunshine = {

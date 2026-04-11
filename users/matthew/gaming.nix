@@ -11,7 +11,7 @@
     evtest-qt
     antimicrox
     jstest-gtk
-    xwiimote
+    # xwiimote
     mangohud
     goverlay
     heroic

@@ -20,9 +20,11 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    eden.url = "github:daaboulex/eden-nix";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, treefmt-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, treefmt-nix, eden, ... }@inputs:
     let
       systems = [ "x86_64-linux" "aarch64-linux" ];
 

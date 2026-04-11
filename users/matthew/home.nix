@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     ./gaming.nix
     ./development.nix
@@ -30,6 +30,7 @@
     scrcpy # Android Screen Mirroring
     dolphin-emu # Dolphin Wii Emulator
     ryubing # Switch Emulator
+    inputs.eden.packages.${pkgs.system}.eden
     moonlight-qt
   ];
 

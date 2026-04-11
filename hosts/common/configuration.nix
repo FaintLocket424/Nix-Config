@@ -145,6 +145,10 @@ in
         oversteer
         game-devices-udev-rules
       ];
+
+      extraRules = ''
+        KERNEL=="uinput", MODE="0660", GROUP="input"
+      '';
     };
 
     # input-remapper.enable = true;

@@ -9,9 +9,7 @@
     # Utils
     evtest
     evtest-qt
-    antimicrox
     jstest-gtk
-    # xwiimote
     mangohud
     goverlay
     heroic

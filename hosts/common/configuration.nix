@@ -146,7 +146,7 @@ in
       ];
     };
 
-    input-remapper.enable = true;
+    # input-remapper.enable = true;
 
     sunshine = {
       enable = true;

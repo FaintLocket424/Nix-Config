@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     ./gaming.nix
     ./development.nix
@@ -32,23 +33,7 @@
     ryubing # Switch Emulator
     inputs.eden.packages.${pkgs.system}.eden
     moonlight-qt
-    moltengamepad
   ];
 
   programs.kitty.enable = true;
-
-  systemd.user.services.moltengamepad = {
-    Unit = {
-      Description = "MoltenGamepad - Virtual controller translator for Wiimotes";
-      After = [ "graphical-session.target" ];
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.moltengamepad}/bin/moltengamepad";
-      Restart = "on-failure";
-      RestartSec = 5;
-    };
-  };
 }

@@ -137,12 +137,16 @@ in
       ];
     };
 
-    udev.packages = with pkgs; [
-      platformio-core.udev
-      openocd
-      oversteer
-      game-devices-udev-rules
-    ];
+    udev = {
+      packages = with pkgs; [
+        platformio-core.udev
+        openocd
+        oversteer
+        game-devices-udev-rules
+      ];
+    };
+
+    input-remapper.enable = true;
 
     sunshine = {
       enable = true;
@@ -285,6 +289,8 @@ in
     looking-glass-client
     spice-vdagent
     android-tools
+    evsieve
+    jq
   ];
 
   networking.firewall.interfaces."virbr0".allowedUDPPorts = [ 4010 ];

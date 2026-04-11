@@ -29,6 +29,7 @@
     obsidian # Note-taking App
     scrcpy # Android Screen Mirroring
     dolphin-emu # Dolphin Wii Emulator
+    ryubing # Switch Emulator
     moonlight-qt
   ];
 

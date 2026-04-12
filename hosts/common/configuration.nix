@@ -19,7 +19,7 @@ in
     extraModulePackages = with config.boot.kernelPackages; [
       hid-tmff2
     ];
-    kernelPackages = pkgs.linuxPackages_6_18;
+    kernelPackages = pkgs.linuxPackages_6_19;
     kernelParams = [
       "quiet"
       "splash"

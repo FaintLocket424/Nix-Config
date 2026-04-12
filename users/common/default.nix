@@ -99,6 +99,12 @@
               updates_disabled = true;
             };
 
+            "firefox-extension@steamdb.info" = {
+              install_url = moz "steam-database";
+              installation_mode = "force_installed";
+              updates_disabled = true;
+            };
+
             "{cb31ec5d-c49a-4e5a-b240-16c767444f62}" = {
               install_url = moz "indie-wiki-buddy";
               installation_mode = "force_installed";

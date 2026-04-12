@@ -1,4 +1,8 @@
 { pkgs, lib, ... }: {
+  imports = [
+    ./kde.nix
+  ];
+
   home.packages = with pkgs; [
     bat
     eza
@@ -19,72 +23,9 @@
     haruna
   ];
 
-  programs.plasma = {
-    enable = true;
-    overrideConfig = true;
 
-    workspace = {
-      cursor = {
-        animationTime = 5;
-        cursorFeedback = "Bouncing";
-        size = 20;
-        theme = "Bibata-Modern-Classic";
-      };
-
-      lookAndFeel = "org.kde.breezedark.desktop";
-      theme = "breeze-dark";
-
-      wallpaperFillMode = "preserveAspectCrop";
-      widgetStyle = "breeze";
-    };
-
-    fonts = {
-      fixedWidth = { family = "JetBrainsMono Nerd Font"; pointSize = 10; };
-      general = { family = "Noto Sans"; pointSize = 10; };
-    };
-
-    kwin = {
-      effects = {
-        blur.enable = true;
-        dimAdminMode.enable = true;
-        # minimization.animation = "magiclamp";
-        shakeCursor.enable = false;
-        # slideBack.enable = true;
-        # windowOpenClose.animation = "glide";
-      };
-    };
-
-    input = {
-      touchpads = [
-        {
-          name = "SYNA32DE:00 06CB:CEE7 Touchpad";
-          naturalScroll = true;
-          productId = "cee7";
-          vendorId = "06cb";
-        }
-      ];
-    };
-
-    kscreenlocker = {
-      autoLock = true;
-      timeout = 5;
-    };
-  };
 
   programs = {
-    #   chromium = {
-    #     enable = true;
-    #     package = pkgs.brave;
-
-    #     commandLineArgs = [
-    #       "--enable-features=UseOzonePlatform"
-    #       "--ozone-platform=wayland"
-    #       "--enable-gpu-rasterization"
-    #       "--enable-zero-copy"
-    #       "--enable-smooth-scrolling"
-    #     ];
-    #   };
-
     firefox = {
       enable = true;
 

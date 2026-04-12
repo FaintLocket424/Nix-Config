@@ -34,6 +34,11 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
+  hardware.bluetooth.settings.General = {
+    FastConnectable = "true";
+    JustWorksRepairing = "always";
+  };
+
   hardware.cpu.amd.updateMicrocode = true;
 
   hardware.firmware = with pkgs; [

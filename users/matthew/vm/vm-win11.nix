@@ -5,7 +5,7 @@
     <name>win11</name>
     <uuid>882430f5-db64-4041-a9d7-2e314503dd27</uuid>
     <memory unit="GiB">16</memory>
-    <vcpu placement="static">12</vcpu>
+    <vcpu placement="static">8</vcpu>
 
     <memoryBacking>
       <access mode="shared"/>

@@ -235,6 +235,7 @@ in
 
     spiceUSBRedirection.enable = true;
   };
+
   systemd.tmpfiles.rules = [
     "f /dev/shm/looking-class 0660 matthew kvm -"
   ];

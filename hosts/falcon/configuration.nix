@@ -44,4 +44,11 @@
   hardware.firmware = with pkgs; [
     broadcom-bt-firmware
   ];
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8192; # Size in Megabytes
+    }
+  ];
 }

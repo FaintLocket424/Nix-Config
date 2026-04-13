@@ -21,6 +21,10 @@
     qalculate-qt
 
     haruna
+
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en-gb-ise
   ];
 
 

@@ -36,9 +36,12 @@ in
     mkdir -p $HOME/VM-Shared
 
     rm -f $HOME/VM-Shared/windows-setup.ps1
-
     cp ${./windows-setup.ps1} $HOME/VM-Shared/windows-setup.ps1
     chmod 755 $HOME/VM-Shared/windows-setup.ps1
+
+    rm -f $HOME/VM-Shared/fonts/*.ttf
+    cp ${../../common/fonts}/*.ttf $HOME/VM-Shared/fonts/ || true
+    chmod 644 $HOME/VM-Shared/fonts/*.ttf
   '';
 
   systemd.user.services.scream-receiver = {

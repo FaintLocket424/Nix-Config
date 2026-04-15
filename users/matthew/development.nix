@@ -10,6 +10,7 @@
     # uv # Python package manager
     # gnumake # Make
     gcc # GNU Compiler Collection
+    powershell # Powershell
     # arduino-cli # Arduino headless CLI
     # platformio # PlatformIO microcontroller toolchain manager
     # avrdude # AVR Flashing

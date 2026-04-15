@@ -97,6 +97,35 @@ if (Test-Path $lgInstallPath) {
     Remove-Item $lgExtract -Recurse -Force
 }
 
+Write-Host "Checking for Custom Fonts in Shared Drive..." -ForegroundColor Cyan
+$fontSource = "Z:\fonts"
+
+if (Test-Path $fontSource) {
+    $fonts = Get-ChildItem -Path $fontSource -Filter "*.ttf"
+
+    if ($fonts.Count -gt 0) {
+        # Initialize the Windows Shell COM Object
+        $shellApp = New-Object -ComObject Shell.Application
+        # 0x14 is the magic hex code for the System Fonts directory
+        $windowsFonts = $shellApp.Namespace(0x14)
+
+        foreach ($font in $fonts) {
+            $fontDest = Join-Path "C:\Windows\Fonts" $font.Name
+
+            # Only install if the font isn't already in the Windows Font folder
+            if (-not (Test-Path $fontDest)) {
+                Write-Host "Installing Font: $($font.Name)..." -ForegroundColor Yellow
+                # CopyHere automatically extracts the font name and adds the Registry keys!
+                $windowsFonts.CopyHere($font.FullName)
+            } else {
+                Write-Host "Font already installed: $($font.Name)" -ForegroundColor DarkGray
+            }
+        }
+    } else {
+        Write-Host "No .ttf fonts found in Z:\fonts." -ForegroundColor DarkGray
+    }
+}
+
 # Final cleanup
 Clear-DesktopShortcuts
 Write-Host "Provisioning Complete! A restart is highly recommended." -ForegroundColor Green

@@ -298,7 +298,8 @@ in
     jq
 
     (pkgs.writeShellScriptBin "looking-glass-client" ''
-      exec ${pkgs.looking-glass-client}/bin/looking-glass-client __NV_DISABLE_EXPLICIT_SYNC=1 "$@"
+      export __NV_DISABLE_EXPLICIT_SYNC=1
+      exec ${pkgs.looking-glass-client}/bin/looking-glass-client "$@"
     '')
   ];
 

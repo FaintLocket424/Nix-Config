@@ -34,6 +34,7 @@ in
 
   home.activation.copyWindowsScript = config.lib.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p $HOME/VM-Shared
+    mkdir -p $HOME/VM-Shared/fonts
 
     rm -f $HOME/VM-Shared/windows-setup.ps1
     cp ${./windows-setup.ps1} $HOME/VM-Shared/windows-setup.ps1

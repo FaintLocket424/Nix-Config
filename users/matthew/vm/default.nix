@@ -14,8 +14,8 @@ let
 
     echo "Checking for Windows 11 virtual hard drive..."
     if [ ! -f /var/lib/libvirt/images/win11.qcow2 ]; then
-      echo "Creating new 128GB QCOW2 disk..."
-      sudo ${pkgs.qemu}/bin/qemu-img create -f qcow2 /var/lib/libvirt/images/win11.qcow2 128G
+      echo "Creating new 256GB QCOW2 disk..."
+      sudo ${pkgs.qemu}/bin/qemu-img create -f qcow2 /var/lib/libvirt/images/win11.qcow2 256G
     fi
 
     echo "Defining Windows 11 VM in Libvirt..."

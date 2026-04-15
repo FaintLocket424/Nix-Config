@@ -292,11 +292,14 @@ in
     dnsmasq
     phodav
     oversteer
-    looking-glass-client
     spice-vdagent
     android-tools
     evsieve
     jq
+
+    (pkgs.writeShellScriptBin "looking-glass-client" ''
+      exec ${pkgs.looking-glass-client}/bin/looking-glass-client __NV_DISABLE_EXPLICIT_SYNC=1 "$@"
+    '')
   ];
 
   networking.firewall.interfaces."virbr0".allowedUDPPorts = [ 4010 ];

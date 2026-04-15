@@ -8,6 +8,7 @@
     ./hyprland.nix
     ./firefox.nix
     ./vm
+    ./syncthing.nix
   ];
 
   home.sessionVariables = {

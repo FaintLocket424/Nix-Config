@@ -25,6 +25,17 @@
     libreoffice-qt
     hunspell
     hunspellDicts.en-gb-ise
+
+    (pkgs.stdenvNoCC.mkDerivation {
+      pname = "my-custom-fonts";
+      version = "1.0";
+      src = ./fonts;
+
+      installPhase = ''
+        mkdir -p $out/share/fonts/truetype
+        cp *.ttf $out/share/fonts/truetype/
+      '';
+    })
   ];
 
 

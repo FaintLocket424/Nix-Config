@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ config, ... }: {
   services.syncthing = {
     enable = true;
     overrideFolders = true;

@@ -177,6 +177,12 @@
 
         autosave = "on_focus_change";
 
+        title_bar = {
+          show_sign_in = false;
+          show_user_picture = false;
+          show_onboarding_banner = false;
+        };
+
         # Use system language servers
         languages = {
           Nix = {

@@ -193,14 +193,6 @@
             language_servers = [ "fish-lsp" ];
           };
         };
-
-        # Disable automatic LSP installation attempts
-        lsp = {
-          nixd.binary.ignore_system_version = false;
-          gopls.binary.ignore_system_version = false;
-          jdtls.binary.ignore_system_version = false;
-          fish-lsp.binary.ignore_system_version = false;
-        };
       };
     };
   };

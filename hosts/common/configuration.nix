@@ -297,10 +297,10 @@ in
     evsieve
     jq
 
-    (pkgs.writeShellScriptBin "looking-glass-client" ''
-      export __NV_DISABLE_EXPLICIT_SYNC=1
-      exec ${pkgs.looking-glass-client}/bin/looking-glass-client "$@"
-    '')
+    # (pkgs.writeShellScriptBin "looking-glass-client" ''
+    #   export __NV_DISABLE_EXPLICIT_SYNC=1
+    #   exec ${pkgs.looking-glass-client}/bin/looking-glass-client "$@"
+    # '')
   ];
 
   networking.firewall.interfaces."virbr0".allowedUDPPorts = [ 4010 ];

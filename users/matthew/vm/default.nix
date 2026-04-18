@@ -30,6 +30,10 @@ in
     pkgs.scream
   ];
 
+  programs.looking-glass-client = {
+    enable = true;
+  };
+
   # home.file."VM-Shared/windows-setup.ps1".source = ./windows-setup.ps1;
 
   home.activation.copyWindowsScript = config.lib.dag.entryAfter [ "writeBoundary" ] ''

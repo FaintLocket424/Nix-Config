@@ -11,9 +11,6 @@
   "canon-cups-ufr2" # Printer firmware
   "broadcom-bt-firmware" # Broadcom bluetooth firmware
 
-  # "modrinth-app" # Modrinth
-  # "modrinth-app-unwrapped"
-
   "obsidian"
 
   "nvidia-x11" # Nvidia Driver

@@ -32,6 +32,22 @@ in
 
   programs.looking-glass-client = {
     enable = true;
+    package = pkgs.symlinkJoin {
+      name = "looking-glass-client-wrapped";
+      paths = [ pkgs.looking-glass-client ];
+      buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/looking-glass-client \
+          --set __NV_DISABLE_EXPLICIT_SYNC 1
+      '';
+    };
+  };
+
+  xdg.desktopEntries.looking-glass-client = {
+    name = "Looking Glass Client";
+    exec = "env __NV_DISABLE_EXPLICIT_SYNC=1 ${pkgs.looking-glass-client}/bin/looking-glass-client";
+    terminal = false;
+    categories = [ "Utility" ];
   };
 
   # home.file."VM-Shared/windows-setup.ps1".source = ./windows-setup.ps1;

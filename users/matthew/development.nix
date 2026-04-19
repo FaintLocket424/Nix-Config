@@ -124,6 +124,8 @@
 
     zed-editor = {
       enable = true;
+      mutableUserSettings = false;
+      mutableUserKeymaps = false;
 
       extensions = [
         "nix"
@@ -183,7 +185,6 @@
           show_onboarding_banner = false;
         };
 
-        # Use system language servers
         languages = {
           Nix = {
             language_servers = [ "nixd" ];

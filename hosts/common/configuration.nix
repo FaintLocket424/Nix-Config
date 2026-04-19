@@ -32,7 +32,6 @@ in
 
   # --- - ---
   hardware = {
-    #    enableAllFirmware = true;
     enableRedistributableFirmware = true;
     graphics.enable = true;
     graphics.enable32Bit = true;

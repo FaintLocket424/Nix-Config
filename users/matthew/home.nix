@@ -37,4 +37,6 @@
   ];
 
   programs.kitty.enable = true;
+
+  home.file.".config/vesktop/themes".source = ./discord_themes;
 }

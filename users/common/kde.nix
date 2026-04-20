@@ -50,7 +50,7 @@
         {
           name = "*";
           accelerationProfile = "flat";
-          pointerAcceleration = "-0.1";
+          acceleration = "-0.1";
         }
       ];
       touchpads = [

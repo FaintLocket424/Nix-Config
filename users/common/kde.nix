@@ -46,6 +46,13 @@
     powerdevil.AC.autoSuspend.action = "nothing";
 
     input = {
+      mice = [
+        {
+          name = "*";
+          accelerationProfile = "flat";
+          pointerAcceleration = "-0.1";
+        }
+      ];
       touchpads = [
         {
           name = "SYNA32DE:00 06CB:CEE7 Touchpad";

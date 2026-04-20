@@ -23,6 +23,16 @@ let
 
     echo "Done! The VM is ready in virt-manager."
   '';
+
+  looking-glass-fixed-pkg = pkgs.symlinkJoin {
+    name = "looking-glass-client-wrapped";
+    paths = [ pkgs.looking-glass-client ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/looking-glass-client \
+        --set __NV_DISABLE_EXPLICIT_SYNC 1
+    '';
+  };
 in
 {
   home.packages = [
@@ -32,25 +42,16 @@ in
 
   programs.looking-glass-client = {
     enable = true;
-    package = pkgs.symlinkJoin {
-      name = "looking-glass-client-wrapped";
-      paths = [ pkgs.looking-glass-client ];
-      buildInputs = [ pkgs.makeWrapper ];
-      postBuild = ''
-        wrapProgram $out/bin/looking-glass-client \
-          --set __NV_DISABLE_EXPLICIT_SYNC 1
-      '';
-    };
+    package = looking-glass-fixed-pkg;
   };
 
-  xdg.desktopEntries.looking-glass-client = {
-    name = "Looking Glass Client";
-    exec = "env __NV_DISABLE_EXPLICIT_SYNC=1 ${pkgs.looking-glass-client}/bin/looking-glass-client";
+  xdg.desktopEntries."my-looking-glass-fixed" = {
+    name = "Looking Glass Client Fixed";
+    exec = "${looking-glass-fixed-pkg}/bin/looking-glass-client";
     terminal = false;
     categories = [ "Utility" ];
+    mimeType = [ "application/x-looking-glass" ];
   };
-
-  # home.file."VM-Shared/windows-setup.ps1".source = ./windows-setup.ps1;
 
   home.activation.copyWindowsScript = config.lib.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p $HOME/VM-Shared

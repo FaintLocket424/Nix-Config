@@ -49,8 +49,10 @@
       mice = [
         {
           name = "*";
-          accelerationProfile = "flat";
-          acceleration = "-0.1";
+          accelerationProfile = "none";
+          acceleration = -0.1;
+          vendorId = "046d";
+          productId = "407f";
         }
       ];
       touchpads = [

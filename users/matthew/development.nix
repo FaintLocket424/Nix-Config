@@ -170,7 +170,12 @@
 
         collaboration_panel.button = false;
 
+        features = {
+          edit_predication_provider = "none";
+        };
+
         show_edit_predictions = false;
+        always_treat_brackets_as_autoclosed = true;
 
         telemetry = {
           diagnostics = false;

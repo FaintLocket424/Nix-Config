@@ -19,4 +19,6 @@
 
     (bottles.override { removeWarningPopup = true; })
   ];
+
+  home.file.".local/bin/prism-java-21".source = "${pkgs.jdk21}/bin/java";
 }

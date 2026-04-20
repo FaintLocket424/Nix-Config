@@ -20,5 +20,7 @@
     (bottles.override { removeWarningPopup = true; })
   ];
 
-  home.file.".local/bin/prism-java-21".source = "${pkgs.jdk21}/bin/java";
+  home.file.".local/bin/minecraft-jars/java-25".source = "${pkgs.jdk25}/bin/java";
+  home.file.".local/bin/minecraft-jars/java-21".source = "${pkgs.jdk21}/bin/java";
+  home.file.".local/bin/minecraft-jars/java-17".source = "${pkgs.jdk17}/bin/java";
 }

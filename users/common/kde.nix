@@ -50,7 +50,7 @@
         {
           name = "*";
           accelerationProfile = "none";
-          acceleration = -0.1;
+          acceleration = 0.0;
           vendorId = "046d";
           productId = "407f";
         }

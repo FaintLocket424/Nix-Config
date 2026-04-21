@@ -44,8 +44,4 @@
     source = ./discord_themes;
     recursive = true;
   };
-
-  # home.shellAliases = {
-  #   droidcam-usb = "adb forward tcp:4747 tcp:4747 && droidcam";
-  # };
 }

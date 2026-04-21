@@ -18,6 +18,7 @@ in
     initrd.systemd.enable = true;
     extraModulePackages = with config.boot.kernelPackages; [
       hid-tmff2
+      v4l2loopback
     ];
     kernelPackages = pkgs.linuxPackages_6_19;
     kernelParams = [
@@ -27,7 +28,11 @@ in
     kernelModules = [
       "ntsync"
       "hid-wiimote"
+      "v4l2loopback"
     ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 card_label="Droidcam" exclusive_caps=1
+    '';
   };
 
   # --- - ---
@@ -202,9 +207,9 @@ in
     obs-studio = {
       enable = true;
       enableVirtualCamera = true;
-      plugins = with pkgs.obs-studio-plugins; [
-        droidcam-obs
-      ];
+      # plugins = with pkgs.obs-studio-plugins; [
+      #   droidcam-obs
+      # ];
     };
   };
 
@@ -295,11 +300,6 @@ in
     android-tools
     evsieve
     jq
-
-    # (pkgs.writeShellScriptBin "looking-glass-client" ''
-    #   export __NV_DISABLE_EXPLICIT_SYNC=1
-    #   exec ${pkgs.looking-glass-client}/bin/looking-glass-client "$@"
-    # '')
   ];
 
   networking.firewall.interfaces."virbr0".allowedUDPPorts = [ 4010 ];

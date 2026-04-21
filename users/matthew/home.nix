@@ -34,6 +34,8 @@
     ryubing # Switch Emulator
     inputs.eden.packages.${pkgs.system}.eden
     moonlight-qt
+    droidcam # use phone as webcam
+    android-tools # For use with droidcam
   ];
 
   programs.kitty.enable = true;
@@ -42,4 +44,8 @@
     source = ./discord_themes;
     recursive = true;
   };
+
+  # home.shellAliases = {
+  #   droidcam-usb = "adb forward tcp:4747 tcp:4747 && droidcam";
+  # };
 }

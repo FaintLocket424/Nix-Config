@@ -61,7 +61,10 @@ in
     useDHCP = lib.mkDefault true;
     networkmanager = {
       enable = true;
-      plugins = [ pkgs.networkmanager-openconnect ];
+      plugins = with pkgs; [
+        networkmanager-openconnect
+        networkmanager-openvpn
+      ];
     };
   };
 

@@ -3,16 +3,17 @@
   "corefonts"
   "vista-fonts"
 
-  # Steam
-  "steam"
-  "steam-unwrapped"
-
+  # Firmware
   "xow_dongle-firmware" # Xbox Controller Firmware
   "canon-cups-ufr2" # Printer firmware
   "broadcom-bt-firmware" # Broadcom bluetooth firmware
 
-  "obsidian"
-
-  "nvidia-x11" # Nvidia Driver
+  # Nvidia Driver
+  "nvidia-x11"
   "nvidia-settings"
+
+  # Programs
+  "steam"
+  "steam-unwrapped"
+  "obsidian"
 ]

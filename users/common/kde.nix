@@ -48,7 +48,7 @@
     input = {
       mice = [
         {
-          name = "Logitech G502";
+          name = "Logitech G502*";
           accelerationProfile = "none";
           acceleration = 0.1;
           vendorId = "046d";

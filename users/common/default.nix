@@ -22,7 +22,7 @@
 
     haruna
 
-    libreoffice-qt
+    onlyoffice-desktopeditors
     hunspell
     hunspellDicts.en-gb-ise
 

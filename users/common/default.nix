@@ -38,8 +38,6 @@
     })
   ];
 
-
-
   programs = {
     firefox = {
       enable = true;

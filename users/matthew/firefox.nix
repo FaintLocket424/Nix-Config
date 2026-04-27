@@ -87,11 +87,6 @@
       privateDefault = "ddg";
 
       engines = {
-        ddg = {
-          urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
-          definedAliases = [ "@ddg" ];
-        };
-
         "Nix Packages" = {
           urls = [
             {

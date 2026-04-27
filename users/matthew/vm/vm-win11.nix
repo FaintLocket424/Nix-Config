@@ -79,9 +79,10 @@
 
       <controller type="usb" model="qemu-xhci" ports="15"/>
 
-      <interface type='bridge'>
-        <source bridge='br0'/>
-        <model type='e1000e'/>
+      <interface type="network">
+        <mac address="52:54:00:36:d3:9d"/>
+        <source network="default"/>
+        <model type="e1000e"/>
       </interface>
 
       <input type="mouse" bus="ps2"/>

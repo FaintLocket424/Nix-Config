@@ -18,7 +18,7 @@
     # pandoc # Document compiler
     # texliveFull # LaTeX
     # ghc # Glasgow Haskell Compiler
-    # haskell-language-server
+    haskell-language-server
     # mono # C# Compiler related
     # dotnet-sdk_9 # .NET 9 SDK
     # dotnet-runtime_9 # .NET 9 Runtime

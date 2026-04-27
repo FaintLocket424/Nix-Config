@@ -48,11 +48,18 @@
     input = {
       mice = [
         {
-          name = "Logitech G502*";
+          name = "Logitech G502";
           accelerationProfile = "none";
           acceleration = 0.1;
           vendorId = "046d";
           productId = "407f";
+        }
+        {
+          name = "Logitech G502 LIGHTSPEED Wireless Gaming Mouse";
+          accelerationProfile = "none";
+          acceleration = 0.1;
+          vendorId = "046d";
+          productId = "c08d";
         }
       ];
       touchpads = [

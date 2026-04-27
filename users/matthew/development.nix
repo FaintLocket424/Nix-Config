@@ -137,6 +137,7 @@
         "nvim-nightfox"
         "git-firefly"
         "powershell"
+        "haskell"
       ];
 
       userSettings = {

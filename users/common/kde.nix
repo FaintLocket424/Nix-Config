@@ -46,22 +46,27 @@
     powerdevil.AC.autoSuspend.action = "nothing";
 
     input = {
-      mice = [
-        {
-          name = "Logitech G502";
-          accelerationProfile = "none";
+      mice =
+        let
           acceleration = 0.1;
-          vendorId = "046d";
-          productId = "407f";
-        }
-        {
-          name = "Logitech G502 LIGHTSPEED Wireless Gaming Mouse";
-          accelerationProfile = "none";
-          acceleration = 0.1;
-          vendorId = "046d";
-          productId = "c08d";
-        }
-      ];
+          profile = "none";
+        in
+        [
+          {
+            name = "Logitech G502";
+            accelerationProfile = profile;
+            acceleration = acceleration;
+            vendorId = "046d";
+            productId = "407f";
+          }
+          {
+            name = "Logitech G502 LIGHTSPEED Wireless Gaming Mouse";
+            accelerationProfile = profile;
+            acceleration = acceleration;
+            vendorId = "046d";
+            productId = "c08d";
+          }
+        ];
       touchpads = [
         {
           name = "SYNA32DE:00 06CB:CEE7 Touchpad";

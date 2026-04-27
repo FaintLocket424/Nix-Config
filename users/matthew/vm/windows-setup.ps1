@@ -28,6 +28,7 @@ $packages = @(
     "TechPowerUp.NVCleanstall"
     "AppWork.JDownloader"
     "LizardByte.Sunshine"
+    "tailscale.tailscale"
 )
 
 foreach ($pkg in $packages) {

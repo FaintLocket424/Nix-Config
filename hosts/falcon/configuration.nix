@@ -51,4 +51,7 @@
       size = 8192; # Size in Megabytes
     }
   ];
+
+  networking.bridges.br0.interfaces = [ "enp7s0" ];
+  networking.interfaces.br0.useDHCP = true;
 }

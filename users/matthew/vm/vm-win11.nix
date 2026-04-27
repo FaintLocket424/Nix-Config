@@ -39,7 +39,7 @@
     </features>
 
     <cpu mode="host-passthrough" check="none" migratable="on">
-      <topology sockets="1" dies="1" clusters="1" cores="6" threads="2"/>
+      <topology sockets="1" dies="1" clusters="1" cores="4" threads="2"/>
       <feature policy="require" name="topoext"/>
     </cpu>
 

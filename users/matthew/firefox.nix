@@ -1,4 +1,4 @@
-{ pkgs, nixos-branding, ... }: {
+{ pkgs, ... }: {
   programs.firefox.profiles.matthew = {
     id = 0;
     name = "Matthew";
@@ -60,6 +60,7 @@
               bookmarks = [
                 { name = "G Drive"; url = "https://drive.google.com/drive/u/0/folders/1iY98aDj5Ql6BoKUvEt4TPV0sUwnCdlF7"; }
                 { name = "Pebblehost"; url = "https://panel.pebblehost.com/server/3e437777"; }
+                { name = "Timestamp"; url = "https://sesh.fyi/timestamp/"; }
               ];
             }
             # { name = "Stop Misusing Rate Limiting in Go - 5 Real-World Fixes"; url = "https://www.linkedin.com/pulse/stop-writing-dumb-rate-limiters-go-do-thisinstead-archit-agarwal-xjuac"; }

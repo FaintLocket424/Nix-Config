@@ -206,6 +206,10 @@
             language_servers = [ "fish-lsp" ];
           };
         };
+
+        lsp.hls.binary = {
+          path = "haskell-language-server-9.10.3";
+        };
       };
     };
   };

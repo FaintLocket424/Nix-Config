@@ -17,7 +17,7 @@
     # openocd # ARM/STM32 debugging and flashing
     # pandoc # Document compiler
     # texliveFull # LaTeX
-    # ghc # Glasgow Haskell Compiler
+    ghc # Glasgow Haskell Compiler
     haskell-language-server
     # mono # C# Compiler related
     # dotnet-sdk_9 # .NET 9 SDK

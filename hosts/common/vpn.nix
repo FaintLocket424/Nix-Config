@@ -1,49 +1,45 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    # protonvpn-gui
-  ];
+  # environment.systemPackages = with pkgs; [
+  # protonvpn-gui
+  # ];
 
   networking = {
     firewall.checkReversePath = "loose";
 
-    wireguard.interfaces."wg-proton" = {
-      ips = [
-        "10.2.0.2/32"
-        "2a07:b944::2:2/128"
-      ];
+    wireguard.interfaces = {
+      wg0 = {
+        ips = [
+          "10.2.0.2/32"
+          "2a07:b944::2:2/128"
+        ];
 
-      privateKeyFile = "/run/secrets/proton.key";
+        privateKeyFile = "/run/secrets/wg-proton-private.key";
 
-      routes = [
-        { address = "0.0.0.0"; prefixLength = 1; }
-        { address = "128.0.0.0"; prefixLength = 1; }
-        { address = "::"; prefixLength = 1; }
-        { address = "8000::"; prefixLength = 1; }
-      ];
+        listenPort = 51820;
 
-      peers = [
-        {
-          publicKey = "AFp36cKCIznWgRchU9fE2G9kPK6zcdS+7S/u4drPU1g=";
-          endpoint = "146.70.48.2:51820";
+        peers = [
+          {
+            publicKey = "AFp36cKCIznWgRchU9fE2G9kPK6zcdS+7S/u4drPU1g=";
 
-          allowedIPs = [
-            "0.0.0.0/1"
-            "128.0.0.0/1"
+            allowedIPs = [
+              "0.0.0.0/0"
+              "::/0"
+            ];
 
-            "::/1"
-            "8000::/1"
-          ];
+            endpoint = "146.70.48.2:51820";
 
-          persistentKeepalive = 25;
-        }
-      ];
+            persistentKeepalive = 25;
+          }
+        ];
+      };
     };
+
+    nameservers = [ "10.2.0.1" "2a07:b944::2:1" ];
   };
 
-  services.tailscale.enable = true;
+  # services.tailscale.enable = true;
 
   services.resolved = {
     enable = true;
-    dnssec = "false";
   };
 }

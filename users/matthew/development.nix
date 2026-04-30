@@ -23,13 +23,11 @@
     # dotnet-sdk_9 # .NET 9 SDK
     # dotnet-runtime_9 # .NET 9 Runtime
     # android-tools # Android platform tools (adb, fastboot)
-    # vegeta # API Testing
 
     nixd # Nix LSP
     nixpkgs-fmt # Nix formatter
 
     # Utilities
-    # httrack # Website copier
     sshfs # SSH File System
   ];
 
@@ -208,7 +206,7 @@
         };
 
         lsp.hls.binary = {
-          path = "haskell-language-server-9.10.3";
+          path = "haskell-language-server-wrapper";
         };
       };
     };

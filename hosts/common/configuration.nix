@@ -7,6 +7,10 @@ let
   };
 in
 {
+  imports = [
+    ./vpn.nix
+  ];
+
   # --- Boot and Kernel ---
   boot = {
     loader = {
@@ -98,13 +102,11 @@ in
       };
     };
 
-    resolved.enable = true;
     fstrim.enable = true;
     fwupd.enable = true;
     dbus.implementation = "broker";
     udisks2.enable = true;
     devmon.enable = true;
-    tailscale.enable = true;
     openssh.enable = true;
     joycond.enable = true;
 
@@ -157,8 +159,6 @@ in
         KERNEL=="uinput", MODE="0660", GROUP="input"
       '';
     };
-
-    # input-remapper.enable = true;
 
     sunshine = {
       enable = true;
@@ -294,7 +294,6 @@ in
     wget
     nano
     vulkan-tools
-    protonvpn-gui
     custom-sddm-theme
     dnsmasq
     phodav

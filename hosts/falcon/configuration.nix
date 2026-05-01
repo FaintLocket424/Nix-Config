@@ -5,19 +5,9 @@
     ./virtualisation.nix
   ];
 
-  boot.initrd.kernelModules = [
-    "vfio_pci"
-    "vfio"
-    "vfio_iommu_type1"
-  ];
-
   boot = {
     kernelParams = [
       "amd_pstate=active"
-      "amd_iommu=on"
-      "iommu=pt"
-
-      "vfio-pci.ids=10de:1b06,10de:10ef"
     ];
 
     blacklistedKernelModules = [

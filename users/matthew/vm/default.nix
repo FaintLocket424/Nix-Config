@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, osConfig ? null, ... }:
 let
   win11-xml = import ./vm-win11.nix { inherit pkgs config; };
   win11-xml-file = pkgs.writeText "win11-declarative.xml" win11-xml;
@@ -33,8 +33,10 @@ let
         --set __NV_DISABLE_EXPLICIT_SYNC 1
     '';
   };
+
+  isFalcon = osConfig != null && osConfig.networking.hostName == "falcon";
 in
-{
+lib.mkIf isFalcon {
   home.packages = [
     rebuild-win11-vm
     pkgs.scream

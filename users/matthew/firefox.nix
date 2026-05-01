@@ -44,8 +44,8 @@
             { name = "LTT Labs"; url = "https://www.lttlabs.com/"; }
             { name = "DHM Weather"; url = "https://www.metoffice.gov.uk/weather/forecast/gcwzefp2c"; }
             { name = "WhatsApp"; url = "https://web.whatsapp.com/"; }
-            { name = "Immich"; url = "http://100.70.23.49:2283/"; }
-            { name = "Jellyfin"; url = "http://100.70.23.49:8096/"; }
+            { name = "Immich"; url = "http://falcon:2283/"; }
+            { name = "Jellyfin"; url = "http://falcon:8096/"; }
             # { name = "Developer Roadmaps"; url = "https://roadmap.sh/"; }
             # {
             #   name = "Pebble";

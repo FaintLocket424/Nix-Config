@@ -114,7 +114,12 @@
         };
 
         "Falcon" = {
-          hostname = "100.70.23.49";
+          hostname = "falcon";
+          user = "matthew";
+        };
+
+        "Hyperion" = {
+          hostname = "hyperion";
           user = "matthew";
         };
       };

@@ -45,9 +45,10 @@ in
     package = looking-glass-fixed-pkg;
   };
 
-  xdg.desktopEntries."my-looking-glass-fixed" = {
-    name = "Looking Glass Client Fixed";
+  xdg.desktopEntries."looking-glass-client" = {
+    name = "Looking Glass Client (Fixed)";
     exec = "${looking-glass-fixed-pkg}/bin/looking-glass-client";
+    icon = "looking-glass-client";
     terminal = false;
     categories = [ "Utility" ];
     mimeType = [ "application/x-looking-glass" ];

@@ -164,11 +164,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1777646569,
-        "narHash": "sha256-Jm+sroIQgzgCk0+ytT97CBVBkm6rnHh0fM7d+pH+nlY=",
+        "lastModified": 1777647314,
+        "narHash": "sha256-ugJgUG8C2WChfZaSVbDvo9DSwpdG4++R0RlZ5/YzdII=",
         "owner": "FaintLocket424",
         "repo": "rc-timing-api",
-        "rev": "1217e8c3b89a353225d0fdc1eac70025c9af418d",
+        "rev": "d5313d22c4111a60e676e8b51ae2aa0f3d245c34",
         "type": "github"
       },
       "original": {

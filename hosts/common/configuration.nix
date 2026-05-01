@@ -159,13 +159,6 @@ in
         KERNEL=="uinput", MODE="0660", GROUP="input"
       '';
     };
-
-    sunshine = {
-      enable = true;
-      autoStart = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
   };
 
   security.rtkit.enable = true;

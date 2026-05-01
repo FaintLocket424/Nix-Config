@@ -51,4 +51,18 @@
       size = 8192; # Size in Megabytes
     }
   ];
+
+  services = {
+    rc-timing-api = {
+      enable = true;
+      openFirewall = true;
+    };
+
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+  };
 }

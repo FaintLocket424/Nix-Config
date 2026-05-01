@@ -136,6 +136,12 @@
               installation_mode = "force_installed";
               updates_disabled = true;
             };
+
+            "plasma-browser-integration@kde.org" = {
+              install_url = moz "plasma-integration";
+              installation_mode = "force_installed";
+              updates_disabled = true;
+            };
           };
 
         "3rdparty".Extensions = {

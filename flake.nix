@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -24,7 +23,7 @@
     eden.url = "github:daaboulex/eden-nix";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, treefmt-nix, eden, ... }@inputs:
+  outputs = { nixpkgs, home-manager, plasma-manager, treefmt-nix, ... }@inputs:
     let
       systems = [ "x86_64-linux" "aarch64-linux" ];
 

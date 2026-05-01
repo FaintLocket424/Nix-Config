@@ -156,16 +156,60 @@
         "type": "github"
       }
     },
+    "rc-timing-api": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1777646450,
+        "narHash": "sha256-FZtxGy63WN+e2/DrvLGY4Y2n+tDXq8x6b1B1vl8SGNg=",
+        "owner": "FaintLocket424",
+        "repo": "rc-timing-api",
+        "rev": "d57be9615705c0c6678d80e59aaaeb5873eab4c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FaintLocket424",
+        "ref": "develop",
+        "repo": "rc-timing-api",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "eden": "eden",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "plasma-manager": "plasma-manager",
-        "treefmt-nix": "treefmt-nix"
+        "rc-timing-api": "rc-timing-api",
+        "treefmt-nix": "treefmt-nix_2"
       }
     },
     "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "rc-timing-api",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775636079,
+        "narHash": "sha256-pc20NRoMdiar8oPQceQT47UUZMBTiMdUuWrYu2obUP0=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "790751ff7fd3801feeaf96d7dc416a8d581265ba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"

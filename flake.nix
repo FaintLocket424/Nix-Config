@@ -21,9 +21,14 @@
     };
 
     eden.url = "github:daaboulex/eden-nix";
+
+    rc-timing-api = {
+      url = "github:FaintLocket424/rc-timing-api/develop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, treefmt-nix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, plasma-manager, treefmt-nix, rc-timing-api, ... }@inputs:
     let
       systems = [ "x86_64-linux" "aarch64-linux" ];
 
@@ -51,6 +56,8 @@
             ./hosts/${hostname}/configuration.nix
             ./users
 
+            rc-timing-api.nixosModules.rc-timing-api
+
             home-manager.nixosModules.home-manager
             {
               home-manager.useUserPackages = true;
@@ -64,6 +71,7 @@
               home-manager.sharedModules = [
                 ./users/common
                 plasma-manager.homeModules.plasma-manager
+
                 {
                   nixpkgs.config = {
                     allowUnfree = false;

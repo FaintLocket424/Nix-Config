@@ -1,6 +1,8 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
+
+    ./virtualisation.nix
   ];
 
   boot.initrd.kernelModules = [

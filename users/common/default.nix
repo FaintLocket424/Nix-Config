@@ -12,6 +12,7 @@
     fastfetch
     pfetch
     p7zip
+    unzip
     wget
 
     geteduroam

@@ -141,6 +141,7 @@
         "git-firefly"
         "powershell"
         "haskell"
+        "latex"
       ];
 
       userSettings = {

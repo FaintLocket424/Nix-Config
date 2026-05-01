@@ -15,8 +15,8 @@
     # platformio # PlatformIO microcontroller toolchain manager
     # avrdude # AVR Flashing
     # openocd # ARM/STM32 debugging and flashing
-    # pandoc # Document compiler
-    # texliveFull # LaTeX
+    pandoc # Document compiler
+    texliveFull # LaTeX
     ghc # Glasgow Haskell Compiler
     haskell-language-server
     # mono # C# Compiler related

@@ -1,8 +1,10 @@
 {
-  description = "Matthew's NixOS Gaming Laptop Configuration";
+  description = "Matthew's NixOS Desktop and Laptop Configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+
+    flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -28,13 +30,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, treefmt-nix, rc-timing-api, ... }@inputs:
+  outputs = { nixpkgs, flake-utils, home-manager, plasma-manager, treefmt-nix, rc-timing-api, ... }@inputs:
     let
-      systems = [ "x86_64-linux" "aarch64-linux" ];
-
-      forAllSystems = nixpkgs.lib.genAttrs systems;
-
       allowedUnfree = import ./lib/unfree-list.nix;
+
+      systems = [ "x86_64-linux" "aarch64-linux" ];
 
       mkSystem = { hostname, system ? "x86_64-linux" }:
         nixpkgs.lib.nixosSystem {
@@ -83,9 +83,8 @@
           ];
         };
     in
-    {
-      # Generate the formatter for each supported system
-      formatter = forAllSystems (system:
+    flake-utils.lib.eachDefaultSystem
+      (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
 
@@ -94,9 +93,11 @@
             programs.nixpkgs-fmt.enable = true;
           };
         in
-        treefmtEval.config.build.wrapper
-      );
-
+        {
+          formatter = treefmtEval.config.build.wrapper;
+        }
+      )
+    // {
       nixosConfigurations = {
         hyperion = mkSystem { hostname = "hyperion"; };
         falcon = mkSystem { hostname = "falcon"; };

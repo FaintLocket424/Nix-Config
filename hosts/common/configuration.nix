@@ -24,7 +24,7 @@ in
       hid-tmff2
       v4l2loopback
     ];
-    kernelPackages = pkgs.linuxPackages_6_19;
+    kernelPackages = pkgs.linuxPackages_7_0;
     kernelParams = [
       "quiet"
       "splash"

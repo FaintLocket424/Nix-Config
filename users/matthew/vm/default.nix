@@ -47,7 +47,7 @@ lib.mkIf isFalcon {
     package = looking-glass-fixed-pkg;
   };
 
-  xdg.desktopEntries."looking-glass-client" = {
+  xdg.desktopEntries."looking-glass-client-fixed" = {
     name = "Looking Glass Client (Fixed)";
     exec = "${looking-glass-fixed-pkg}/bin/looking-glass-client";
     icon = "looking-glass-client";

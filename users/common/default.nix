@@ -51,7 +51,6 @@
         AutofillCreditCardEnabled = false;
 
         BackgroundAppUpdate = false;
-        # BlockAboutConfig = false;
         BlockAboutProfiles = true;
         BlockAboutSupport = true;
 

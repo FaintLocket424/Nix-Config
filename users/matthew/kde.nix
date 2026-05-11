@@ -1,6 +1,6 @@
-{ pkgs, lib, ... }:
+{ pkgs, osConfig, ... }:
 let
-  wallpaper = ./wallpapers/art002e009301-large.jpg;
+  wallpaper = ./wallpapers/${osConfig.networking.hostName}.jpg;
 in
 {
   systemd.user.services.set-plasma-wallpaper = {

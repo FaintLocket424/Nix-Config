@@ -142,9 +142,21 @@
           definedAliases = [ "@nixwix" "@nixoswiki" ];
         };
 
+        "Modrinth" = {
+          urls = [
+            {
+              template = "https://modrinth.com/discover/mods";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
+              ];
+            }
+          ];
+          definedAliases = [ "@md" ];
+        };
+
         bing.metaData.hidden = true;
         google.metaData.hidden = true;
-        ebay.metaData.hidden = true;
+        eBay.metaData.hidden = true;
         perplexity.metaData.hidden = true;
         wikipedia.metaData.hidden = true;
       };

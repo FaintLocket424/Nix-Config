@@ -183,20 +183,20 @@ in
       protontricks.enable = true;
     };
 
-    # nix-ld = {
-    #   enable = true;
-    #   libraries = with pkgs; [
-    #     stdenv.cc.cc
-    #     stdenv.cc.cc.lib
-    #     zlib
-    #     fuse3
-    #     icu
-    #     nss
-    #     openssl
-    #     curl
-    #     expat
-    #   ];
-    # };
+    nix-ld = {
+      enable = true;
+      # libraries = with pkgs; [
+      #     stdenv.cc.cc
+      #     stdenv.cc.cc.lib
+      #     zlib
+      #     fuse3
+      #     icu
+      #     nss
+      #     openssl
+      #     curl
+      #     expat
+      # ];
+    };
 
     ssh.askPassword = lib.mkForce "";
 

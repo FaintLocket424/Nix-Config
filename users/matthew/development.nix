@@ -134,6 +134,7 @@
         "nix"
         "go"
         "java"
+        "kotlin"
         "python"
         "toml"
         "fish"

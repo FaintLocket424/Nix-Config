@@ -154,6 +154,18 @@
           definedAliases = [ "@md" ];
         };
 
+        "CML Distribution" = {
+          urls = [
+            {
+              template = "https://www.cmldistribution.co.uk/results/";
+              params = [
+                { name = "q_search"; value = "{searchTerms}"; }
+              ];
+            }
+          ];
+          definedAliases = [ "@cml" ];
+        };
+
         bing.metaData.hidden = true;
         google.metaData.hidden = true;
         eBay.metaData.hidden = true;

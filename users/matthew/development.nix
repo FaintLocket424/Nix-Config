@@ -89,7 +89,6 @@
           hashKnownHosts = false;
           userKnownHostsFile = "~/.ssh/known_hosts";
 
-          # Connection multiplexing (Massively speeds up multiple SSH sessions to the same host)
           controlMaster = "no";
           controlPath = "~/.ssh/master-%r@%n:%p";
           controlPersist = "no";

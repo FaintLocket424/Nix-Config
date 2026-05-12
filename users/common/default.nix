@@ -202,7 +202,7 @@
         ls = "eza --icons --group-directories-first";
         cat = "bat";
         ll = "eza -l --icons --git -a";
-        find = "fd";
+        # find = "fd";
         grep = "rg";
       };
 

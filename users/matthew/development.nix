@@ -169,6 +169,10 @@
           ".minecraft-src"
         ];
 
+        file_scan_exclusions = [
+          ".direnv"
+        ];
+
         file_finder = {
           include_ignored = "indexed";
         };

@@ -166,6 +166,10 @@
           calt = true;
         };
 
+        file_scan_inclusions = [
+          ".minecraft-src"
+        ];
+
         terminal = {
           font_family = "JetBrainsMono Nerd Font";
 

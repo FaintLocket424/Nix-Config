@@ -170,6 +170,10 @@
           ".minecraft-src"
         ];
 
+        search = {
+          include_ignored = true;
+        };
+
         terminal = {
           font_family = "JetBrainsMono Nerd Font";
 

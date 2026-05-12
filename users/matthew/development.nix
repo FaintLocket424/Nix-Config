@@ -171,6 +171,7 @@
 
         file_scan_exclusions = [
           ".direnv"
+          ".git"
         ];
 
         file_finder = {

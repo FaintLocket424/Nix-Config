@@ -25,7 +25,7 @@
     eden.url = "github:daaboulex/eden-nix";
 
     opengrid-bridge = {
-      url = "github:FaintLocket424/opengrid-bridge/develop";
+      url = "git+https://codeberg.org/OpenGrid-RC/bridge.git?ref=develop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -120,11 +120,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776796298,
-        "narHash": "sha256-PcRvlWayisPSjd0UcRQbhG8Oqw78AcPE6x872cPRHN8=",
+        "lastModified": 1778507602,
+        "narHash": "sha256-kTwur1wV+01SdqskVMSo6JMEpg71ps3HpbFY2GsflKs=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "3cfd774b0a530725a077e17354fbdb87ea1c4aad",
+        "rev": "61ab0e80d9c7ab14c256b5b453d8b3fb0189ba0a",
         "type": "github"
       },
       "original": {
@@ -240,18 +240,18 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1778789831,
-        "narHash": "sha256-sO7c96EatP3lI99uWBxMLu8xpcUXGf38TYPHrWct500=",
-        "owner": "FaintLocket424",
-        "repo": "opengrid-bridge",
-        "rev": "9f76247e734a2a63d5fe8334c034c0209a525c7c",
-        "type": "github"
+        "lastModified": 1778795533,
+        "narHash": "sha256-ESeeCaZYIwQsPpxWLfvmA5TofpWsTxFY/OqPohw4dKY=",
+        "ref": "develop",
+        "rev": "793da8f8d062cbc8514c76b8aef88bbcf8ec6130",
+        "revCount": 44,
+        "type": "git",
+        "url": "https://codeberg.org/OpenGrid-RC/bridge.git"
       },
       "original": {
-        "owner": "FaintLocket424",
         "ref": "develop",
-        "repo": "opengrid-bridge",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/OpenGrid-RC/bridge.git"
       }
     },
     "plasma-manager": {

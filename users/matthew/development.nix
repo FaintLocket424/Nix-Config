@@ -94,32 +94,36 @@
           controlPersist = "no";
         };
 
-        "github.com" = {
+        "github-personal" = {
           hostname = "github.com";
           user = "git";
-          identityFile = "~/.ssh/id_ed25519";
+          identityFile = "~/.ssh/id_ed25519_github_personal";
+        };
+
+        "codeberg-personal" = {
+          hostname = "codeberg.org";
+          user = "git";
+          identityFile = "~/.ssh/id_ed25519_codeberg_personal";
+        };
+
+        "codeberg-opengrid-rc" = {
+          hostname = "codeberg.org";
+          user = "git";
+          identityFile = "~/.ssh/id_ed25519_codeberg_opengrid-rc";
         };
 
         "Hamilton" = {
           hostname = "hamilton8.dur.ac.uk";
           user = "qcsc66";
+          identityFile = "~/.ssh/id_ed25519_durham";
           setEnv = { TERM = "xterm-256color"; };
         };
 
         "NCC" = {
           hostname = "ncc1.clients.dur.ac.uk";
           user = "qcsc66";
+          identityFile = "~/.ssh/id_ed25519_durham";
           setEnv = { TERM = "xterm-256color"; };
-        };
-
-        "Falcon" = {
-          hostname = "falcon";
-          user = "matthew";
-        };
-
-        "Hyperion" = {
-          hostname = "hyperion";
-          user = "matthew";
         };
       };
     };

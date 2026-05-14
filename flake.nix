@@ -54,7 +54,7 @@
             ./hosts/${hostname}/configuration.nix
             ./users
 
-            opengrid-bridge.nixosModules.rc-timing-api
+            opengrid-bridge.nixosModules.opengrid-bridge
 
             home-manager.nixosModules.home-manager
             {

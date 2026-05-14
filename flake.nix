@@ -22,7 +22,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    eden.url = "github:daaboulex/eden-nix";
+    eden = {
+      url = "github:daaboulex/eden-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     opengrid-bridge = {
       url = "git+https://codeberg.org/OpenGrid-RC/bridge.git?ref=develop";

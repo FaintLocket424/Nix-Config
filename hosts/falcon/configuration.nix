@@ -45,7 +45,7 @@
   ];
 
   services = {
-    rc-timing-api = {
+    opengrid-bridge = {
       enable = true;
       openFirewall = true;
     };

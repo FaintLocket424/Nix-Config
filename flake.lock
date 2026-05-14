@@ -115,7 +115,7 @@
         "flake-compat": "flake-compat_2",
         "gitignore": "gitignore_2",
         "nixpkgs": [
-          "rc-timing-api",
+          "opengrid-bridge",
           "nixpkgs"
         ]
       },
@@ -158,7 +158,7 @@
     "gitignore_2": {
       "inputs": {
         "nixpkgs": [
-          "rc-timing-api",
+          "opengrid-bridge",
           "git-hooks",
           "nixpkgs"
         ]
@@ -230,6 +230,30 @@
         "type": "github"
       }
     },
+    "opengrid-bridge": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "git-hooks": "git-hooks_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1778789831,
+        "narHash": "sha256-sO7c96EatP3lI99uWBxMLu8xpcUXGf38TYPHrWct500=",
+        "owner": "FaintLocket424",
+        "repo": "opengrid-bridge",
+        "rev": "9f76247e734a2a63d5fe8334c034c0209a525c7c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FaintLocket424",
+        "ref": "develop",
+        "repo": "opengrid-bridge",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -253,38 +277,14 @@
         "type": "github"
       }
     },
-    "rc-timing-api": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "git-hooks": "git-hooks_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "treefmt-nix": "treefmt-nix"
-      },
-      "locked": {
-        "lastModified": 1778789831,
-        "narHash": "sha256-sO7c96EatP3lI99uWBxMLu8xpcUXGf38TYPHrWct500=",
-        "owner": "FaintLocket424",
-        "repo": "rc-timing-api",
-        "rev": "9f76247e734a2a63d5fe8334c034c0209a525c7c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "FaintLocket424",
-        "ref": "develop",
-        "repo": "rc-timing-api",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "eden": "eden",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
+        "opengrid-bridge": "opengrid-bridge",
         "plasma-manager": "plasma-manager",
-        "rc-timing-api": "rc-timing-api",
         "treefmt-nix": "treefmt-nix_2"
       }
     },
@@ -321,7 +321,7 @@
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
-          "rc-timing-api",
+          "opengrid-bridge",
           "nixpkgs"
         ]
       },

@@ -24,17 +24,15 @@
 
     eden.url = "github:daaboulex/eden-nix";
 
-    rc-timing-api = {
-      url = "github:FaintLocket424/rc-timing-api/develop";
+    opengrid-bridge = {
+      url = "github:FaintLocket424/opengrid-bridge/develop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, flake-utils, home-manager, plasma-manager, treefmt-nix, rc-timing-api, ... }@inputs:
+  outputs = { nixpkgs, flake-utils, home-manager, plasma-manager, treefmt-nix, opengrid-bridge, ... }@inputs:
     let
       allowedUnfree = import ./lib/unfree-list.nix;
-
-      systems = [ "x86_64-linux" "aarch64-linux" ];
 
       mkSystem = { hostname, system ? "x86_64-linux" }:
         nixpkgs.lib.nixosSystem {
@@ -56,7 +54,7 @@
             ./hosts/${hostname}/configuration.nix
             ./users
 
-            rc-timing-api.nixosModules.rc-timing-api
+            opengrid-bridge.nixosModules.rc-timing-api
 
             home-manager.nixosModules.home-manager
             {

@@ -115,14 +115,14 @@
         "Hamilton" = {
           hostname = "hamilton8.dur.ac.uk";
           user = "qcsc66";
-          identityFile = "~/.ssh/id_ed25519_durham";
+          identityFile = "~/.ssh/id_ed25519_durham-university";
           setEnv = { TERM = "xterm-256color"; };
         };
 
         "NCC" = {
           hostname = "ncc1.clients.dur.ac.uk";
           user = "qcsc66";
-          identityFile = "~/.ssh/id_ed25519_durham";
+          identityFile = "~/.ssh/id_ed25519_durham-university";
           setEnv = { TERM = "xterm-256color"; };
         };
       };

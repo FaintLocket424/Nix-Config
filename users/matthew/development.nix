@@ -47,7 +47,7 @@
     git = {
       settings = {
         user.name = "FaintLocket424";
-        user.email = "github.grill135@passinbox.com";
+        user.email = "git-faintlocket.lash245@passmail.net";
         init.defaultBranch = "main";
         core.autocrlf = "input";
         url = {

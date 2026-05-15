@@ -226,11 +226,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1778852021,
-        "narHash": "sha256-IkP1Ezx6ZL7eershbonJQJomjOXpEPThvOqzsFq6SJs=",
+        "lastModified": 1778852383,
+        "narHash": "sha256-zYUZjmaTJW6T077SIicUoxdyP77BylM7S1sO7mxEnvc=",
         "ref": "develop",
-        "rev": "13056f8caa8ed676e642153f36618693e6ff09af",
-        "revCount": 47,
+        "rev": "2f83c3304efb5334f06d7b221dcf4daefd3bd980",
+        "revCount": 48,
         "type": "git",
         "url": "https://codeberg.org/OpenGrid-RC/bridge.git"
       },

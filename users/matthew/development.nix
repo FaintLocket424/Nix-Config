@@ -74,11 +74,6 @@
       enable = true;
       enableDefaultConfig = false;
 
-      extraConfig = ''
-        Host *
-            WarnWeakCrypto no
-      '';
-
       matchBlocks = {
         "*" = {
           addKeysToAgent = "yes";
@@ -92,24 +87,30 @@
           controlMaster = "no";
           controlPath = "~/.ssh/master-%r@%n:%p";
           controlPersist = "no";
+          extraOptions = {
+            "WarnWeakCrypto" = "no";
+          };
         };
 
         "github-personal" = {
           hostname = "github.com";
           user = "git";
           identityFile = "~/.ssh/id_ed25519_github_personal";
+          identitiesOnly = true;
         };
 
         "codeberg-personal" = {
           hostname = "codeberg.org";
           user = "git";
           identityFile = "~/.ssh/id_ed25519_codeberg_personal";
+          identitiesOnly = true;
         };
 
         "codeberg-opengrid-rc" = {
           hostname = "codeberg.org";
           user = "git";
           identityFile = "~/.ssh/id_ed25519_codeberg_opengrid-rc";
+          identitiesOnly = true;
         };
 
         "Hamilton" = {
@@ -117,6 +118,7 @@
           user = "qcsc66";
           identityFile = "~/.ssh/id_ed25519_durham-university";
           setEnv = { TERM = "xterm-256color"; };
+          identitiesOnly = true;
         };
 
         "NCC" = {
@@ -124,6 +126,7 @@
           user = "qcsc66";
           identityFile = "~/.ssh/id_ed25519_durham-university";
           setEnv = { TERM = "xterm-256color"; };
+          identitiesOnly = true;
         };
       };
     };

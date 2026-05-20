@@ -128,6 +128,20 @@
           setEnv = { TERM = "xterm-256color"; };
           identitiesOnly = true;
         };
+
+        "falcon" = {
+          hostname = "falcon";
+          user = "matthew";
+          identityFile = "~/.ssh/id_ed25519_home";
+          identitiesOnly = true;
+        };
+
+        "hyperion" = {
+          hostname = "hyperion";
+          user = "matthew";
+          identityFile = "~/.ssh/id_ed25519_home";
+          identitiesOnly = true;
+        };
       };
     };
 

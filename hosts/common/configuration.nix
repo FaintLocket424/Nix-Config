@@ -107,8 +107,15 @@ in
     dbus.implementation = "broker";
     udisks2.enable = true;
     devmon.enable = true;
-    openssh.enable = true;
     joycond.enable = true;
+
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+      };
+    };
 
     avahi = {
       enable = true;
